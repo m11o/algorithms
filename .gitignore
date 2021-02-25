@@ -3,3 +3,7 @@ node_modules
 coverage
 .vscode
 .DS_Store
+
+ruby/.bundle
+ruby/vendor/bundle/
+ruby/.ruby-version
