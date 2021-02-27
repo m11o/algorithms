@@ -73,29 +73,29 @@ describe LinkedList do
     linked_list.append 2
     linked_list.append 3
 
-    expect(linked_list.head.to_s).to '1'
-    expect(linked_list.head.to_s).to '3'
+    expect(linked_list.head.to_s).to eq '1'
+    expect(linked_list.tail.to_s).to eq '3'
 
     delete_node1 = linked_list.delete_tail
 
     expect(delete_node1.value).to eq 3
     expect(linked_list.to_s).to eq '1,2'
     expect(linked_list.head.to_s).to '1'
-    expect(linked_list.head.to_s).to '2'
+    expect(linked_list.tail.to_s).to '2'
 
     delete_node2 = linked_list.delete_tail
 
     expect(delete_node2.value).to eq 2
     expect(linked_list.to_s).to eq '1'
     expect(linked_list.head.to_s).to '1'
-    expect(linked_list.head.to_s).to '1'
+    expect(linked_list.tail.to_s).to '1'
 
     delete_node3 = linked_list.delete_tail
 
     expect(delete_node3.value).to eq 1
     expect(linked_list.to_s).to eq ''
     expect(linked_list.head.to_s).to ''
-    expect(linked_list.head.to_s).to ''
+    expect(linked_list.tail.to_s).to ''
   end
 
   it 'should delete linked list head' do
@@ -128,7 +128,7 @@ describe LinkedList do
 
     linked_list.append(node_value1).prepend(node_value2)
 
-    expected = linked_list.to_s { |value| "#{value.key}:#{value}" }
+    expected = linked_list.to_s { |value| "#{value[:key]}:#{value[:value]}" }
     expect(expected).to eq 'key2:2,key1:1'
   end
 

@@ -9,8 +9,8 @@ describe LinkedListNode do
   it 'should create list node with object as a value' do
     node = LinkedListNode.new value: 1, key: 'test'
 
-    expect(node.value.value).to eq 1
-    expect(node.value.key).to eq 'test'
+    expect(node.value[:value]).to eq 1
+    expect(node.value[:key]).to eq 'test'
     expect(node.next).to eq nil
   end
 
@@ -36,7 +36,7 @@ describe LinkedListNode do
   it 'should convert node to string with custom stringifier' do
     node = LinkedListNode.new value: 1, key: 'test'
 
-    expected = node.to_s { |value| "value: #{value.value}, key: #{value.key}" }
+    expected = node.to_s { |value| "value: #{value[:value]}, key: #{value[:key]}" }
     expect(expected).to eq 'value: 1, key: test'
   end
 end
