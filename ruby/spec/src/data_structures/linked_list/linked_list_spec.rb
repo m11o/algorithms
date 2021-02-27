@@ -2,7 +2,7 @@ describe LinkedList do
   let(:linked_list) { LinkedList.new }
 
   it 'should create empty linked list' do
-    expect(linked_list.to_s).to eq nil
+    expect(linked_list.to_s).to eq ''
   end
 
   it 'should append node to linked list' do
@@ -24,7 +24,7 @@ describe LinkedList do
     linked_list.append(1)
     linked_list.prepend(3)
 
-    expect(linked_list.to_s).to eq '1,2,3'
+    expect(linked_list.to_s).to eq '3,2,1'
   end
 
   it 'should delete node by value from linked list' do
@@ -80,22 +80,22 @@ describe LinkedList do
 
     expect(delete_node1.value).to eq 3
     expect(linked_list.to_s).to eq '1,2'
-    expect(linked_list.head.to_s).to '1'
-    expect(linked_list.tail.to_s).to '2'
+    expect(linked_list.head.to_s).to eq '1'
+    expect(linked_list.tail.to_s).to eq '2'
 
     delete_node2 = linked_list.delete_tail
 
     expect(delete_node2.value).to eq 2
     expect(linked_list.to_s).to eq '1'
-    expect(linked_list.head.to_s).to '1'
-    expect(linked_list.tail.to_s).to '1'
+    expect(linked_list.head.to_s).to eq '1'
+    expect(linked_list.tail.to_s).to eq '1'
 
     delete_node3 = linked_list.delete_tail
 
     expect(delete_node3.value).to eq 1
     expect(linked_list.to_s).to eq ''
-    expect(linked_list.head.to_s).to ''
-    expect(linked_list.tail.to_s).to ''
+    expect(linked_list.head.to_s).to eq ''
+    expect(linked_list.tail.to_s).to eq ''
   end
 
   it 'should delete linked list head' do
@@ -133,15 +133,15 @@ describe LinkedList do
   end
 
   it 'should find node by value' do
-    expect(linked_list.find(value: 5)).to eq nil
+    expect(linked_list.find(5)).to eq nil
 
     linked_list.append 1
-    expect(linked_list.find(value: 1).value).to eq 1
+    expect(linked_list.find(1).value).to eq 1
 
     linked_list.append(2).append(3)
 
-    expect(linked_list.find(value: 2).value).to eq 2
-    expect(linked_list.find(value: 5).value).to eq nil
+    expect(linked_list.find(2).value).to eq 2
+    expect(linked_list.find(5)).to eq nil
   end
 
   it 'should find node by callback' do
@@ -149,12 +149,12 @@ describe LinkedList do
     linked_list.append(value: 2, key: 'test2')
     linked_list.append(value: 3, key: 'test3')
 
-    node = linked_list.find { |value| value.key == 'test2' }
+    node = linked_list.find { |value| value[:key] == 'test2' }
 
-    expect(node.value.value).to eq 2
-    expect(node.value.key).to eq 'test2'
+    expect(node.value[:value]).to eq 2
+    expect(node.value[:key]).to eq 'test2'
 
-    expect(linked_list.find { |value| value.key == 'test5' }).to eq nil
+    expect(linked_list.find { |value| value[:key] == 'test5' }).to eq nil
   end
 
   it 'should create linked list from array' do
