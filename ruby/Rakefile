@@ -1,0 +1,114 @@
+require 'fileutils'
+
+namespace :rspec do
+  desc 'convert rspec'
+  task :convert do
+    test_files = Dir.glob('../src/**/*.test.js')
+    test_files.each do |test_file_path|
+      RspecConverter.convert! test_file_path
+    end
+  end
+
+  class RspecConverter
+    def self.convert!(file_path)
+      new(file_path).send(:convert!)
+    end
+
+    def initialize(file_path)
+      @file_path = file_path
+      @file = File.open file_path
+      @filename = File.basename file_path
+      @codes = []
+    end
+
+    private
+
+    def convert!
+      #return if File.exists? spec_file_path
+
+      @file.each do |line|
+        line.gsub! 'toString()', 'to_s'
+
+        if line =~ /(\s*)}\);/
+          @codes << "#{$1}end\n"
+        end
+
+        line.lstrip!
+        case line
+        when /\Aimport/
+          # 何もしない
+        when /describe\('(.+?)',/
+          @codes << ['describe', $1, 'do'].join(' ')
+        when /it\('(.+?)',/
+          @codes << [' ', 'it', "'#{$1}'", 'do'].join(' ')
+        when /expect\((.+?)\)\.(to.+?)\((.*?)\);/
+          next if $2 === 'toBeDefined'
+
+          @codes << "    expect(#{$1}).to #{matcher_and_expect($2, $3)}"
+        when /[const|let]\s+?(.+?)\s*?=\s*?new\s+?(.+?)\((.*?)\)/
+          @codes << "    #{$1} = #{$2}.new(#{$3})"
+        when /[const|let]\s+?(.+?)\s*?=(.+?);/
+          @codes << "    #{$1} =#{$2}"
+        else
+          next if line =~ /(\s*)}\);/
+
+          @codes << "    #{line}"
+        end
+      end
+
+      FileUtils.mkdir_p /\A(.+)\/(.+?).rb/.match(spec_file_path).to_a.values_at(1)
+      File.open(spec_file_path, 'w+') do |f|
+        f.puts @codes.join("\n")
+      end
+    end
+
+    def matcher_and_expect(js_method, expect)
+      case js_method
+      when /toBeNull/, /toBeUndefined/
+        'eq nil'
+      when /toEqual/
+        "eq #{expect}"
+      when /toBe/
+        "be #{expect}"
+      when /toBeGreaterThanOrEqual/
+        "be >= #{expect}"
+      when /toBeLessThanOrEqual/
+        "be <= #{expect}"
+      when /toBeGreaterThan/
+        "be > #{expect}"
+      when /toBeLessThan/
+        "be < #{expect}"
+      when /toBeFalsy/
+        'be_false'
+      when /toBeTruthy/
+        'be_true'
+      when /toBeCloseTo/
+        expect, delta = if expect =~ /(.+?),\s?(.+?)/
+                          [$1, $2]
+                        else
+                          [expect, 0.1]
+                        end
+        "be_within(#{expect}).of(#{delta})"
+      when /toThrowError/, /toHaveBeenCalledTimes/, /toThrow/
+        "#{js_method}(#{expect})"
+      else
+        raise "#{js_method}に合致するmatcherは存在しません"
+      end
+    end
+
+    def spec_file_path
+      return @spec_file_path unless @spec_file_path.nil?
+
+      dir = /\A\.\.\/(src)\/(.+?)\/(__?tests?__?)\//.match(@file_path).to_a.values_at(2).first
+      puts @file_path
+      puts dir.inspect
+      dir.gsub! '-', '_'
+      @spec_file_name = to_snake(@filename).gsub(/\.test\.js\z/, "_spec.rb")
+      @spec_file_path = "../ruby/spec/#{dir}/#{@spec_file_name}"
+    end
+
+    def to_snake(str)
+      str.gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2').gsub(/([a-z\d])([A-Z])/, '\1_\2').tr("-", "_").downcase
+    end
+  end
+end
