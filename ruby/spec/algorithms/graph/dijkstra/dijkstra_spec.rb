@@ -76,11 +76,11 @@ describe dijkstra do
     end
 
     
-    expect(previousVertices.F.getKey()).to be 'D'
-    expect(previousVertices.D.getKey()).to be 'B'
-    expect(previousVertices.B.getKey()).to be 'A'
-    expect(previousVertices.G.getKey()).to be 'E'
-    expect(previousVertices.C.getKey()).to be 'A'
+    expect(previousVertices.F.getKey()).to eq 'D'
+    expect(previousVertices.D.getKey()).to eq 'B'
+    expect(previousVertices.B.getKey()).to eq 'A'
+    expect(previousVertices.G.getKey()).to eq 'E'
+    expect(previousVertices.C.getKey()).to eq 'A'
     expect(previousVertices.A).to eq nil
     expect(previousVertices.H).to eq nil
   end
@@ -149,10 +149,10 @@ describe dijkstra do
     
     expect(previousVertices.H).to eq nil
     expect(previousVertices.S).to eq nil
-    expect(previousVertices.B.getKey()).to be 'C'
-    expect(previousVertices.C.getKey()).to be 'A'
-    expect(previousVertices.A.getKey()).to be 'D'
-    expect(previousVertices.D.getKey()).to be 'E'
+    expect(previousVertices.B.getKey()).to eq 'C'
+    expect(previousVertices.C.getKey()).to eq 'A'
+    expect(previousVertices.A.getKey()).to eq 'D'
+    expect(previousVertices.D.getKey()).to eq 'E'
   end
 
 end

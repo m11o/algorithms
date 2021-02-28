@@ -66,10 +66,8 @@ namespace :rspec do
       case js_method
       when /toBeNull/, /toBeUndefined/
         'eq nil'
-      when /toEqual/
+      when /toEqual/, /toBe/
         "eq #{expect}"
-      when /toBe/
-        "be #{expect}"
       when /toBeGreaterThanOrEqual/
         "be >= #{expect}"
       when /toBeLessThanOrEqual/

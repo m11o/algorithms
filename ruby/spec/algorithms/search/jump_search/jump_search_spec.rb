@@ -1,20 +1,20 @@
     
 describe jumpSearch do
   it 'should search for an element in sorted array' do
-    expect(jumpSearch([], 1)).to be -1
-    expect(jumpSearch([1], 2)).to be -1
-    expect(jumpSearch([1], 1)).to be 0
-    expect(jumpSearch([1, 2], 1)).to be 0
-    expect(jumpSearch([1, 2], 1)).to be 0
-    expect(jumpSearch([1, 1, 1], 1)).to be 0
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 2)).to be 1
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 0)).to be -1
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 0)).to be -1
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 7)).to be -1
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 5)).to be 2
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 20)).to be 4
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 30)).to be 7
-    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 48)).to be 8
+    expect(jumpSearch([], 1)).to eq -1
+    expect(jumpSearch([1], 2)).to eq -1
+    expect(jumpSearch([1], 1)).to eq 0
+    expect(jumpSearch([1, 2], 1)).to eq 0
+    expect(jumpSearch([1, 2], 1)).to eq 0
+    expect(jumpSearch([1, 1, 1], 1)).to eq 0
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 2)).to eq 1
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 0)).to eq -1
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 0)).to eq -1
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 7)).to eq -1
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 5)).to eq 2
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 20)).to eq 4
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 30)).to eq 7
+    expect(jumpSearch([1, 2, 5, 10, 20, 21, 24, 30, 48], 48)).to eq 8
   end
 
     
@@ -39,11 +39,11 @@ describe jumpSearch do
     };
 
     
-    expect(jumpSearch([], { key: 1 }, comparator)).to be -1
-    expect(jumpSearch(sortedArrayOfObjects, { key: 4 }, comparator)).to be -1
-    expect(jumpSearch(sortedArrayOfObjects, { key: 1 }, comparator)).to be 0
-    expect(jumpSearch(sortedArrayOfObjects, { key: 2 }, comparator)).to be 1
-    expect(jumpSearch(sortedArrayOfObjects, { key: 3 }, comparator)).to be 2
+    expect(jumpSearch([], { key: 1 }, comparator)).to eq -1
+    expect(jumpSearch(sortedArrayOfObjects, { key: 4 }, comparator)).to eq -1
+    expect(jumpSearch(sortedArrayOfObjects, { key: 1 }, comparator)).to eq 0
+    expect(jumpSearch(sortedArrayOfObjects, { key: 2 }, comparator)).to eq 1
+    expect(jumpSearch(sortedArrayOfObjects, { key: 3 }, comparator)).to eq 2
   end
 
 end

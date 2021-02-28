@@ -17,7 +17,7 @@ describe Stack do
     stack.push(2);
 
     
-    expect(stack.to_s).to be '2,1'
+    expect(stack.to_s).to eq '2,1'
   end
 
     
@@ -31,20 +31,20 @@ describe Stack do
     stack.push(2);
 
     
-    expect(stack.peek()).to be 2
-    expect(stack.peek()).to be 2
+    expect(stack.peek()).to eq 2
+    expect(stack.peek()).to eq 2
   end
 
     
   it 'should check if stack is empty' do
     stack = Stack.new()
     
-    expect(stack.isEmpty()).to be true
+    expect(stack.isEmpty()).to eq true
     
     stack.push(1);
 
     
-    expect(stack.isEmpty()).to be false
+    expect(stack.isEmpty()).to eq false
   end
 
     
@@ -56,10 +56,10 @@ describe Stack do
     stack.push(2);
 
     
-    expect(stack.pop()).to be 2
-    expect(stack.pop()).to be 1
+    expect(stack.pop()).to eq 2
+    expect(stack.pop()).to eq 1
     expect(stack.pop()).to eq nil
-    expect(stack.isEmpty()).to be true
+    expect(stack.isEmpty()).to eq true
   end
 
     
@@ -73,9 +73,9 @@ describe Stack do
     
     stringifier = (value) => `${value.key}:${value.value}`
     
-    expect(stack.toString(stringifier)).to be 'key2:test2,key1:test1'
-    expect(stack.pop().value).to be 'test2'
-    expect(stack.pop().value).to be 'test1'
+    expect(stack.toString(stringifier)).to eq 'key2:test2,key1:test1'
+    expect(stack.pop().value).to eq 'test2'
+    expect(stack.pop().value).to eq 'test1'
   end
 
     

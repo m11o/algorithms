@@ -5,8 +5,8 @@ describe GraphEdge do
     endVertex = GraphVertex.new('B')
     edge = GraphEdge.new(startVertex, endVertex)
     
-    expect(edge.getKey()).to be 'A_B'
-    expect(edge.to_s).to be 'A_B'
+    expect(edge.getKey()).to eq 'A_B'
+    expect(edge.to_s).to eq 'A_B'
     expect(edge.startVertex).to eq startVertex
     expect(edge.endVertex).to eq endVertex
     expect(edge.weight).to eq 0

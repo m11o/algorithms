@@ -3,7 +3,7 @@ describe Trie do
   it 'should create trie' do
     trie = Trie.new()
     
-    expect(trie.head.to_s).to be '*'
+    expect(trie.head.to_s).to eq '*'
   end
 
     
@@ -13,15 +13,15 @@ describe Trie do
     trie.addWord('cat');
 
     
-    expect(trie.head.to_s).to be '*:c'
-    expect(trie.head.getChild('c').to be 'c:a'
+    expect(trie.head.to_s).to eq '*:c'
+    expect(trie.head.getChild('c').to eq 'c:a'
     
     trie.addWord('car');
 
-    expect(trie.head.to_s).to be '*:c'
-    expect(trie.head.getChild('c').to be 'c:a'
-    expect(trie.head.getChild('c').getChild('a').to be 'a:t,r'
-    expect(trie.head.getChild('c').getChild('a').getChild('t').to be 't*'
+    expect(trie.head.to_s).to eq '*:c'
+    expect(trie.head.getChild('c').to eq 'c:a'
+    expect(trie.head.getChild('c').getChild('a').to eq 'a:t,r'
+    expect(trie.head.getChild('c').getChild('a').getChild('t').to eq 't*'
   end
 
     
@@ -36,42 +36,42 @@ describe Trie do
 
     trie.addWord('cart');
 
-    expect(trie.doesWordExist('carpet')).to be true
-    expect(trie.doesWordExist('car')).to be true
-    expect(trie.doesWordExist('cart')).to be true
-    expect(trie.doesWordExist('cat')).to be true
+    expect(trie.doesWordExist('carpet')).to eq true
+    expect(trie.doesWordExist('car')).to eq true
+    expect(trie.doesWordExist('cart')).to eq true
+    expect(trie.doesWordExist('cat')).to eq true
     
     // Try to delete not-existing word first.
 
     trie.deleteWord('carpool');
 
-    expect(trie.doesWordExist('carpet')).to be true
-    expect(trie.doesWordExist('car')).to be true
-    expect(trie.doesWordExist('cart')).to be true
-    expect(trie.doesWordExist('cat')).to be true
+    expect(trie.doesWordExist('carpet')).to eq true
+    expect(trie.doesWordExist('car')).to eq true
+    expect(trie.doesWordExist('cart')).to eq true
+    expect(trie.doesWordExist('cat')).to eq true
     
     trie.deleteWord('carpet');
 
     expect(trie.doesWordExist('carpet')).to eq false
     expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to be true
-    expect(trie.doesWordExist('cat')).to be true
+    expect(trie.doesWordExist('cart')).to eq true
+    expect(trie.doesWordExist('cat')).to eq true
     
     trie.deleteWord('cat');
 
     expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to be true
-    expect(trie.doesWordExist('cat')).to be false
+    expect(trie.doesWordExist('cart')).to eq true
+    expect(trie.doesWordExist('cat')).to eq false
     
     trie.deleteWord('car');
 
     expect(trie.doesWordExist('car')).to eq false
-    expect(trie.doesWordExist('cart')).to be true
+    expect(trie.doesWordExist('cart')).to eq true
     
     trie.deleteWord('cart');
 
     expect(trie.doesWordExist('car')).to eq false
-    expect(trie.doesWordExist('cart')).to be false
+    expect(trie.doesWordExist('cart')).to eq false
   end
 
     
@@ -107,12 +107,12 @@ describe Trie do
     trie.addWord('caption');
 
     
-    expect(trie.doesWordExist('cat')).to be true
-    expect(trie.doesWordExist('cats')).to be true
-    expect(trie.doesWordExist('carpet')).to be true
-    expect(trie.doesWordExist('car')).to be true
-    expect(trie.doesWordExist('cap')).to be false
-    expect(trie.doesWordExist('call')).to be false
+    expect(trie.doesWordExist('cat')).to eq true
+    expect(trie.doesWordExist('cats')).to eq true
+    expect(trie.doesWordExist('carpet')).to eq true
+    expect(trie.doesWordExist('car')).to eq true
+    expect(trie.doesWordExist('cap')).to eq false
+    expect(trie.doesWordExist('call')).to eq false
   end
 
 end

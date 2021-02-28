@@ -88,22 +88,22 @@ describe floydWarshall do
     vertexGIndex = vertices.indexOf(vertexG)
     vertexHIndex = vertices.indexOf(vertexH)
     
-    expect(distances[vertexAIndex][vertexHIndex]).to be Infinity
-    expect(distances[vertexAIndex][vertexAIndex]).to be 0
-    expect(distances[vertexAIndex][vertexBIndex]).to be 4
-    expect(distances[vertexAIndex][vertexEIndex]).to be 7
-    expect(distances[vertexAIndex][vertexCIndex]).to be 3
-    expect(distances[vertexAIndex][vertexDIndex]).to be 9
-    expect(distances[vertexAIndex][vertexGIndex]).to be 12
-    expect(distances[vertexAIndex][vertexFIndex]).to be 11
+    expect(distances[vertexAIndex][vertexHIndex]).to eq Infinity
+    expect(distances[vertexAIndex][vertexAIndex]).to eq 0
+    expect(distances[vertexAIndex][vertexBIndex]).to eq 4
+    expect(distances[vertexAIndex][vertexEIndex]).to eq 7
+    expect(distances[vertexAIndex][vertexCIndex]).to eq 3
+    expect(distances[vertexAIndex][vertexDIndex]).to eq 9
+    expect(distances[vertexAIndex][vertexGIndex]).to eq 12
+    expect(distances[vertexAIndex][vertexFIndex]).to eq 11
     
-    expect(nextVertices[vertexAIndex][vertexFIndex]).to be vertexD
-    expect(nextVertices[vertexAIndex][vertexDIndex]).to be vertexB
-    expect(nextVertices[vertexAIndex][vertexBIndex]).to be vertexA
-    expect(nextVertices[vertexAIndex][vertexGIndex]).to be vertexE
-    expect(nextVertices[vertexAIndex][vertexCIndex]).to be vertexA
-    expect(nextVertices[vertexAIndex][vertexAIndex]).to be null
-    expect(nextVertices[vertexAIndex][vertexHIndex]).to be null
+    expect(nextVertices[vertexAIndex][vertexFIndex]).to eq vertexD
+    expect(nextVertices[vertexAIndex][vertexDIndex]).to eq vertexB
+    expect(nextVertices[vertexAIndex][vertexBIndex]).to eq vertexA
+    expect(nextVertices[vertexAIndex][vertexGIndex]).to eq vertexE
+    expect(nextVertices[vertexAIndex][vertexCIndex]).to eq vertexA
+    expect(nextVertices[vertexAIndex][vertexAIndex]).to eq null
+    expect(nextVertices[vertexAIndex][vertexHIndex]).to eq null
   end
 
     
@@ -164,10 +164,10 @@ describe floydWarshall do
     vertexCIndex = vertices.indexOf(vertexC)
     vertexDIndex = vertices.indexOf(vertexD)
     
-    expect(distances[vertexAIndex][vertexAIndex]).to be 0
-    expect(distances[vertexAIndex][vertexBIndex]).to be 3
-    expect(distances[vertexAIndex][vertexCIndex]).to be 5
-    expect(distances[vertexAIndex][vertexDIndex]).to be 6
+    expect(distances[vertexAIndex][vertexAIndex]).to eq 0
+    expect(distances[vertexAIndex][vertexBIndex]).to eq 3
+    expect(distances[vertexAIndex][vertexCIndex]).to eq 5
+    expect(distances[vertexAIndex][vertexDIndex]).to eq 6
     
     expect(distances).toEqual([
 
@@ -182,11 +182,11 @@ describe floydWarshall do
     ]);
 
     
-    expect(nextVertices[vertexAIndex][vertexDIndex]).to be vertexC
-    expect(nextVertices[vertexAIndex][vertexCIndex]).to be vertexB
-    expect(nextVertices[vertexBIndex][vertexDIndex]).to be vertexC
-    expect(nextVertices[vertexAIndex][vertexAIndex]).to be null
-    expect(nextVertices[vertexAIndex][vertexBIndex]).to be vertexA
+    expect(nextVertices[vertexAIndex][vertexDIndex]).to eq vertexC
+    expect(nextVertices[vertexAIndex][vertexCIndex]).to eq vertexB
+    expect(nextVertices[vertexBIndex][vertexDIndex]).to eq vertexC
+    expect(nextVertices[vertexAIndex][vertexAIndex]).to eq null
+    expect(nextVertices[vertexAIndex][vertexBIndex]).to eq vertexA
   end
 
     
@@ -262,22 +262,22 @@ describe floydWarshall do
     vertexGIndex = vertices.indexOf(vertexG)
     vertexFIndex = vertices.indexOf(vertexF)
     
-    expect(distances[vertexFIndex][vertexGIndex]).to be Infinity
-    expect(distances[vertexFIndex][vertexFIndex]).to be 0
-    expect(distances[vertexFIndex][vertexAIndex]).to be 5
-    expect(distances[vertexFIndex][vertexBIndex]).to be 5
-    expect(distances[vertexFIndex][vertexCIndex]).to be 7
-    expect(distances[vertexFIndex][vertexDIndex]).to be 9
-    expect(distances[vertexFIndex][vertexEIndex]).to be 8
+    expect(distances[vertexFIndex][vertexGIndex]).to eq Infinity
+    expect(distances[vertexFIndex][vertexFIndex]).to eq 0
+    expect(distances[vertexFIndex][vertexAIndex]).to eq 5
+    expect(distances[vertexFIndex][vertexBIndex]).to eq 5
+    expect(distances[vertexFIndex][vertexCIndex]).to eq 7
+    expect(distances[vertexFIndex][vertexDIndex]).to eq 9
+    expect(distances[vertexFIndex][vertexEIndex]).to eq 8
     
-    expect(nextVertices[vertexFIndex][vertexGIndex]).to be null
-    expect(nextVertices[vertexFIndex][vertexFIndex]).to be null
-    expect(nextVertices[vertexAIndex][vertexBIndex]).to be vertexC
-    expect(nextVertices[vertexAIndex][vertexCIndex]).to be vertexA
-    expect(nextVertices[vertexFIndex][vertexBIndex]).to be vertexE
-    expect(nextVertices[vertexEIndex][vertexBIndex]).to be vertexD
-    expect(nextVertices[vertexDIndex][vertexBIndex]).to be vertexC
-    expect(nextVertices[vertexCIndex][vertexBIndex]).to be vertexC
+    expect(nextVertices[vertexFIndex][vertexGIndex]).to eq null
+    expect(nextVertices[vertexFIndex][vertexFIndex]).to eq null
+    expect(nextVertices[vertexAIndex][vertexBIndex]).to eq vertexC
+    expect(nextVertices[vertexAIndex][vertexCIndex]).to eq vertexA
+    expect(nextVertices[vertexFIndex][vertexBIndex]).to eq vertexE
+    expect(nextVertices[vertexEIndex][vertexBIndex]).to eq vertexD
+    expect(nextVertices[vertexDIndex][vertexBIndex]).to eq vertexC
+    expect(nextVertices[vertexCIndex][vertexBIndex]).to eq vertexC
   end
 
 end

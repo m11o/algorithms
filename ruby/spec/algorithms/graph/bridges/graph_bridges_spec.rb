@@ -23,10 +23,10 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 3
-    expect(bridges[0].getKey()).to be edgeCD.getKey()
-    expect(bridges[1].getKey()).to be edgeBC.getKey()
-    expect(bridges[2].getKey()).to be edgeAB.getKey()
+    expect(bridges.length).to eq 3
+    expect(bridges[0].getKey()).to eq edgeCD.getKey()
+    expect(bridges[1].getKey()).to eq edgeBC.getKey()
+    expect(bridges[2].getKey()).to eq edgeAB.getKey()
   end
 
     
@@ -56,8 +56,8 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 1
-    expect(bridges[0].getKey()).to be edgeCD.getKey()
+    expect(bridges.length).to eq 1
+    expect(bridges[0].getKey()).to eq edgeCD.getKey()
   end
 
     
@@ -106,10 +106,10 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 3
-    expect(bridges[0].getKey()).to be edgeFH.getKey()
-    expect(bridges[1].getKey()).to be edgeDE.getKey()
-    expect(bridges[2].getKey()).to be edgeCD.getKey()
+    expect(bridges.length).to eq 3
+    expect(bridges[0].getKey()).to eq edgeFH.getKey()
+    expect(bridges[1].getKey()).to eq edgeDE.getKey()
+    expect(bridges[2].getKey()).to eq edgeCD.getKey()
   end
 
     
@@ -158,10 +158,10 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 3
-    expect(bridges[0].getKey()).to be edgeFH.getKey()
-    expect(bridges[1].getKey()).to be edgeDE.getKey()
-    expect(bridges[2].getKey()).to be edgeCD.getKey()
+    expect(bridges.length).to eq 3
+    expect(bridges[0].getKey()).to eq edgeFH.getKey()
+    expect(bridges[1].getKey()).to eq edgeDE.getKey()
+    expect(bridges[2].getKey()).to eq edgeCD.getKey()
   end
 
     
@@ -195,9 +195,9 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 2
-    expect(bridges[0].getKey()).to be edgeDE.getKey()
-    expect(bridges[1].getKey()).to be edgeCD.getKey()
+    expect(bridges.length).to eq 2
+    expect(bridges[0].getKey()).to eq edgeDE.getKey()
+    expect(bridges[1].getKey()).to eq edgeCD.getKey()
   end
 
     
@@ -242,8 +242,8 @@ describe graphBridges do
     
     bridges = Object.values(graphBridges(graph))
     
-    expect(bridges.length).to be 1
-    expect(bridges[0].getKey()).to be edgeCD.getKey()
+    expect(bridges.length).to eq 1
+    expect(bridges[0].getKey()).to eq edgeCD.getKey()
   end
 
 end

@@ -63,10 +63,10 @@ describe prim do
     
     minimumSpanningTree = prim(graph)
     
-    expect(minimumSpanningTree.getWeight()).to be 24
-    expect(minimumSpanningTree.getAllVertices().length).to be graph.getAllVertices().length
-    expect(minimumSpanningTree.getAllEdges().length).to be graph.getAllVertices().length - 1
-    expect(minimumSpanningTree.to_s).to be 'A,B,C,E,D,F,G'
+    expect(minimumSpanningTree.getWeight()).to eq 24
+    expect(minimumSpanningTree.getAllVertices().length).to eq graph.getAllVertices().length
+    expect(minimumSpanningTree.getAllEdges().length).to eq graph.getAllVertices().length - 1
+    expect(minimumSpanningTree.to_s).to eq 'A,B,C,E,D,F,G'
   end
 
     
@@ -101,10 +101,10 @@ describe prim do
     
     minimumSpanningTree = prim(graph)
     
-    expect(minimumSpanningTree.getWeight()).to be 3
-    expect(minimumSpanningTree.getAllVertices().length).to be graph.getAllVertices().length
-    expect(minimumSpanningTree.getAllEdges().length).to be graph.getAllVertices().length - 1
-    expect(minimumSpanningTree.to_s).to be 'A,B,C,D'
+    expect(minimumSpanningTree.getWeight()).to eq 3
+    expect(minimumSpanningTree.getAllVertices().length).to eq graph.getAllVertices().length
+    expect(minimumSpanningTree.getAllEdges().length).to eq graph.getAllVertices().length - 1
+    expect(minimumSpanningTree.to_s).to eq 'A,B,C,D'
   end
 
 end

@@ -2,29 +2,29 @@
 describe HashTable do
   it 'should create hash table of certain size' do
     defaultHashTable = HashTable.new()
-    expect(defaultHashTable.buckets.length).to be 32
+    expect(defaultHashTable.buckets.length).to eq 32
     
     biggerHashTable = HashTable.new(64)
-    expect(biggerHashTable.buckets.length).to be 64
+    expect(biggerHashTable.buckets.length).to eq 64
   end
 
     
   it 'should generate proper hash for specified keys' do
     hashTable = HashTable.new()
     
-    expect(hashTable.hash('a')).to be 1
-    expect(hashTable.hash('b')).to be 2
-    expect(hashTable.hash('abc')).to be 6
+    expect(hashTable.hash('a')).to eq 1
+    expect(hashTable.hash('b')).to eq 2
+    expect(hashTable.hash('abc')).to eq 6
   end
 
     
   it 'should set, read and delete data with collisions' do
     hashTable = HashTable.new(3)
     
-    expect(hashTable.hash('a')).to be 1
-    expect(hashTable.hash('b')).to be 2
-    expect(hashTable.hash('c')).to be 0
-    expect(hashTable.hash('d')).to be 1
+    expect(hashTable.hash('a')).to eq 1
+    expect(hashTable.hash('b')).to eq 2
+    expect(hashTable.hash('c')).to eq 0
+    expect(hashTable.hash('d')).to eq 1
     
     hashTable.set('a', 'sky-old');
 
@@ -37,18 +37,18 @@ describe HashTable do
     hashTable.set('d', 'ocean');
 
     
-    expect(hashTable.has('x')).to be false
-    expect(hashTable.has('b')).to be true
-    expect(hashTable.has('c')).to be true
+    expect(hashTable.has('x')).to eq false
+    expect(hashTable.has('b')).to eq true
+    expect(hashTable.has('c')).to eq true
     
     stringifier = (value) => `${value.key}:${value.value}`
     
-    expect(hashTable.buckets[0].toString(stringifier)).to be 'c:earth'
-    expect(hashTable.buckets[1].toString(stringifier)).to be 'a:sky,d:ocean'
-    expect(hashTable.buckets[2].toString(stringifier)).to be 'b:sea'
+    expect(hashTable.buckets[0].toString(stringifier)).to eq 'c:earth'
+    expect(hashTable.buckets[1].toString(stringifier)).to eq 'a:sky,d:ocean'
+    expect(hashTable.buckets[2].toString(stringifier)).to eq 'b:sea'
     
-    expect(hashTable.get('a')).to be 'sky'
-    expect(hashTable.get('d')).to be 'ocean'
+    expect(hashTable.get('a')).to eq 'sky'
+    expect(hashTable.get('d')).to eq 'ocean'
     expect(hashTable.get('x')).not.toBeDefined();
 
     
@@ -59,11 +59,11 @@ describe HashTable do
     
     expect(hashTable.get('a')).not.toBeDefined();
 
-    expect(hashTable.get('d')).to be 'ocean'
+    expect(hashTable.get('d')).to eq 'ocean'
     
     hashTable.set('d', 'ocean-new');
 
-    expect(hashTable.get('d')).to be 'ocean-new'
+    expect(hashTable.get('d')).to eq 'ocean-new'
   end
 
     
@@ -74,8 +74,8 @@ describe HashTable do
 
     
     object = hashTable.get('objectKey')
-    expect(object.prop1).to be 'a'
-    expect(object.prop2).to be 'b'
+    expect(object.prop1).to eq 'a'
+    expect(object.prop2).to eq 'b'
   end
 
     
@@ -94,15 +94,15 @@ describe HashTable do
 
     
     expect(hashTable.getKeys()).to eq ['a', 'b', 'c', 'd']
-    expect(hashTable.has('a')).to be true
-    expect(hashTable.has('x')).to be false
+    expect(hashTable.has('a')).to eq true
+    expect(hashTable.has('x')).to eq false
     
     hashTable.delete('a');
 
     
-    expect(hashTable.has('a')).to be false
-    expect(hashTable.has('b')).to be true
-    expect(hashTable.has('x')).to be false
+    expect(hashTable.has('a')).to eq false
+    expect(hashTable.has('b')).to eq true
+    expect(hashTable.has('x')).to eq false
   end
 
     

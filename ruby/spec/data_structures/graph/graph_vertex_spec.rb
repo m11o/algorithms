@@ -18,10 +18,10 @@ describe GraphVertex do
   it 'should create graph vertex' do
     vertex = GraphVertex.new('A')
     
-    expect(vertex.value).to be 'A'
-    expect(vertex.to_s).to be 'A'
-    expect(vertex.getKey()).to be 'A'
-    expect(vertex.edges.to_s).to be ''
+    expect(vertex.value).to eq 'A'
+    expect(vertex.to_s).to eq 'A'
+    expect(vertex.getKey()).to eq 'A'
+    expect(vertex.edges.to_s).to eq ''
     expect(vertex.getEdges()).to eq []
   end
 
@@ -34,10 +34,10 @@ describe GraphVertex do
     vertexA.addEdge(edgeAB);
 
     
-    expect(vertexA.hasEdge(edgeAB)).to be true
-    expect(vertexB.hasEdge(edgeAB)).to be false
-    expect(vertexA.getEdges().length).to be 1
-    expect(vertexA.getEdges()[0].to_s).to be 'A_B'
+    expect(vertexA.hasEdge(edgeAB)).to eq true
+    expect(vertexB.hasEdge(edgeAB)).to eq false
+    expect(vertexA.getEdges().length).to eq 1
+    expect(vertexA.getEdges()[0].to_s).to eq 'A_B'
   end
 
     
@@ -55,28 +55,28 @@ describe GraphVertex do
     .addEdge(edgeAC);
 
     
-    expect(vertexA.hasEdge(edgeAB)).to be true
-    expect(vertexB.hasEdge(edgeAB)).to be false
+    expect(vertexA.hasEdge(edgeAB)).to eq true
+    expect(vertexB.hasEdge(edgeAB)).to eq false
     
-    expect(vertexA.hasEdge(edgeAC)).to be true
-    expect(vertexC.hasEdge(edgeAC)).to be false
+    expect(vertexA.hasEdge(edgeAC)).to eq true
+    expect(vertexC.hasEdge(edgeAC)).to eq false
     
-    expect(vertexA.getEdges().length).to be 2
+    expect(vertexA.getEdges().length).to eq 2
     
-    expect(vertexA.getEdges()[0].to_s).to be 'A_B'
-    expect(vertexA.getEdges()[1].to_s).to be 'A_C'
+    expect(vertexA.getEdges()[0].to_s).to eq 'A_B'
+    expect(vertexA.getEdges()[1].to_s).to eq 'A_C'
     
     vertexA.deleteEdge(edgeAB);
 
-    expect(vertexA.hasEdge(edgeAB)).to be false
-    expect(vertexA.hasEdge(edgeAC)).to be true
-    expect(vertexA.getEdges()[0].to_s).to be 'A_C'
+    expect(vertexA.hasEdge(edgeAB)).to eq false
+    expect(vertexA.hasEdge(edgeAC)).to eq true
+    expect(vertexA.getEdges()[0].to_s).to eq 'A_C'
     
     vertexA.deleteEdge(edgeAC);
 
-    expect(vertexA.hasEdge(edgeAB)).to be false
-    expect(vertexA.hasEdge(edgeAC)).to be false
-    expect(vertexA.getEdges().length).to be 0
+    expect(vertexA.hasEdge(edgeAB)).to eq false
+    expect(vertexA.hasEdge(edgeAC)).to eq false
+    expect(vertexA.getEdges().length).to eq 0
   end
 
     
@@ -94,24 +94,24 @@ describe GraphVertex do
     .addEdge(edgeAC);
 
     
-    expect(vertexA.hasEdge(edgeAB)).to be true
-    expect(vertexB.hasEdge(edgeAB)).to be false
+    expect(vertexA.hasEdge(edgeAB)).to eq true
+    expect(vertexB.hasEdge(edgeAB)).to eq false
     
-    expect(vertexA.hasEdge(edgeAC)).to be true
-    expect(vertexC.hasEdge(edgeAC)).to be false
+    expect(vertexA.hasEdge(edgeAC)).to eq true
+    expect(vertexC.hasEdge(edgeAC)).to eq false
     
-    expect(vertexA.getEdges().length).to be 2
+    expect(vertexA.getEdges().length).to eq 2
     
     vertexA.deleteAllEdges();
 
     
-    expect(vertexA.hasEdge(edgeAB)).to be false
-    expect(vertexB.hasEdge(edgeAB)).to be false
+    expect(vertexA.hasEdge(edgeAB)).to eq false
+    expect(vertexB.hasEdge(edgeAB)).to eq false
     
-    expect(vertexA.hasEdge(edgeAC)).to be false
-    expect(vertexC.hasEdge(edgeAC)).to be false
+    expect(vertexA.hasEdge(edgeAC)).to eq false
+    expect(vertexC.hasEdge(edgeAC)).to eq false
     
-    expect(vertexA.getEdges().length).to be 0
+    expect(vertexA.getEdges().length).to eq 0
   end
 
     
@@ -133,7 +133,7 @@ describe GraphVertex do
     
     neighbors = vertexA.getNeighbors()
     
-    expect(neighbors.length).to be 2
+    expect(neighbors.length).to eq 2
     expect(neighbors[0]).to eq vertexB
     expect(neighbors[1]).to eq vertexC
   end
@@ -157,7 +157,7 @@ describe GraphVertex do
     
     neighbors = vertexA.getNeighbors()
     
-    expect(neighbors.length).to be 2
+    expect(neighbors.length).to eq 2
     expect(neighbors[0]).to eq vertexB
     expect(neighbors[1]).to eq vertexC
   end
@@ -172,8 +172,8 @@ describe GraphVertex do
     vertexA.addEdge(edgeAB);
 
     
-    expect(vertexA.hasNeighbor(vertexB)).to be true
-    expect(vertexA.hasNeighbor(vertexC)).to be false
+    expect(vertexA.hasNeighbor(vertexB)).to eq true
+    expect(vertexA.hasNeighbor(vertexC)).to eq false
   end
 
     
@@ -195,23 +195,23 @@ describe GraphVertex do
     vertexA = GraphVertex.new('A')
     vertexB = GraphVertex.new('B')
     
-    expect(vertexA.getDegree()).to be 0
+    expect(vertexA.getDegree()).to eq 0
     
     edgeAB = GraphEdge.new(vertexA, vertexB)
     vertexA.addEdge(edgeAB);
 
     
-    expect(vertexA.getDegree()).to be 1
+    expect(vertexA.getDegree()).to eq 1
     
     edgeBA = GraphEdge.new(vertexB, vertexA)
     vertexA.addEdge(edgeBA);
 
     
-    expect(vertexA.getDegree()).to be 2
+    expect(vertexA.getDegree()).to eq 2
     
     vertexA.addEdge(edgeAB);
 
-    expect(vertexA.getDegree()).to be 3
+    expect(vertexA.getDegree()).to eq 3
     
     expect(vertexA.getEdges().length).to eq 3
   end

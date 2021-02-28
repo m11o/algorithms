@@ -38,31 +38,31 @@ describe hamiltonianCycle do
     
     hamiltonianCycleSet = hamiltonianCycle(graph)
     
-    expect(hamiltonianCycleSet.length).to be 8
+    expect(hamiltonianCycleSet.length).to eq 8
     
-    expect(hamiltonianCycleSet[0][0].getKey()).to be vertexA.getKey()
-    expect(hamiltonianCycleSet[0][1].getKey()).to be vertexB.getKey()
-    expect(hamiltonianCycleSet[0][2].getKey()).to be vertexE.getKey()
-    expect(hamiltonianCycleSet[0][3].getKey()).to be vertexD.getKey()
-    expect(hamiltonianCycleSet[0][4].getKey()).to be vertexC.getKey()
+    expect(hamiltonianCycleSet[0][0].getKey()).to eq vertexA.getKey()
+    expect(hamiltonianCycleSet[0][1].getKey()).to eq vertexB.getKey()
+    expect(hamiltonianCycleSet[0][2].getKey()).to eq vertexE.getKey()
+    expect(hamiltonianCycleSet[0][3].getKey()).to eq vertexD.getKey()
+    expect(hamiltonianCycleSet[0][4].getKey()).to eq vertexC.getKey()
     
-    expect(hamiltonianCycleSet[1][0].getKey()).to be vertexA.getKey()
-    expect(hamiltonianCycleSet[1][1].getKey()).to be vertexB.getKey()
-    expect(hamiltonianCycleSet[1][2].getKey()).to be vertexC.getKey()
-    expect(hamiltonianCycleSet[1][3].getKey()).to be vertexD.getKey()
-    expect(hamiltonianCycleSet[1][4].getKey()).to be vertexE.getKey()
+    expect(hamiltonianCycleSet[1][0].getKey()).to eq vertexA.getKey()
+    expect(hamiltonianCycleSet[1][1].getKey()).to eq vertexB.getKey()
+    expect(hamiltonianCycleSet[1][2].getKey()).to eq vertexC.getKey()
+    expect(hamiltonianCycleSet[1][3].getKey()).to eq vertexD.getKey()
+    expect(hamiltonianCycleSet[1][4].getKey()).to eq vertexE.getKey()
     
-    expect(hamiltonianCycleSet[2][0].getKey()).to be vertexA.getKey()
-    expect(hamiltonianCycleSet[2][1].getKey()).to be vertexE.getKey()
-    expect(hamiltonianCycleSet[2][2].getKey()).to be vertexB.getKey()
-    expect(hamiltonianCycleSet[2][3].getKey()).to be vertexD.getKey()
-    expect(hamiltonianCycleSet[2][4].getKey()).to be vertexC.getKey()
+    expect(hamiltonianCycleSet[2][0].getKey()).to eq vertexA.getKey()
+    expect(hamiltonianCycleSet[2][1].getKey()).to eq vertexE.getKey()
+    expect(hamiltonianCycleSet[2][2].getKey()).to eq vertexB.getKey()
+    expect(hamiltonianCycleSet[2][3].getKey()).to eq vertexD.getKey()
+    expect(hamiltonianCycleSet[2][4].getKey()).to eq vertexC.getKey()
     
-    expect(hamiltonianCycleSet[3][0].getKey()).to be vertexA.getKey()
-    expect(hamiltonianCycleSet[3][1].getKey()).to be vertexE.getKey()
-    expect(hamiltonianCycleSet[3][2].getKey()).to be vertexD.getKey()
-    expect(hamiltonianCycleSet[3][3].getKey()).to be vertexB.getKey()
-    expect(hamiltonianCycleSet[3][4].getKey()).to be vertexC.getKey()
+    expect(hamiltonianCycleSet[3][0].getKey()).to eq vertexA.getKey()
+    expect(hamiltonianCycleSet[3][1].getKey()).to eq vertexE.getKey()
+    expect(hamiltonianCycleSet[3][2].getKey()).to eq vertexD.getKey()
+    expect(hamiltonianCycleSet[3][3].getKey()).to eq vertexB.getKey()
+    expect(hamiltonianCycleSet[3][4].getKey()).to eq vertexC.getKey()
   end
 
     
@@ -98,7 +98,7 @@ describe hamiltonianCycle do
     
     hamiltonianCycleSet = hamiltonianCycle(graph)
     
-    expect(hamiltonianCycleSet.length).to be 0
+    expect(hamiltonianCycleSet.length).to eq 0
   end
 
 end

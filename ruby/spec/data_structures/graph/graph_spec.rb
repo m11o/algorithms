@@ -13,7 +13,7 @@ describe Graph do
     .addVertex(vertexB);
 
     
-    expect(graph.to_s).to be 'A,B'
+    expect(graph.to_s).to eq 'A,B'
     expect(graph.getVertexByKey(vertexA.getKey())).to eq vertexA
     expect(graph.getVertexByKey(vertexB.getKey())).to eq vertexB
   end
@@ -30,22 +30,22 @@ describe Graph do
     graph.addEdge(edgeAB);
 
     
-    expect(graph.getAllVertices().length).to be 2
+    expect(graph.getAllVertices().length).to eq 2
     expect(graph.getAllVertices()[0]).to eq vertexA
     expect(graph.getAllVertices()[1]).to eq vertexB
     
     graphVertexA = graph.getVertexByKey(vertexA.getKey())
     graphVertexB = graph.getVertexByKey(vertexB.getKey())
     
-    expect(graph.to_s).to be 'A,B'
+    expect(graph.to_s).to eq 'A,B'
     
     expect(graph.getVertexByKey('not existing')).to eq nil
     
-    expect(graphVertexA.getNeighbors().length).to be 1
+    expect(graphVertexA.getNeighbors().length).to eq 1
     expect(graphVertexA.getNeighbors()[0]).to eq vertexB
     expect(graphVertexA.getNeighbors()[0]).to eq graphVertexB
     
-    expect(graphVertexB.getNeighbors().length).to be 1
+    expect(graphVertexB.getNeighbors().length).to eq 1
     expect(graphVertexB.getNeighbors()[0]).to eq vertexA
     expect(graphVertexB.getNeighbors()[0]).to eq graphVertexA
   end
@@ -65,13 +65,13 @@ describe Graph do
     graphVertexA = graph.getVertexByKey(vertexA.getKey())
     graphVertexB = graph.getVertexByKey(vertexB.getKey())
     
-    expect(graph.to_s).to be 'A,B'
+    expect(graph.to_s).to eq 'A,B'
     
-    expect(graphVertexA.getNeighbors().length).to be 1
+    expect(graphVertexA.getNeighbors().length).to eq 1
     expect(graphVertexA.getNeighbors()[0]).to eq vertexB
     expect(graphVertexA.getNeighbors()[0]).to eq graphVertexB
     
-    expect(graphVertexB.getNeighbors().length).to be 0
+    expect(graphVertexB.getNeighbors().length).to eq 0
   end
 
     
@@ -96,7 +96,7 @@ describe Graph do
     expect(graphEdgeCA).to eq nil
     expect(graphEdgeAB).to eq edgeAB
     expect(graphEdgeBA).to eq edgeAB
-    expect(graphEdgeAB.weight).to be 10
+    expect(graphEdgeAB.weight).to eq 10
   end
 
     
@@ -121,7 +121,7 @@ describe Graph do
     expect(graphEdgeCA).to eq nil
     expect(graphEdgeBA).to eq nil
     expect(graphEdgeAB).to eq edgeAB
-    expect(graphEdgeAB.weight).to be 10
+    expect(graphEdgeAB.weight).to eq 10
   end
 
     
@@ -144,7 +144,7 @@ describe Graph do
     
     neighbors = graph.getNeighbors(vertexA)
     
-    expect(neighbors.length).to be 2
+    expect(neighbors.length).to eq 2
     expect(neighbors[0]).to eq vertexB
     expect(neighbors[1]).to eq vertexC
   end
@@ -192,7 +192,7 @@ describe Graph do
     
     edges = graph.getAllEdges()
     
-    expect(edges.length).to be 2
+    expect(edges.length).to eq 2
     expect(edges[0]).to eq edgeAB
     expect(edges[1]).to eq edgeBC
   end
@@ -222,7 +222,7 @@ describe Graph do
     .addEdge(edgeAD);
 
     
-    expect(graph.getWeight()).to be 0
+    expect(graph.getWeight()).to eq 0
   end
 
     
@@ -250,7 +250,7 @@ describe Graph do
     .addEdge(edgeAD);
 
     
-    expect(graph.getWeight()).to be 10
+    expect(graph.getWeight()).to eq 10
   end
 
     
@@ -274,14 +274,14 @@ describe Graph do
     .addEdge(edgeAC);
 
     
-    expect(graph.getAllEdges().length).to be 3
+    expect(graph.getAllEdges().length).to eq 3
     
     graph.deleteEdge(edgeAB);
 
     
-    expect(graph.getAllEdges().length).to be 2
-    expect(graph.getAllEdges()[0].getKey()).to be edgeBC.getKey()
-    expect(graph.getAllEdges()[1].getKey()).to be edgeAC.getKey()
+    expect(graph.getAllEdges().length).to eq 2
+    expect(graph.getAllEdges()[0].getKey()).to eq edgeBC.getKey()
+    expect(graph.getAllEdges()[1].getKey()).to eq edgeAC.getKey()
   end
 
     
@@ -328,28 +328,28 @@ describe Graph do
     .addEdge(edgeCD);
 
     
-    expect(graph.to_s).to be 'A,B,C,D'
-    expect(graph.getAllEdges().length).to be 3
-    expect(graph.getNeighbors(vertexA).length).to be 2
-    expect(graph.getNeighbors(vertexA)[0].getKey()).to be vertexB.getKey()
-    expect(graph.getNeighbors(vertexA)[1].getKey()).to be vertexC.getKey()
-    expect(graph.getNeighbors(vertexB).length).to be 0
-    expect(graph.getNeighbors(vertexC).length).to be 1
-    expect(graph.getNeighbors(vertexC)[0].getKey()).to be vertexD.getKey()
-    expect(graph.getNeighbors(vertexD).length).to be 0
+    expect(graph.to_s).to eq 'A,B,C,D'
+    expect(graph.getAllEdges().length).to eq 3
+    expect(graph.getNeighbors(vertexA).length).to eq 2
+    expect(graph.getNeighbors(vertexA)[0].getKey()).to eq vertexB.getKey()
+    expect(graph.getNeighbors(vertexA)[1].getKey()).to eq vertexC.getKey()
+    expect(graph.getNeighbors(vertexB).length).to eq 0
+    expect(graph.getNeighbors(vertexC).length).to eq 1
+    expect(graph.getNeighbors(vertexC)[0].getKey()).to eq vertexD.getKey()
+    expect(graph.getNeighbors(vertexD).length).to eq 0
     
     graph.reverse();
 
     
-    expect(graph.to_s).to be 'A,B,C,D'
-    expect(graph.getAllEdges().length).to be 3
-    expect(graph.getNeighbors(vertexA).length).to be 0
-    expect(graph.getNeighbors(vertexB).length).to be 1
-    expect(graph.getNeighbors(vertexB)[0].getKey()).to be vertexA.getKey()
-    expect(graph.getNeighbors(vertexC).length).to be 1
-    expect(graph.getNeighbors(vertexC)[0].getKey()).to be vertexA.getKey()
-    expect(graph.getNeighbors(vertexD).length).to be 1
-    expect(graph.getNeighbors(vertexD)[0].getKey()).to be vertexC.getKey()
+    expect(graph.to_s).to eq 'A,B,C,D'
+    expect(graph.getAllEdges().length).to eq 3
+    expect(graph.getNeighbors(vertexA).length).to eq 0
+    expect(graph.getNeighbors(vertexB).length).to eq 1
+    expect(graph.getNeighbors(vertexB)[0].getKey()).to eq vertexA.getKey()
+    expect(graph.getNeighbors(vertexC).length).to eq 1
+    expect(graph.getNeighbors(vertexC)[0].getKey()).to eq vertexA.getKey()
+    expect(graph.getNeighbors(vertexD).length).to eq 1
+    expect(graph.getNeighbors(vertexD)[0].getKey()).to eq vertexC.getKey()
   end
 
     

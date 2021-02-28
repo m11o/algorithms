@@ -3,9 +3,9 @@ describe TrieNode do
   it 'should create trie node' do
     trieNode = TrieNode.new('c', true)
     
-    expect(trieNode.character).to be 'c'
-    expect(trieNode.isCompleteWord).to be true
-    expect(trieNode.to_s).to be 'c*'
+    expect(trieNode.character).to eq 'c'
+    expect(trieNode.isCompleteWord).to eq true
+    expect(trieNode.to_s).to eq 'c*'
   end
 
     
@@ -17,7 +17,7 @@ describe TrieNode do
     trieNode.addChild('o');
 
     
-    expect(trieNode.to_s).to be 'c:a,o'
+    expect(trieNode.to_s).to eq 'c:a,o'
   end
 
     
@@ -29,9 +29,9 @@ describe TrieNode do
     trieNode.addChild('o');
 
     
-    expect(trieNode.getChild('a').to be 'a'
-    expect(trieNode.getChild('a').character).to be 'a'
-    expect(trieNode.getChild('o').to be 'o'
+    expect(trieNode.getChild('a').to eq 'a'
+    expect(trieNode.getChild('a').character).to eq 'a'
+    expect(trieNode.getChild('o').to eq 'o'
     expect(trieNode.getChild('b')).to eq nil
   end
 
@@ -39,12 +39,12 @@ describe TrieNode do
   it 'should check if node has children' do
     trieNode = TrieNode.new('c')
     
-    expect(trieNode.hasChildren()).to be false
+    expect(trieNode.hasChildren()).to eq false
     
     trieNode.addChild('a');
 
     
-    expect(trieNode.hasChildren()).to be true
+    expect(trieNode.hasChildren()).to eq true
   end
 
     
@@ -56,9 +56,9 @@ describe TrieNode do
     trieNode.addChild('o');
 
     
-    expect(trieNode.hasChild('a')).to be true
-    expect(trieNode.hasChild('o')).to be true
-    expect(trieNode.hasChild('b')).to be false
+    expect(trieNode.hasChild('a')).to eq true
+    expect(trieNode.hasChild('o')).to eq true
+    expect(trieNode.hasChild('b')).to eq false
   end
 
     
@@ -78,11 +78,11 @@ describe TrieNode do
     trieNode = TrieNode.new('c')
     trieNode.addChild('a');
 
-    expect(trieNode.hasChild('a')).to be true
+    expect(trieNode.hasChild('a')).to eq true
     
     trieNode.removeChild('a');
 
-    expect(trieNode.hasChild('a')).to be false
+    expect(trieNode.hasChild('a')).to eq false
   end
 
     

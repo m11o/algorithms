@@ -33,28 +33,28 @@ describe DisjointSet do
     disjointSet.makeSet('A');
 
     
-    expect(disjointSet.find('A')).to be 'A'
+    expect(disjointSet.find('A')).to eq 'A'
     expect(disjointSet.find('B')).to eq nil
     
     disjointSet.makeSet('B');
 
     
-    expect(disjointSet.find('A')).to be 'A'
-    expect(disjointSet.find('B')).to be 'B'
+    expect(disjointSet.find('A')).to eq 'A'
+    expect(disjointSet.find('B')).to eq 'B'
     
     disjointSet.makeSet('C');
 
     
-    expect(disjointSet.inSameSet('A', 'B')).to be false
+    expect(disjointSet.inSameSet('A', 'B')).to eq false
     
     disjointSet.union('A', 'B');
 
     
-    expect(disjointSet.find('A')).to be 'A'
-    expect(disjointSet.find('B')).to be 'A'
-    expect(disjointSet.inSameSet('A', 'B')).to be true
-    expect(disjointSet.inSameSet('B', 'A')).to be true
-    expect(disjointSet.inSameSet('A', 'C')).to be false
+    expect(disjointSet.find('A')).to eq 'A'
+    expect(disjointSet.find('B')).to eq 'A'
+    expect(disjointSet.inSameSet('A', 'B')).to eq true
+    expect(disjointSet.inSameSet('B', 'A')).to eq true
+    expect(disjointSet.inSameSet('A', 'C')).to eq false
     
     disjointSet.union('A', 'A');
 
@@ -62,13 +62,13 @@ describe DisjointSet do
     disjointSet.union('B', 'C');
 
     
-    expect(disjointSet.find('A')).to be 'A'
-    expect(disjointSet.find('B')).to be 'A'
-    expect(disjointSet.find('C')).to be 'A'
+    expect(disjointSet.find('A')).to eq 'A'
+    expect(disjointSet.find('B')).to eq 'A'
+    expect(disjointSet.find('C')).to eq 'A'
     
-    expect(disjointSet.inSameSet('A', 'B')).to be true
-    expect(disjointSet.inSameSet('B', 'C')).to be true
-    expect(disjointSet.inSameSet('A', 'C')).to be true
+    expect(disjointSet.inSameSet('A', 'B')).to eq true
+    expect(disjointSet.inSameSet('B', 'C')).to eq true
+    expect(disjointSet.inSameSet('A', 'C')).to eq true
     
     disjointSet
 
@@ -94,14 +94,14 @@ describe DisjointSet do
     .union('H', 'I');
 
     
-    expect(disjointSet.inSameSet('A', 'I')).to be false
-    expect(disjointSet.inSameSet('E', 'I')).to be true
+    expect(disjointSet.inSameSet('A', 'I')).to eq false
+    expect(disjointSet.inSameSet('E', 'I')).to eq true
     
     disjointSet.union('I', 'C');
 
     
-    expect(disjointSet.find('I')).to be 'E'
-    expect(disjointSet.inSameSet('A', 'I')).to be true
+    expect(disjointSet.find('I')).to eq 'E'
+    expect(disjointSet.inSameSet('A', 'I')).to eq true
   end
 
     
@@ -121,7 +121,7 @@ describe DisjointSet do
     .union('A', 'C');
 
     
-    expect(disjointSet.find('A')).to be 'B'
+    expect(disjointSet.find('A')).to eq 'B'
   end
 
     
@@ -140,39 +140,39 @@ describe DisjointSet do
     disjointSet.makeSet(itemA);
 
     
-    expect(disjointSet.find(itemA)).to be 'A'
+    expect(disjointSet.find(itemA)).to eq 'A'
     expect(disjointSet.find(itemB)).to eq nil
     
     disjointSet.makeSet(itemB);
 
     
-    expect(disjointSet.find(itemA)).to be 'A'
-    expect(disjointSet.find(itemB)).to be 'B'
+    expect(disjointSet.find(itemA)).to eq 'A'
+    expect(disjointSet.find(itemB)).to eq 'B'
     
     disjointSet.makeSet(itemC);
 
     
-    expect(disjointSet.inSameSet(itemA, itemB)).to be false
+    expect(disjointSet.inSameSet(itemA, itemB)).to eq false
     
     disjointSet.union(itemA, itemB);
 
     
-    expect(disjointSet.find(itemA)).to be 'A'
-    expect(disjointSet.find(itemB)).to be 'A'
-    expect(disjointSet.inSameSet(itemA, itemB)).to be true
-    expect(disjointSet.inSameSet(itemB, itemA)).to be true
-    expect(disjointSet.inSameSet(itemA, itemC)).to be false
+    expect(disjointSet.find(itemA)).to eq 'A'
+    expect(disjointSet.find(itemB)).to eq 'A'
+    expect(disjointSet.inSameSet(itemA, itemB)).to eq true
+    expect(disjointSet.inSameSet(itemB, itemA)).to eq true
+    expect(disjointSet.inSameSet(itemA, itemC)).to eq false
     
     disjointSet.union(itemA, itemC);
 
     
-    expect(disjointSet.find(itemA)).to be 'A'
-    expect(disjointSet.find(itemB)).to be 'A'
-    expect(disjointSet.find(itemC)).to be 'A'
+    expect(disjointSet.find(itemA)).to eq 'A'
+    expect(disjointSet.find(itemB)).to eq 'A'
+    expect(disjointSet.find(itemC)).to eq 'A'
     
-    expect(disjointSet.inSameSet(itemA, itemB)).to be true
-    expect(disjointSet.inSameSet(itemB, itemC)).to be true
-    expect(disjointSet.inSameSet(itemA, itemC)).to be true
+    expect(disjointSet.inSameSet(itemA, itemB)).to eq true
+    expect(disjointSet.inSameSet(itemB, itemC)).to eq true
+    expect(disjointSet.inSameSet(itemA, itemC)).to eq true
   end
 
 end

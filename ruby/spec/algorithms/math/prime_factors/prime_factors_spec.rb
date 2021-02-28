@@ -49,17 +49,17 @@ describe primeFactors do
 
     
   it 'should give approximate prime factors count using Hardy-Ramanujan theorem' do
-    expect(hardyRamanujan(2)).to be -0.366, 2
-    expect(hardyRamanujan(4)).to be 0.326, 2
-    expect(hardyRamanujan(40)).to be 1.305, 2
-    expect(hardyRamanujan(156)).to be 1.6193, 2
-    expect(hardyRamanujan(980)).to be 1.929, 2
-    expect(hardyRamanujan(52734)).to be 2.386, 2
-    expect(hardyRamanujan(343434)).to be 2.545, 2
-    expect(hardyRamanujan(456745)).to be 2.567, 2
-    expect(hardyRamanujan(510510)).to be 2.575, 2
-    expect(hardyRamanujan(8735463)).to be 2.771, 2
-    expect(hardyRamanujan(873452453)).to be 3.024, 2
+    expect(hardyRamanujan(2)).to eq -0.366, 2
+    expect(hardyRamanujan(4)).to eq 0.326, 2
+    expect(hardyRamanujan(40)).to eq 1.305, 2
+    expect(hardyRamanujan(156)).to eq 1.6193, 2
+    expect(hardyRamanujan(980)).to eq 1.929, 2
+    expect(hardyRamanujan(52734)).to eq 2.386, 2
+    expect(hardyRamanujan(343434)).to eq 2.545, 2
+    expect(hardyRamanujan(456745)).to eq 2.567, 2
+    expect(hardyRamanujan(510510)).to eq 2.575, 2
+    expect(hardyRamanujan(8735463)).to eq 2.771, 2
+    expect(hardyRamanujan(873452453)).to eq 3.024, 2
   end
 
     

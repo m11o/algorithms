@@ -10,7 +10,7 @@ describe permutateWithoutRepetitions do
 
     
     permutations2 = permutateWithoutRepetitions(['A', 'B'])
-    expect(permutations2.length).to be 2
+    expect(permutations2.length).to eq 2
     expect(permutations2).toEqual([
 
     ['A', 'B'],
@@ -21,7 +21,7 @@ describe permutateWithoutRepetitions do
 
     
     permutations6 = permutateWithoutRepetitions(['A', 'A'])
-    expect(permutations6.length).to be 2
+    expect(permutations6.length).to eq 2
     expect(permutations6).toEqual([
 
     ['A', 'A'],
@@ -32,7 +32,7 @@ describe permutateWithoutRepetitions do
 
     
     permutations3 = permutateWithoutRepetitions(['A', 'B', 'C'])
-    expect(permutations3.length).to be factorial(3)
+    expect(permutations3.length).to eq factorial(3)
     expect(permutations3).toEqual([
 
     ['A', 'B', 'C'],
@@ -51,7 +51,7 @@ describe permutateWithoutRepetitions do
 
     
     permutations4 = permutateWithoutRepetitions(['A', 'B', 'C', 'D'])
-    expect(permutations4.length).to be factorial(4)
+    expect(permutations4.length).to eq factorial(4)
     expect(permutations4).toEqual([
 
     ['A', 'B', 'C', 'D'],
@@ -106,7 +106,7 @@ describe permutateWithoutRepetitions do
 
     
     permutations5 = permutateWithoutRepetitions(['A', 'B', 'C', 'D', 'E', 'F'])
-    expect(permutations5.length).to be factorial(6)
+    expect(permutations5.length).to eq factorial(6)
   end
 
 end

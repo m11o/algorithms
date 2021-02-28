@@ -39,7 +39,7 @@ describe depthFirstSearch do
     .addEdge(edgeDG);
 
     
-    expect(graph.to_s).to be 'A,B,C,G,D,E,F'
+    expect(graph.to_s).to eq 'A,B,C,G,D,E,F'
     
     enterVertexCallback = jest.fn()
     leaveVertexCallback = jest.fn()
@@ -156,7 +156,7 @@ describe depthFirstSearch do
     .addEdge(edgeDG);
 
     
-    expect(graph.to_s).to be 'A,B,C,G,D,E,F'
+    expect(graph.to_s).to eq 'A,B,C,G,D,E,F'
     
     enterVertexCallback = jest.fn()
     leaveVertexCallback = jest.fn()

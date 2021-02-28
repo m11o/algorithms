@@ -26,13 +26,13 @@ describe stronglyConnectedComponents do
     
     components = stronglyConnectedComponents(graph)
     
-    expect(components.length).to be 2
+    expect(components.length).to eq 2
     
-    expect(components[0][0].getKey()).to be vertexA.getKey()
-    expect(components[0][1].getKey()).to be vertexC.getKey()
-    expect(components[0][2].getKey()).to be vertexB.getKey()
+    expect(components[0][0].getKey()).to eq vertexA.getKey()
+    expect(components[0][1].getKey()).to eq vertexC.getKey()
+    expect(components[0][2].getKey()).to eq vertexB.getKey()
     
-    expect(components[1][0].getKey()).to be vertexD.getKey()
+    expect(components[1][0].getKey()).to eq vertexD.getKey()
   end
 
     
@@ -96,22 +96,22 @@ describe stronglyConnectedComponents do
     
     components = stronglyConnectedComponents(graph)
     
-    expect(components.length).to be 4
+    expect(components.length).to eq 4
     
-    expect(components[0][0].getKey()).to be vertexG.getKey()
-    expect(components[0][1].getKey()).to be vertexJ.getKey()
-    expect(components[0][2].getKey()).to be vertexI.getKey()
-    expect(components[0][3].getKey()).to be vertexH.getKey()
+    expect(components[0][0].getKey()).to eq vertexG.getKey()
+    expect(components[0][1].getKey()).to eq vertexJ.getKey()
+    expect(components[0][2].getKey()).to eq vertexI.getKey()
+    expect(components[0][3].getKey()).to eq vertexH.getKey()
     
-    expect(components[1][0].getKey()).to be vertexK.getKey()
+    expect(components[1][0].getKey()).to eq vertexK.getKey()
     
-    expect(components[2][0].getKey()).to be vertexA.getKey()
-    expect(components[2][1].getKey()).to be vertexC.getKey()
-    expect(components[2][2].getKey()).to be vertexB.getKey()
+    expect(components[2][0].getKey()).to eq vertexA.getKey()
+    expect(components[2][1].getKey()).to eq vertexC.getKey()
+    expect(components[2][2].getKey()).to eq vertexB.getKey()
     
-    expect(components[3][0].getKey()).to be vertexD.getKey()
-    expect(components[3][1].getKey()).to be vertexF.getKey()
-    expect(components[3][2].getKey()).to be vertexE.getKey()
+    expect(components[3][0].getKey()).to eq vertexD.getKey()
+    expect(components[3][1].getKey()).to eq vertexF.getKey()
+    expect(components[3][2].getKey()).to eq vertexE.getKey()
   end
 
 end

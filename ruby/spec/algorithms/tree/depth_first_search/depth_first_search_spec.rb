@@ -18,7 +18,7 @@ describe depthFirstSearch do
     
     // In-order traversing.
 
-    expect(nodeA.to_s).to be 'D,B,E,A,F,C,G'
+    expect(nodeA.to_s).to eq 'D,B,E,A,F,C,G'
     
     enterNodeCallback = jest.fn()
     leaveNodeCallback = jest.fn()
@@ -82,7 +82,7 @@ describe depthFirstSearch do
     
     // In-order traversing.
 
-    expect(nodeA.to_s).to be 'D,B,E,A,F,C,G'
+    expect(nodeA.to_s).to eq 'D,B,E,A,F,C,G'
     
     enterNodeCallback = jest.fn()
     leaveNodeCallback = jest.fn()

@@ -42,7 +42,7 @@ describe topologicalSort do
     
     sortedVertices = topologicalSort(graph)
     
-    expect(sortedVertices.length).to be graph.getAllVertices().length
+    expect(sortedVertices.length).to eq graph.getAllVertices().length
     expect(sortedVertices).toEqual([
 
     vertexB,

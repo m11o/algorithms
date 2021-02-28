@@ -51,8 +51,8 @@ describe fastFourierTransform do
     output = fastFourierTransform(input)
     invertedOutput = fastFourierTransform(output, true)
     
-    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to be true
-    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to be true
+    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to eq true
+    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to eq true
   end
 
     
@@ -84,8 +84,8 @@ describe fastFourierTransform do
     output = fastFourierTransform(input)
     invertedOutput = fastFourierTransform(output, true)
     
-    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to be true
-    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to be true
+    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to eq true
+    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to eq true
   end
 
     
@@ -155,8 +155,8 @@ describe fastFourierTransform do
     output = fastFourierTransform(input)
     invertedOutput = fastFourierTransform(output, true)
     
-    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to be true
-    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to be true
+    expect(sequencesApproximatelyEqual(expectedOutput, output, delta)).to eq true
+    expect(sequencesApproximatelyEqual(input, invertedOutput, delta)).to eq true
   end
 
 end

@@ -29,12 +29,12 @@ describe detectUndirectedCycleUsingDisjointSet do
     .addEdge(edgeCD);
 
     
-    expect(detectUndirectedCycleUsingDisjointSet(graph)).to be false
+    expect(detectUndirectedCycleUsingDisjointSet(graph)).to eq false
     
     graph.addEdge(edgeDE);
 
     
-    expect(detectUndirectedCycleUsingDisjointSet(graph)).to be true
+    expect(detectUndirectedCycleUsingDisjointSet(graph)).to eq true
   end
 
 end

@@ -43,7 +43,7 @@ end
 
     //
 
-    expect(linkedList.to_s).to be '1,2,3'
+    expect(linkedList.to_s).to eq '1,2,3'
     expect(linkedList.reverseTraversal(linkedList.head, value => value * 2)).to eq [6, 4, 2]
     expect(() => linkedList.reverseTraversal(linkedList.head)).to toThrow()
  end

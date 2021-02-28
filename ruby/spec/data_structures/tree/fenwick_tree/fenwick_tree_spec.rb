@@ -2,15 +2,15 @@
 describe FenwickTree do
   it 'should create empty fenwick tree of correct size' do
     tree1 = FenwickTree.new(5)
-    expect(tree1.treeArray.length).to be 5 + 1
+    expect(tree1.treeArray.length).to eq 5 + 1
     
     i = 0
-    expect(tree1.treeArray[i]).to be 0
+    expect(tree1.treeArray[i]).to eq 0
     }
 
     
     tree2 = FenwickTree.new(50)
-    expect(tree2.treeArray.length).to be 50 + 1
+    expect(tree2.treeArray.length).to eq 50 + 1
   end
 
     
@@ -18,7 +18,7 @@ describe FenwickTree do
     inputArray = [3, 2, -1, 6, 5, 4, -3, 3, 7, 2, 3]
     
     tree = FenwickTree.new(inputArray.length)
-    expect(tree.treeArray.length).to be inputArray.length + 1
+    expect(tree.treeArray.length).to eq inputArray.length + 1
     
     inputArray.forEach((value, index) => {
 
@@ -29,42 +29,42 @@ describe FenwickTree do
     
     expect(tree.treeArray).to eq [0, 3, 5, -1, 10, 5, 9, -3, 19, 7, 9, 3]
     
-    expect(tree.query(1)).to be 3
-    expect(tree.query(2)).to be 5
-    expect(tree.query(3)).to be 4
-    expect(tree.query(4)).to be 10
-    expect(tree.query(5)).to be 15
-    expect(tree.query(6)).to be 19
-    expect(tree.query(7)).to be 16
-    expect(tree.query(8)).to be 19
-    expect(tree.query(9)).to be 26
-    expect(tree.query(10)).to be 28
-    expect(tree.query(11)).to be 31
+    expect(tree.query(1)).to eq 3
+    expect(tree.query(2)).to eq 5
+    expect(tree.query(3)).to eq 4
+    expect(tree.query(4)).to eq 10
+    expect(tree.query(5)).to eq 15
+    expect(tree.query(6)).to eq 19
+    expect(tree.query(7)).to eq 16
+    expect(tree.query(8)).to eq 19
+    expect(tree.query(9)).to eq 26
+    expect(tree.query(10)).to eq 28
+    expect(tree.query(11)).to eq 31
     
-    expect(tree.queryRange(1, 1)).to be 3
-    expect(tree.queryRange(1, 2)).to be 5
-    expect(tree.queryRange(2, 4)).to be 7
-    expect(tree.queryRange(6, 9)).to be 11
+    expect(tree.queryRange(1, 1)).to eq 3
+    expect(tree.queryRange(1, 2)).to eq 5
+    expect(tree.queryRange(2, 4)).to eq 7
+    expect(tree.queryRange(6, 9)).to eq 11
     
     tree.increase(3, 1);
 
     
-    expect(tree.query(1)).to be 3
-    expect(tree.query(2)).to be 5
-    expect(tree.query(3)).to be 5
-    expect(tree.query(4)).to be 11
-    expect(tree.query(5)).to be 16
-    expect(tree.query(6)).to be 20
-    expect(tree.query(7)).to be 17
-    expect(tree.query(8)).to be 20
-    expect(tree.query(9)).to be 27
-    expect(tree.query(10)).to be 29
-    expect(tree.query(11)).to be 32
+    expect(tree.query(1)).to eq 3
+    expect(tree.query(2)).to eq 5
+    expect(tree.query(3)).to eq 5
+    expect(tree.query(4)).to eq 11
+    expect(tree.query(5)).to eq 16
+    expect(tree.query(6)).to eq 20
+    expect(tree.query(7)).to eq 17
+    expect(tree.query(8)).to eq 20
+    expect(tree.query(9)).to eq 27
+    expect(tree.query(10)).to eq 29
+    expect(tree.query(11)).to eq 32
     
-    expect(tree.queryRange(1, 1)).to be 3
-    expect(tree.queryRange(1, 2)).to be 5
-    expect(tree.queryRange(2, 4)).to be 8
-    expect(tree.queryRange(6, 9)).to be 11
+    expect(tree.queryRange(1, 1)).to eq 3
+    expect(tree.queryRange(1, 2)).to eq 5
+    expect(tree.queryRange(2, 4)).to eq 8
+    expect(tree.queryRange(6, 9)).to eq 11
   end
 
     
@@ -76,20 +76,20 @@ describe FenwickTree do
     tree.increase(3, 7);
 
     
-    expect(tree.query(1)).to be 4
-    expect(tree.query(3)).to be 11
-    expect(tree.query(5)).to be 11
-    expect(tree.queryRange(2, 3)).to be 7
+    expect(tree.query(1)).to eq 4
+    expect(tree.query(3)).to eq 11
+    expect(tree.query(5)).to eq 11
+    expect(tree.queryRange(2, 3)).to eq 7
     
     tree.increase(2, 5);
 
-    expect(tree.query(5)).to be 16
+    expect(tree.query(5)).to eq 16
     
     tree.increase(1, 3);
 
-    expect(tree.queryRange(1, 1)).to be 7
-    expect(tree.query(5)).to be 19
-    expect(tree.queryRange(1, 5)).to be 19
+    expect(tree.queryRange(1, 1)).to eq 7
+    expect(tree.query(5)).to eq 19
+    expect(tree.queryRange(1, 5)).to eq 19
   end
 
     

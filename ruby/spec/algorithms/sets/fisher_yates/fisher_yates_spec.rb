@@ -10,7 +10,7 @@ describe fisherYates do
     shuffledArray = fisherYates(sortedArr)
     sorter = QuickSort.new()
     
-    expect(shuffledArray.length).to be sortedArr.length
+    expect(shuffledArray.length).to eq sortedArr.length
     expect(shuffledArray).not.toEqual(sortedArr);
 
     expect(sorter.sort(shuffledArray)).to eq sortedArr

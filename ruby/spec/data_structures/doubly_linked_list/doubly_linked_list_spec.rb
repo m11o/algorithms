@@ -2,7 +2,7 @@
 describe DoublyLinkedList do
   it 'should create empty linked list' do
     linkedList = DoublyLinkedList.new()
-    expect(linkedList.to_s).to be ''
+    expect(linkedList.to_s).to eq ''
   end
 
     
@@ -17,9 +17,9 @@ describe DoublyLinkedList do
     linkedList.append(2);
 
     
-    expect(linkedList.head.next.value).to be 2
-    expect(linkedList.tail.previous.value).to be 1
-    expect(linkedList.to_s).to be '1,2'
+    expect(linkedList.head.next.value).to eq 2
+    expect(linkedList.tail.previous.value).to eq 1
+    expect(linkedList.to_s).to eq '1,2'
   end
 
     
@@ -28,18 +28,18 @@ describe DoublyLinkedList do
     
     linkedList.prepend(2);
 
-    expect(linkedList.head.to_s).to be '2'
-    expect(linkedList.tail.to_s).to be '2'
+    expect(linkedList.head.to_s).to eq '2'
+    expect(linkedList.tail.to_s).to eq '2'
     
     linkedList.append(1);
 
     linkedList.prepend(3);
 
     
-    expect(linkedList.head.next.next.previous).to be linkedList.head.next
-    expect(linkedList.tail.previous.next).to be linkedList.tail
-    expect(linkedList.tail.previous.value).to be 2
-    expect(linkedList.to_s).to be '3,2,1'
+    expect(linkedList.head.next.next.previous).to eq linkedList.head.next
+    expect(linkedList.tail.previous.next).to eq linkedList.tail
+    expect(linkedList.tail.previous.value).to eq 2
+    expect(linkedList.to_s).to eq '3,2,1'
   end
 
     
@@ -48,7 +48,7 @@ describe DoublyLinkedList do
     linkedList.fromArray([1, 1, 2, 3, 3, 3, 4, 5]);
 
     
-    expect(linkedList.to_s).to be '1,1,2,3,3,3,4,5'
+    expect(linkedList.to_s).to eq '1,1,2,3,3,3,4,5'
   end
 
     
@@ -74,45 +74,45 @@ describe DoublyLinkedList do
     linkedList.append(5);
 
     
-    expect(linkedList.head.to_s).to be '1'
-    expect(linkedList.tail.to_s).to be '5'
+    expect(linkedList.head.to_s).to eq '1'
+    expect(linkedList.tail.to_s).to eq '5'
     
     deletedNode = linkedList.delete(3)
-    expect(deletedNode.value).to be 3
-    expect(linkedList.tail.previous.previous.value).to be 2
-    expect(linkedList.to_s).to be '1,1,2,4,5'
+    expect(deletedNode.value).to eq 3
+    expect(linkedList.tail.previous.previous.value).to eq 2
+    expect(linkedList.to_s).to eq '1,1,2,4,5'
     
     linkedList.delete(3);
 
-    expect(linkedList.to_s).to be '1,1,2,4,5'
+    expect(linkedList.to_s).to eq '1,1,2,4,5'
     
     linkedList.delete(1);
 
-    expect(linkedList.to_s).to be '2,4,5'
+    expect(linkedList.to_s).to eq '2,4,5'
     
-    expect(linkedList.head.to_s).to be '2'
-    expect(linkedList.head.next.next).to be linkedList.tail
-    expect(linkedList.tail.previous.previous).to be linkedList.head
-    expect(linkedList.tail.to_s).to be '5'
+    expect(linkedList.head.to_s).to eq '2'
+    expect(linkedList.head.next.next).to eq linkedList.tail
+    expect(linkedList.tail.previous.previous).to eq linkedList.head
+    expect(linkedList.tail.to_s).to eq '5'
     
     linkedList.delete(5);
 
-    expect(linkedList.to_s).to be '2,4'
+    expect(linkedList.to_s).to eq '2,4'
     
-    expect(linkedList.head.to_s).to be '2'
-    expect(linkedList.tail.to_s).to be '4'
+    expect(linkedList.head.to_s).to eq '2'
+    expect(linkedList.tail.to_s).to eq '4'
     
     linkedList.delete(4);
 
-    expect(linkedList.to_s).to be '2'
+    expect(linkedList.to_s).to eq '2'
     
-    expect(linkedList.head.to_s).to be '2'
-    expect(linkedList.tail.to_s).to be '2'
-    expect(linkedList.head).to be linkedList.tail
+    expect(linkedList.head.to_s).to eq '2'
+    expect(linkedList.tail.to_s).to eq '2'
+    expect(linkedList.head).to eq linkedList.tail
     
     linkedList.delete(2);
 
-    expect(linkedList.to_s).to be ''
+    expect(linkedList.to_s).to eq ''
   end
 
     
@@ -128,27 +128,27 @@ describe DoublyLinkedList do
     linkedList.append(3);
 
     
-    expect(linkedList.head.to_s).to be '1'
-    expect(linkedList.tail.to_s).to be '3'
+    expect(linkedList.head.to_s).to eq '1'
+    expect(linkedList.tail.to_s).to eq '3'
     
     deletedNode1 = linkedList.deleteTail()
     
-    expect(deletedNode1.value).to be 3
-    expect(linkedList.to_s).to be '1,2'
-    expect(linkedList.head.to_s).to be '1'
-    expect(linkedList.tail.to_s).to be '2'
+    expect(deletedNode1.value).to eq 3
+    expect(linkedList.to_s).to eq '1,2'
+    expect(linkedList.head.to_s).to eq '1'
+    expect(linkedList.tail.to_s).to eq '2'
     
     deletedNode2 = linkedList.deleteTail()
     
-    expect(deletedNode2.value).to be 2
-    expect(linkedList.to_s).to be '1'
-    expect(linkedList.head.to_s).to be '1'
-    expect(linkedList.tail.to_s).to be '1'
+    expect(deletedNode2.value).to eq 2
+    expect(linkedList.to_s).to eq '1'
+    expect(linkedList.head.to_s).to eq '1'
+    expect(linkedList.tail.to_s).to eq '1'
     
     deletedNode3 = linkedList.deleteTail()
     
-    expect(deletedNode3.value).to be 1
-    expect(linkedList.to_s).to be ''
+    expect(deletedNode3.value).to eq 1
+    expect(linkedList.to_s).to eq ''
     expect(linkedList.head).to eq nil
     expect(linkedList.tail).to eq nil
   end
@@ -164,21 +164,21 @@ describe DoublyLinkedList do
     linkedList.append(2);
 
     
-    expect(linkedList.head.to_s).to be '1'
-    expect(linkedList.tail.to_s).to be '2'
+    expect(linkedList.head.to_s).to eq '1'
+    expect(linkedList.tail.to_s).to eq '2'
     
     deletedNode1 = linkedList.deleteHead()
     
-    expect(deletedNode1.value).to be 1
+    expect(deletedNode1.value).to eq 1
     expect(linkedList.head.previous).to eq nil
-    expect(linkedList.to_s).to be '2'
-    expect(linkedList.head.to_s).to be '2'
-    expect(linkedList.tail.to_s).to be '2'
+    expect(linkedList.to_s).to eq '2'
+    expect(linkedList.head.to_s).to eq '2'
+    expect(linkedList.tail.to_s).to eq '2'
     
     deletedNode2 = linkedList.deleteHead()
     
-    expect(deletedNode2.value).to be 2
-    expect(linkedList.to_s).to be ''
+    expect(deletedNode2.value).to eq 2
+    expect(linkedList.to_s).to eq ''
     expect(linkedList.head).to eq nil
     expect(linkedList.tail).to eq nil
   end
@@ -199,7 +199,7 @@ describe DoublyLinkedList do
     
     nodeStringifier = (value) => `${value.key}:${value.value}`
     
-    expect(linkedList.toString(nodeStringifier)).to be 'key2:2,key1:1'
+    expect(linkedList.toString(nodeStringifier)).to eq 'key2:2,key1:1'
   end
 
     
@@ -222,7 +222,7 @@ describe DoublyLinkedList do
 
     node = linkedList.find({ value: 2 })
     
-    expect(node.value).to be 2
+    expect(node.value).to eq 2
     expect(linkedList.find({ value: 5 })).to eq nil
   end
 
@@ -243,8 +243,8 @@ describe DoublyLinkedList do
 
     node = linkedList.find({ callback: (value) => value.key === 'test2' })
     
-    expect(node.value.value).to be 2
-    expect(node.value.key).to be 'test2'
+    expect(node.value.value).to eq 2
+    expect(node.value.key).to eq 'test2'
     expect(linkedList.find({ callback: (value) => value.key === 'test5' })).to eq nil
   end
 
@@ -282,8 +282,8 @@ describe DoublyLinkedList do
     end
 
     
-    expect(node.value.value).to be 2
-    expect(node.value.customValue).to be 'test2'
+    expect(node.value.value).to eq 2
+    expect(node.value.customValue).to eq 'test2'
     expect(linkedList.find({ value: 2, customValue: 'test5' })).to eq nil
   end
 
@@ -304,47 +304,47 @@ describe DoublyLinkedList do
     .append(4);
 
     
-    expect(linkedList.to_s).to be '1,2,3,4'
-    expect(linkedList.head.value).to be 1
-    expect(linkedList.tail.value).to be 4
+    expect(linkedList.to_s).to eq '1,2,3,4'
+    expect(linkedList.head.value).to eq 1
+    expect(linkedList.tail.value).to eq 4
     
     // Reverse linked list.
 
     linkedList.reverse();
 
     
-    expect(linkedList.to_s).to be '4,3,2,1'
+    expect(linkedList.to_s).to eq '4,3,2,1'
     
     expect(linkedList.head.previous).to eq nil
-    expect(linkedList.head.value).to be 4
-    expect(linkedList.head.next.value).to be 3
-    expect(linkedList.head.next.next.value).to be 2
-    expect(linkedList.head.next.next.next.value).to be 1
+    expect(linkedList.head.value).to eq 4
+    expect(linkedList.head.next.value).to eq 3
+    expect(linkedList.head.next.next.value).to eq 2
+    expect(linkedList.head.next.next.next.value).to eq 1
     
     expect(linkedList.tail.next).to eq nil
-    expect(linkedList.tail.value).to be 1
-    expect(linkedList.tail.previous.value).to be 2
-    expect(linkedList.tail.previous.previous.value).to be 3
-    expect(linkedList.tail.previous.previous.previous.value).to be 4
+    expect(linkedList.tail.value).to eq 1
+    expect(linkedList.tail.previous.value).to eq 2
+    expect(linkedList.tail.previous.previous.value).to eq 3
+    expect(linkedList.tail.previous.previous.previous.value).to eq 4
     
     // Reverse linked list back to initial state.
 
     linkedList.reverse();
 
     
-    expect(linkedList.to_s).to be '1,2,3,4'
+    expect(linkedList.to_s).to eq '1,2,3,4'
     
     expect(linkedList.head.previous).to eq nil
-    expect(linkedList.head.value).to be 1
-    expect(linkedList.head.next.value).to be 2
-    expect(linkedList.head.next.next.value).to be 3
-    expect(linkedList.head.next.next.next.value).to be 4
+    expect(linkedList.head.value).to eq 1
+    expect(linkedList.head.next.value).to eq 2
+    expect(linkedList.head.next.next.value).to eq 3
+    expect(linkedList.head.next.next.next.value).to eq 4
     
     expect(linkedList.tail.next).to eq nil
-    expect(linkedList.tail.value).to be 4
-    expect(linkedList.tail.previous.value).to be 3
-    expect(linkedList.tail.previous.previous.value).to be 2
-    expect(linkedList.tail.previous.previous.previous.value).to be 1
+    expect(linkedList.tail.value).to eq 4
+    expect(linkedList.tail.previous.value).to eq 3
+    expect(linkedList.tail.previous.previous.value).to eq 2
+    expect(linkedList.tail.previous.previous.previous.value).to eq 1
   end
 
 end
