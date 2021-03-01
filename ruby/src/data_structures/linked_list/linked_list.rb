@@ -131,8 +131,8 @@ class LinkedList
     @head = prev_node
   end
 
-  def to_s
-    to_a.map { |value| block_given? ? yield(value) : value.to_s }.join(',')
+  def to_s(&block)
+    to_a.map { |value| block_given? ? block.call(value) : value.to_s }.join(',')
   end
 
   def to_a
@@ -143,6 +143,10 @@ class LinkedList
       node = node.next
     end
     values
+  end
+
+  def empty?
+    head.nil? && tail.nil?
   end
 
   private

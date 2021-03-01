@@ -192,4 +192,12 @@ describe LinkedList do
     expect(linked_list.head.value).to eq 1
     expect(linked_list.tail.value).to eq 3
   end
+
+  it 'should blank list is true' do
+    expect(linked_list.empty?).to eq true
+
+    linked_list.append 1
+
+    expect(linked_list.empty?).to eq false
+  end
 end
