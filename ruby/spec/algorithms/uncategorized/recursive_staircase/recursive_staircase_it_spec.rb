@@ -1,5 +1,5 @@
     
-describe recursiveStaircaseIT do
+xdescribe recursiveStaircaseIT do
   it 'should calculate number of variants using Iterative solution' do
     expect(recursiveStaircaseIT(-1)).to eq 0
     expect(recursiveStaircaseIT(0)).to eq 0

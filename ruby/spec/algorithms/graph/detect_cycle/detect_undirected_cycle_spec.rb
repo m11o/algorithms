@@ -1,5 +1,5 @@
     
-describe detectUndirectedCycle do
+xdescribe detectUndirectedCycle do
   it 'should detect undirected cycle' do
     vertexA = GraphVertex.new('A')
     vertexB = GraphVertex.new('B')

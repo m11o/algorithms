@@ -1,5 +1,5 @@
     
-describe hornerMethod do
+xdescribe hornerMethod do
   it 'should evaluate the polynomial for the specified value of x correctly' do
     expect(hornerMethod([8], 0.1)).to eq 8
     expect(hornerMethod([2, 4, 2, 5], 0.555)).to eq 7.68400775

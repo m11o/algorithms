@@ -56,5 +56,4 @@ describe Queue do
     expect(queue.dequeue).to eq nil
     expect(queue.empty?).to eq true
   end
-
 end

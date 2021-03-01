@@ -1,5 +1,5 @@
     
-describe greedyJumpGame do
+xdescribe greedyJumpGame do
   it 'should solve Jump Game problem in greedy manner' do
     expect(greedyJumpGame([1, 0])).to eq true
     expect(greedyJumpGame([100, 0])).to eq true

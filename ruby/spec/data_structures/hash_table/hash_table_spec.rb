@@ -1,5 +1,5 @@
     
-describe HashTable do
+xdescribe HashTable do
   it 'should create hash table of certain size' do
     defaultHashTable = HashTable.new()
     expect(defaultHashTable.buckets.length).to eq 32

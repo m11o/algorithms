@@ -1,5 +1,5 @@
     
-describe longestCommonSubstring do
+xdescribe longestCommonSubstring do
   it 'should find longest common substring between two strings' do
     expect(longestCommonSubstring('', '')).to eq ''
     expect(longestCommonSubstring('ABC', '')).to eq ''

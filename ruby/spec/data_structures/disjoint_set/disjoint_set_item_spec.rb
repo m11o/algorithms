@@ -1,5 +1,5 @@
     
-describe DisjointSetItem do
+xdescribe DisjointSetItem do
   it 'should do basic manipulation with disjoint set item' do
     itemA = DisjointSetItem.new('A')
     itemB = DisjointSetItem.new('B')

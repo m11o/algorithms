@@ -35,7 +35,7 @@
     }
 
     
-describe trialDivision do
+xdescribe trialDivision do
   it 'should detect prime numbers' do
     primalityTest(trialDivision);
 

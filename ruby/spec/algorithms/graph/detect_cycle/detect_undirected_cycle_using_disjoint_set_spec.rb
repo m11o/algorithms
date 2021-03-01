@@ -1,5 +1,5 @@
     
-describe detectUndirectedCycleUsingDisjointSet do
+xdescribe detectUndirectedCycleUsingDisjointSet do
   it 'should detect undirected cycle' do
     vertexA = GraphVertex.new('A')
     vertexB = GraphVertex.new('B')

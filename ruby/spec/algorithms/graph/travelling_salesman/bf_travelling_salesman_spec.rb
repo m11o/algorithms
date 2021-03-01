@@ -1,5 +1,5 @@
     
-describe bfTravellingSalesman do
+xdescribe bfTravellingSalesman do
   it 'should solve problem for simple graph' do
     vertexA = GraphVertex.new('A')
     vertexB = GraphVertex.new('B')

@@ -1,5 +1,5 @@
     
-describe combineWithoutRepetitions do
+xdescribe combineWithoutRepetitions do
   it 'should combine string without repetitions' do
     expect(combineWithoutRepetitions(['A', 'B'], 3)).to eq []
     

@@ -1,5 +1,5 @@
     
-describe MaxHeap do
+xdescribe MaxHeap do
   it 'should create an empty max heap' do
     maxHeap = MaxHeap.new()
     

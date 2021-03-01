@@ -1,5 +1,5 @@
     
-describe isEven do
+xdescribe isEven do
   it 'should detect if a number is even' do
     expect(isEven(0)).to eq true
     expect(isEven(2)).to eq true

@@ -1,5 +1,5 @@
     
-describe hammingDistance do
+xdescribe hammingDistance do
   it 'should throw an error when trying to compare the strings of different lengths' do
     const compareStringsOfDifferentLength = () => {
 

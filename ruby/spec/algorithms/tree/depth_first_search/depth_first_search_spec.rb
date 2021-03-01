@@ -1,5 +1,5 @@
     
-describe depthFirstSearch do
+xdescribe depthFirstSearch do
   it 'should perform DFS operation on tree' do
     nodeA = BinaryTreeNode.new('A')
     nodeB = BinaryTreeNode.new('B')

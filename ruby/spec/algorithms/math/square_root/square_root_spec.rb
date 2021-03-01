@@ -1,5 +1,5 @@
     
-describe squareRoot do
+xdescribe squareRoot do
   it 'should throw for negative numbers' do
     function failingSquareRoot() {
 

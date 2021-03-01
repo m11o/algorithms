@@ -1,5 +1,5 @@
     
-describe breadthFirstSearch do
+xdescribe breadthFirstSearch do
   it 'should perform BFS operation on graph' do
     graph = Graph.new(true)
     

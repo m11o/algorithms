@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 320
     EQUAL_ARRAY_VISITING_COUNT = 320
     
-describe ShellSort do
+xdescribe ShellSort do
   it 'should sort array' do
     SortTester.testSort(ShellSort);
 

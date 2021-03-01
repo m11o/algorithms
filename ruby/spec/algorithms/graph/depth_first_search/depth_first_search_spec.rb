@@ -1,5 +1,5 @@
     
-describe depthFirstSearch do
+xdescribe depthFirstSearch do
   it 'should perform DFS operation on graph' do
     graph = Graph.new(true)
     

@@ -1,5 +1,5 @@
     
-describe KnapsackItem do
+xdescribe KnapsackItem do
   it 'should create knapsack item and count its total weight and value' do
  end
 

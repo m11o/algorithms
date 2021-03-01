@@ -1,5 +1,5 @@
     
-describe countSetBits do
+xdescribe countSetBits do
   it 'should return number of set bits' do
     expect(countSetBits(0)).to eq 0
     expect(countSetBits(1)).to eq 1

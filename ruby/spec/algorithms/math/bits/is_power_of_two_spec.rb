@@ -1,5 +1,5 @@
     
-describe isPowerOfTwo do
+xdescribe isPowerOfTwo do
   it 'should detect if the number is power of two' do
     expect(isPowerOfTwo(1)).to eq true
     expect(isPowerOfTwo(2)).to eq true

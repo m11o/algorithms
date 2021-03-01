@@ -1,5 +1,5 @@
     
-describe railFenceCipher do
+xdescribe railFenceCipher do
   it 'encodes a string correctly for base=3' do
     expect(encodeRailFenceCipher('', 3)).to eq ''
     expect(encodeRailFenceCipher('12345', 3)).toBe(

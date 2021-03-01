@@ -1,5 +1,5 @@
     
-describe getBit do
+xdescribe getBit do
   it 'should get bit at specific position' do
     // 1 = 0b0001
 

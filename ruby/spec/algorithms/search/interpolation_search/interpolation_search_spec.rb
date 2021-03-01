@@ -1,5 +1,5 @@
     
-describe interpolationSearch do
+xdescribe interpolationSearch do
   it 'should search elements in sorted array of numbers' do
     expect(interpolationSearch([], 1)).to eq -1
     expect(interpolationSearch([1], 1)).to eq 0

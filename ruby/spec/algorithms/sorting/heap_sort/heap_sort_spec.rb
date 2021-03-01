@@ -22,7 +22,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 40
     EQUAL_ARRAY_VISITING_COUNT = 40
     
-describe HeapSort do
+xdescribe HeapSort do
   it 'should sort array' do
     SortTester.testSort(HeapSort);
 

@@ -1,5 +1,5 @@
     
-describe dpRainTerraces do
+xdescribe dpRainTerraces do
   it 'should find the amount of water collected after raining' do
     expect(dpRainTerraces([1])).to eq 0
     expect(dpRainTerraces([1, 0])).to eq 0

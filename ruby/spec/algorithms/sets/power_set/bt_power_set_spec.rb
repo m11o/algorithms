@@ -1,5 +1,5 @@
     
-describe btPowerSet do
+xdescribe btPowerSet do
   it 'should calculate power set of given set using backtracking approach' do
     expect(btPowerSet([1])).toEqual([
 

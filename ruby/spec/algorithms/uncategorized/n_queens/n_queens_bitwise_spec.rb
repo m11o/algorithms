@@ -1,5 +1,5 @@
     
-describe nQueensBitwise do
+xdescribe nQueensBitwise do
   it 'should have solutions for 4 to N queens' do
     expect(nQueensBitwise(4)).to eq 2
     expect(nQueensBitwise(5)).to eq 10

@@ -1,5 +1,5 @@
     
-describe hillCipher do
+xdescribe hillCipher do
   it 'should throw an exception when trying to decipher' do
     expect(hillCipherDecrypt).to toThrowError('This method is not implemented yet')
   end
