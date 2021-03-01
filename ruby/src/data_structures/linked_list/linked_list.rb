@@ -145,6 +145,10 @@ class LinkedList
     values
   end
 
+  def empty?
+    head.nil? && tail.nil?
+  end
+
   private
 
   def init_insertion(node)
