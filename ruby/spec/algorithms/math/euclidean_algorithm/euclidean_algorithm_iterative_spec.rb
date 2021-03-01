@@ -1,5 +1,5 @@
     
-describe euclideanAlgorithmIterative do
+xdescribe euclideanAlgorithmIterative do
   it 'should calculate GCD iteratively' do
     expect(euclideanAlgorithmIterative(0, 0)).to eq 0
     expect(euclideanAlgorithmIterative(2, 0)).to eq 2

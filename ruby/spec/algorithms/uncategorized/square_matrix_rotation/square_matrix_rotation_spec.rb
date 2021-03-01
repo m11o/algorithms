@@ -1,5 +1,5 @@
     
-describe squareMatrixRotation do
+xdescribe squareMatrixRotation do
   it 'should rotate matrix #0 in-place' do
     matrix = [[1]]
     

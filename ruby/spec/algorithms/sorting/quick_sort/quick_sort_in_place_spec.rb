@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 19
     EQUAL_ARRAY_VISITING_COUNT = 19
     
-describe QuickSortInPlace do
+xdescribe QuickSortInPlace do
   it 'should sort array' do
     SortTester.testSort(QuickSortInPlace);
 

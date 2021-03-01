@@ -1,5 +1,5 @@
     
-describe dpBottomUpJumpGame do
+xdescribe dpBottomUpJumpGame do
   it 'should solve Jump Game problem in bottom-up dynamic programming manner' do
     expect(dpBottomUpJumpGame([1, 0])).to eq true
     expect(dpBottomUpJumpGame([100, 0])).to eq true

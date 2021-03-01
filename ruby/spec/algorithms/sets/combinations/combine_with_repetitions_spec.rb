@@ -1,5 +1,5 @@
     
-describe combineWithRepetitions do
+xdescribe combineWithRepetitions do
   it 'should combine string with repetitions' do
     expect(combineWithRepetitions(['A'], 1)).toEqual([
 

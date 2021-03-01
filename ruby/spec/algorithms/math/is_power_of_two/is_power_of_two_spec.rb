@@ -1,5 +1,5 @@
     
-describe isPowerOfTwo do
+xdescribe isPowerOfTwo do
   it 'should check if the number is made by multiplying twos' do
     expect(isPowerOfTwo(-1)).to eq false
     expect(isPowerOfTwo(0)).to eq false

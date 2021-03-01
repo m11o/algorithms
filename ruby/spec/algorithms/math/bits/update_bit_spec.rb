@@ -1,5 +1,5 @@
     
-describe updateBit do
+xdescribe updateBit do
   it 'should update bit at specific position' do
     // 1 = 0b0001
 

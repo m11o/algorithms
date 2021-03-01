@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 209
     EQUAL_ARRAY_VISITING_COUNT = 209
     
-describe SelectionSort do
+xdescribe SelectionSort do
   it 'should sort array' do
     SortTester.testSort(SelectionSort);
 

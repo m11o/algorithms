@@ -1,5 +1,5 @@
     
-describe binarySearch do
+xdescribe binarySearch do
   it 'should search number in sorted array' do
     expect(binarySearch([], 1)).to eq -1
     expect(binarySearch([1], 1)).to eq 0

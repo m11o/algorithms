@@ -1,5 +1,5 @@
     
-describe SegmentTree do
+xdescribe SegmentTree do
   it 'should build tree for input array #0 with length of power of two' do
     array = [-1, 2]
     segmentTree = SegmentTree.new(array, Math.min, Infinity)

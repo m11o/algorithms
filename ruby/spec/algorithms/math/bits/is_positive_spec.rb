@@ -1,5 +1,5 @@
     
-describe isPositive do
+xdescribe isPositive do
   it 'should detect if a number is positive' do
     expect(isPositive(1)).to eq true
     expect(isPositive(2)).to eq true

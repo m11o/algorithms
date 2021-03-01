@@ -1,5 +1,5 @@
     
-describe sieveOfEratosthenes do
+xdescribe sieveOfEratosthenes do
   it 'should find all primes less than or equal to n' do
     expect(sieveOfEratosthenes(5)).to eq [2, 3, 5]
     expect(sieveOfEratosthenes(10)).to eq [2, 3, 5, 7]

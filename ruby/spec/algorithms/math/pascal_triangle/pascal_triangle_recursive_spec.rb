@@ -1,5 +1,5 @@
     
-describe pascalTriangleRecursive do
+xdescribe pascalTriangleRecursive do
   it 'should calculate Pascal Triangle coefficients for specific line number' do
     expect(pascalTriangleRecursive(0)).to eq [1]
     expect(pascalTriangleRecursive(1)).to eq [1, 1]

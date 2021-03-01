@@ -1,5 +1,5 @@
     
-describe permutateWithoutRepetitions do
+xdescribe permutateWithoutRepetitions do
   it 'should permutate string' do
     permutations1 = permutateWithoutRepetitions(['A'])
     expect(permutations1).toEqual([

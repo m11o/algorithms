@@ -1,5 +1,5 @@
     
-describe multiply do
+xdescribe multiply do
   it 'should multiply two numbers' do
     expect(multiply(0, 0)).to eq 0
     expect(multiply(2, 0)).to eq 0

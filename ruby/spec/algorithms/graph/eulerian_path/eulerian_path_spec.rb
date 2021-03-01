@@ -1,5 +1,5 @@
     
-describe eulerianPath do
+xdescribe eulerianPath do
   it 'should throw an error when graph is not Eulerian' do
     function findEulerianPathInNotEulerianGraph() {
 

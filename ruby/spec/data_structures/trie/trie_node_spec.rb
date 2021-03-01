@@ -1,5 +1,5 @@
     
-describe TrieNode do
+xdescribe TrieNode do
   it 'should create trie node' do
     trieNode = TrieNode.new('c', true)
     

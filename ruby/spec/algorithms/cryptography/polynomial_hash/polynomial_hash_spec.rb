@@ -1,5 +1,5 @@
     
-describe PolynomialHash do
+xdescribe PolynomialHash do
   it 'should calculate new hash based on previous one' do
     bases = [3, 79, 101, 3251, 13229, 122743, 3583213]
     mods = [79, 101]

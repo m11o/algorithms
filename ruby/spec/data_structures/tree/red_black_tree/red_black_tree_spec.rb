@@ -1,5 +1,5 @@
     
-describe RedBlackTree do
+xdescribe RedBlackTree do
   it 'should always color first inserted node as black' do
     tree = RedBlackTree.new()
     

@@ -1,5 +1,5 @@
     
-describe backtrackingJumpGame do
+xdescribe backtrackingJumpGame do
   it 'should solve Jump Game problem in backtracking manner' do
     expect(backtrackingJumpGame([1, 0])).to eq true
     expect(backtrackingJumpGame([100, 0])).to eq true

@@ -1,5 +1,5 @@
     
-describe accumulatorBestTimeToBuySellStocks do
+xdescribe accumulatorBestTimeToBuySellStocks do
   it 'should find the best time to buy and sell stocks' do
     let visit;
 

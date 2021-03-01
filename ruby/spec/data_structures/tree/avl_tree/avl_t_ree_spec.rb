@@ -1,5 +1,5 @@
     
-describe AvlTree do
+xdescribe AvlTree do
   it 'should do simple left-left rotation' do
     tree = AvlTree.new()
     

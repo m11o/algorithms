@@ -1,5 +1,5 @@
     
-describe graphBridges do
+xdescribe graphBridges do
   it 'should find bridges in simple graph' do
     vertexA = GraphVertex.new('A')
     vertexB = GraphVertex.new('B')

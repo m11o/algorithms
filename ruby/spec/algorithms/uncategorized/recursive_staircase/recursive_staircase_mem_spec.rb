@@ -1,5 +1,5 @@
     
-describe recursiveStaircaseMEM do
+xdescribe recursiveStaircaseMEM do
   it 'should calculate number of variants using Brute Force with Memoization' do
     expect(recursiveStaircaseMEM(-1)).to eq 0
     expect(recursiveStaircaseMEM(0)).to eq 0

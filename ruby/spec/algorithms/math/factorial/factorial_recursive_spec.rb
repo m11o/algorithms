@@ -1,5 +1,5 @@
     
-describe factorialRecursive do
+xdescribe factorialRecursive do
   it 'should calculate factorial' do
     expect(factorialRecursive(0)).to eq 1
     expect(factorialRecursive(1)).to eq 1

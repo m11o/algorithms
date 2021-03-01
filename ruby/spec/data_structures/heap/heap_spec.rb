@@ -1,5 +1,5 @@
     
-describe Heap do
+xdescribe Heap do
   it 'should not allow to create instance of the Heap directly' do
     const instantiateHeap = () => {
 

@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 209
     EQUAL_ARRAY_VISITING_COUNT = 19
     
-describe InsertionSort do
+xdescribe InsertionSort do
   it 'should sort array' do
     SortTester.testSort(InsertionSort);
 

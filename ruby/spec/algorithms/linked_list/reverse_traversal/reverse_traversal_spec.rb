@@ -1,5 +1,5 @@
     
-describe reverseTraversal do
+xdescribe reverseTraversal do
   it 'should traverse linked list in reverse order' do
     linkedList = LinkedList.new()
     

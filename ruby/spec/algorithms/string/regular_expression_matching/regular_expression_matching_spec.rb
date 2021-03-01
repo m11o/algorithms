@@ -1,5 +1,5 @@
     
-describe regularExpressionMatching do
+xdescribe regularExpressionMatching do
   it 'should match regular expressions in a string' do
     expect(regularExpressionMatching('', '')).to eq true
     expect(regularExpressionMatching('a', 'a')).to eq true
