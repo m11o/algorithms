@@ -39,7 +39,7 @@ describe PolynomialHash do
     
     // Check that rolling hash is the same as directly calculated hash.
 
-    expect(currentRollingHash).to be currentHash
+    expect(currentRollingHash).to eq currentHash
     
     previousWord = currentWord;
 
@@ -57,14 +57,14 @@ describe PolynomialHash do
   it 'should generate numeric hashed' do
     polynomialHash = SimplePolynomialHash.new()
     
-    expect(polynomialHash.hash('Test')).to be 604944
-    expect(polynomialHash.hash('a')).to be 97
-    expect(polynomialHash.hash('b')).to be 98
-    expect(polynomialHash.hash('c')).to be 99
-    expect(polynomialHash.hash('d')).to be 100
-    expect(polynomialHash.hash('e')).to be 101
-    expect(polynomialHash.hash('ab')).to be 1763
-    expect(polynomialHash.hash('abc')).to be 30374
+    expect(polynomialHash.hash('Test')).to eq 604944
+    expect(polynomialHash.hash('a')).to eq 97
+    expect(polynomialHash.hash('b')).to eq 98
+    expect(polynomialHash.hash('c')).to eq 99
+    expect(polynomialHash.hash('d')).to eq 100
+    expect(polynomialHash.hash('e')).to eq 101
+    expect(polynomialHash.hash('ab')).to eq 1763
+    expect(polynomialHash.hash('abc')).to eq 30374
   end
 
 end

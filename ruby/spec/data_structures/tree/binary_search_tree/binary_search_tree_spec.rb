@@ -17,9 +17,9 @@ describe BinarySearchTree do
     bst.insert(5);
 
     
-    expect(bst.to_s).to be '5,10,20'
-    expect(insertedNode1.value).to be 10
-    expect(insertedNode2.value).to be 20
+    expect(bst.to_s).to eq '5,10,20'
+    expect(insertedNode1.value).to eq 10
+    expect(insertedNode2.value).to eq 20
   end
 
     
@@ -33,8 +33,8 @@ describe BinarySearchTree do
     bst.insert(5);
 
     
-    expect(bst.contains(20)).to be true
-    expect(bst.contains(40)).to be false
+    expect(bst.contains(20)).to eq true
+    expect(bst.contains(40)).to eq false
   end
 
     
@@ -48,15 +48,15 @@ describe BinarySearchTree do
     bst.insert(5);
 
     
-    expect(bst.to_s).to be '5,10,20'
+    expect(bst.to_s).to eq '5,10,20'
     
     removed1 = bst.remove(5)
-    expect(bst.to_s).to be '10,20'
-    expect(removed1).to be true
+    expect(bst.to_s).to eq '10,20'
+    expect(removed1).to eq true
     
     removed2 = bst.remove(20)
-    expect(bst.to_s).to be '10'
-    expect(removed2).to be true
+    expect(bst.to_s).to eq '10'
+    expect(removed2).to eq true
   end
 
     
@@ -91,7 +91,7 @@ describe BinarySearchTree do
     bst.insert(obj1);
 
     
-    expect(bst.to_s).to be 'obj1,obj2,obj3'
+    expect(bst.to_s).to eq 'obj1,obj2,obj3'
   end
 
     
@@ -111,14 +111,14 @@ describe BinarySearchTree do
     bst.insert(6);
 
     
-    expect(bst.to_s).to be '-20,-10,6,10,20,25'
-    expect(bst.root.height).to be 2
+    expect(bst.to_s).to eq '-20,-10,6,10,20,25'
+    expect(bst.root.height).to eq 2
     
     bst.insert(4);
 
     
-    expect(bst.to_s).to be '-20,-10,4,6,10,20,25'
-    expect(bst.root.height).to be 3
+    expect(bst.to_s).to eq '-20,-10,4,6,10,20,25'
+    expect(bst.root.height).to eq 3
   end
 
 end

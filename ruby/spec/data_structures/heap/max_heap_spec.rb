@@ -4,7 +4,7 @@ describe MaxHeap do
     maxHeap = MaxHeap.new()
     
     expect(maxHeap.peek()).to eq nil
-    expect(maxHeap.isEmpty()).to be true
+    expect(maxHeap.isEmpty()).to eq true
   end
 
     
@@ -13,38 +13,38 @@ describe MaxHeap do
     
     maxHeap.add(5);
 
-    expect(maxHeap.isEmpty()).to be false
-    expect(maxHeap.peek()).to be 5
-    expect(maxHeap.to_s).to be '5'
+    expect(maxHeap.isEmpty()).to eq false
+    expect(maxHeap.peek()).to eq 5
+    expect(maxHeap.to_s).to eq '5'
     
     maxHeap.add(3);
 
-    expect(maxHeap.peek()).to be 5
-    expect(maxHeap.to_s).to be '5,3'
+    expect(maxHeap.peek()).to eq 5
+    expect(maxHeap.to_s).to eq '5,3'
     
     maxHeap.add(10);
 
-    expect(maxHeap.peek()).to be 10
-    expect(maxHeap.to_s).to be '10,3,5'
+    expect(maxHeap.peek()).to eq 10
+    expect(maxHeap.to_s).to eq '10,3,5'
     
     maxHeap.add(1);
 
-    expect(maxHeap.peek()).to be 10
-    expect(maxHeap.to_s).to be '10,3,5,1'
+    expect(maxHeap.peek()).to eq 10
+    expect(maxHeap.to_s).to eq '10,3,5,1'
     
     maxHeap.add(1);
 
-    expect(maxHeap.peek()).to be 10
-    expect(maxHeap.to_s).to be '10,3,5,1,1'
+    expect(maxHeap.peek()).to eq 10
+    expect(maxHeap.to_s).to eq '10,3,5,1,1'
     
-    expect(maxHeap.poll()).to be 10
-    expect(maxHeap.to_s).to be '5,3,1,1'
+    expect(maxHeap.poll()).to eq 10
+    expect(maxHeap.to_s).to eq '5,3,1,1'
     
-    expect(maxHeap.poll()).to be 5
-    expect(maxHeap.to_s).to be '3,1,1'
+    expect(maxHeap.poll()).to eq 5
+    expect(maxHeap.to_s).to eq '3,1,1'
     
-    expect(maxHeap.poll()).to be 3
-    expect(maxHeap.to_s).to be '1,1'
+    expect(maxHeap.poll()).to eq 3
+    expect(maxHeap.to_s).to eq '1,1'
   end
 
     
@@ -62,25 +62,25 @@ describe MaxHeap do
     maxHeap.add(1);
 
     
-    expect(maxHeap.to_s).to be '11,10,5,3,1'
+    expect(maxHeap.to_s).to eq '11,10,5,3,1'
     
-    expect(maxHeap.poll()).to be 11
-    expect(maxHeap.to_s).to be '10,3,5,1'
+    expect(maxHeap.poll()).to eq 11
+    expect(maxHeap.to_s).to eq '10,3,5,1'
     
-    expect(maxHeap.poll()).to be 10
-    expect(maxHeap.to_s).to be '5,3,1'
+    expect(maxHeap.poll()).to eq 10
+    expect(maxHeap.to_s).to eq '5,3,1'
     
-    expect(maxHeap.poll()).to be 5
-    expect(maxHeap.to_s).to be '3,1'
+    expect(maxHeap.poll()).to eq 5
+    expect(maxHeap.to_s).to eq '3,1'
     
-    expect(maxHeap.poll()).to be 3
-    expect(maxHeap.to_s).to be '1'
+    expect(maxHeap.poll()).to eq 3
+    expect(maxHeap.to_s).to eq '1'
     
-    expect(maxHeap.poll()).to be 1
-    expect(maxHeap.to_s).to be ''
+    expect(maxHeap.poll()).to eq 1
+    expect(maxHeap.to_s).to eq ''
     
     expect(maxHeap.poll()).to eq nil
-    expect(maxHeap.to_s).to be ''
+    expect(maxHeap.to_s).to eq ''
   end
 
     
@@ -94,14 +94,14 @@ describe MaxHeap do
     maxHeap.add(10);
 
     
-    expect(maxHeap.to_s).to be '12,3,10'
+    expect(maxHeap.to_s).to eq '12,3,10'
     
     maxHeap.add(11);
 
-    expect(maxHeap.to_s).to be '12,11,10,3'
+    expect(maxHeap.to_s).to eq '12,11,10,3'
     
-    expect(maxHeap.poll()).to be 12
-    expect(maxHeap.to_s).to be '11,3,10'
+    expect(maxHeap.poll()).to eq 12
+    expect(maxHeap.to_s).to eq '11,3,10'
   end
 
     
@@ -119,7 +119,7 @@ describe MaxHeap do
     maxHeap.add(11);
 
     
-    expect(maxHeap.to_s).to be '12,11,10,3,11'
+    expect(maxHeap.to_s).to eq '12,11,10,3,11'
     
     expect(maxHeap.find(5)).to eq []
     expect(maxHeap.find(12)).to eq [0]
@@ -141,7 +141,7 @@ describe MaxHeap do
     maxHeap.add(11);
 
     
-    expect(maxHeap.to_s).to be '12,11,10,3,11'
+    expect(maxHeap.to_s).to eq '12,11,10,3,11'
     
     expect(maxHeap.remove(12).to eq '11,11,10,3'
     expect(maxHeap.remove(12).peek()).to eq 11
@@ -174,7 +174,7 @@ describe MaxHeap do
     maxHeap.add(1);
 
     
-    expect(maxHeap.to_s).to be '10,8,6,7,6,4,5,3,2,1'
+    expect(maxHeap.to_s).to eq '10,8,6,7,6,4,5,3,2,1'
     expect(maxHeap.remove(4).to eq '10,8,6,7,6,1,5,3,2'
     expect(maxHeap.remove(3).to eq '10,8,6,7,6,1,5,2'
     expect(maxHeap.remove(5).to eq '10,8,6,7,6,1,2'
@@ -198,7 +198,7 @@ describe MaxHeap do
     maxHeap.add('dddd');
 
     
-    expect(maxHeap.to_s).to be 'dddd,ccc,bb,a'
+    expect(maxHeap.to_s).to eq 'dddd,ccc,bb,a'
     
     comparator = Comparator.new((a, b)
     if (a.length === b.length) {
@@ -215,7 +215,7 @@ describe MaxHeap do
     
     maxHeap.remove('hey', comparator);
 
-    expect(maxHeap.to_s).to be 'dddd,a,bb'
+    expect(maxHeap.to_s).to eq 'dddd,a,bb'
   end
 
 end

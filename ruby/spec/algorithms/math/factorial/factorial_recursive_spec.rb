@@ -1,11 +1,11 @@
     
 describe factorialRecursive do
   it 'should calculate factorial' do
-    expect(factorialRecursive(0)).to be 1
-    expect(factorialRecursive(1)).to be 1
-    expect(factorialRecursive(5)).to be 120
-    expect(factorialRecursive(8)).to be 40320
-    expect(factorialRecursive(10)).to be 3628800
+    expect(factorialRecursive(0)).to eq 1
+    expect(factorialRecursive(1)).to eq 1
+    expect(factorialRecursive(5)).to eq 120
+    expect(factorialRecursive(8)).to eq 40320
+    expect(factorialRecursive(10)).to eq 3628800
   end
 
 end

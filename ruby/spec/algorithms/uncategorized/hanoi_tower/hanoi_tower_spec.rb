@@ -28,15 +28,15 @@ describe hanoiTower do
     expect(fromPole.toArray()).to eq []
     expect(toPole.toArray()).to eq [1, 2]
     
-    expect(moveCallback.mock.calls[0][0]).to be 1
+    expect(moveCallback.mock.calls[0][0]).to eq 1
     expect(moveCallback.mock.calls[0][1]).to eq [1, 2]
     expect(moveCallback.mock.calls[0][2]).to eq []
     
-    expect(moveCallback.mock.calls[1][0]).to be 2
+    expect(moveCallback.mock.calls[1][0]).to eq 2
     expect(moveCallback.mock.calls[1][1]).to eq [2]
     expect(moveCallback.mock.calls[1][2]).to eq []
     
-    expect(moveCallback.mock.calls[2][0]).to be 1
+    expect(moveCallback.mock.calls[2][0]).to eq 1
     expect(moveCallback.mock.calls[2][1]).to eq [1]
     expect(moveCallback.mock.calls[2][2]).to eq [2]
   end

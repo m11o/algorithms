@@ -1,7 +1,7 @@
     
 describe railFenceCipher do
   it 'encodes a string correctly for base=3' do
-    expect(encodeRailFenceCipher('', 3)).to be ''
+    expect(encodeRailFenceCipher('', 3)).to eq ''
     expect(encodeRailFenceCipher('12345', 3)).toBe(
 
     '15243',
@@ -24,7 +24,7 @@ describe railFenceCipher do
 
     
   it 'decodes a string correctly for base=3' do
-    expect(decodeRailFenceCipher('', 3)).to be ''
+    expect(decodeRailFenceCipher('', 3)).to eq ''
     expect(decodeRailFenceCipher('WECRLTEERDSOEEFEAOCAIVDEN', 3)).toBe(
 
     'WEAREDISCOVEREDFLEEATONCE',
@@ -47,7 +47,7 @@ describe railFenceCipher do
 
     
   it 'encodes a string correctly for base=4' do
-    expect(encodeRailFenceCipher('', 4)).to be ''
+    expect(encodeRailFenceCipher('', 4)).to eq ''
     expect(encodeRailFenceCipher('THEYAREATTACKINGFROMTHENORTH', 4)).toBe(
 
     'TEKOOHRACIRMNREATANFTETYTGHH',
@@ -58,7 +58,7 @@ describe railFenceCipher do
 
     
   it 'decodes a string correctly for base=4' do
-    expect(decodeRailFenceCipher('', 4)).to be ''
+    expect(decodeRailFenceCipher('', 4)).to eq ''
     expect(decodeRailFenceCipher('TEKOOHRACIRMNREATANFTETYTGHH', 4)).toBe(
 
     'THEYAREATTACKINGFROMTHENORTH',

@@ -50,7 +50,7 @@ describe bfTravellingSalesman do
     
     salesmanPath = bfTravellingSalesman(graph)
     
-    expect(salesmanPath.length).to be 4
+    expect(salesmanPath.length).to eq 4
     
     expect(salesmanPath[0].getKey()).to eq vertexA.getKey()
     expect(salesmanPath[1].getKey()).to eq vertexB.getKey()

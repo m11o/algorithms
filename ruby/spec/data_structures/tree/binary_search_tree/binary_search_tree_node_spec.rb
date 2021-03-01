@@ -3,7 +3,7 @@ describe BinarySearchTreeNode do
   it 'should create binary search tree' do
     bstNode = BinarySearchTreeNode.new(2)
     
-    expect(bstNode.value).to be 2
+    expect(bstNode.value).to eq 2
     expect(bstNode.left).to eq nil
     expect(bstNode.right).to eq nil
   end
@@ -14,7 +14,7 @@ describe BinarySearchTreeNode do
     bstNode.insert(1);
 
     
-    expect(bstNode.value).to be 1
+    expect(bstNode.value).to eq 1
     expect(bstNode.left).to eq nil
     expect(bstNode.right).to eq nil
   end
@@ -24,38 +24,38 @@ describe BinarySearchTreeNode do
     bstNode = BinarySearchTreeNode.new(2)
     insertedNode1 = bstNode.insert(1)
     
-    expect(insertedNode1.value).to be 1
-    expect(bstNode.to_s).to be '1,2'
-    expect(bstNode.contains(1)).to be true
-    expect(bstNode.contains(3)).to be false
+    expect(insertedNode1.value).to eq 1
+    expect(bstNode.to_s).to eq '1,2'
+    expect(bstNode.contains(1)).to eq true
+    expect(bstNode.contains(3)).to eq false
     
     insertedNode2 = bstNode.insert(3)
     
-    expect(insertedNode2.value).to be 3
-    expect(bstNode.to_s).to be '1,2,3'
-    expect(bstNode.contains(3)).to be true
-    expect(bstNode.contains(4)).to be false
+    expect(insertedNode2.value).to eq 3
+    expect(bstNode.to_s).to eq '1,2,3'
+    expect(bstNode.contains(3)).to eq true
+    expect(bstNode.contains(4)).to eq false
     
     bstNode.insert(7);
 
     
-    expect(bstNode.to_s).to be '1,2,3,7'
-    expect(bstNode.contains(7)).to be true
-    expect(bstNode.contains(8)).to be false
+    expect(bstNode.to_s).to eq '1,2,3,7'
+    expect(bstNode.contains(7)).to eq true
+    expect(bstNode.contains(8)).to eq false
     
     bstNode.insert(4);
 
     
-    expect(bstNode.to_s).to be '1,2,3,4,7'
-    expect(bstNode.contains(4)).to be true
-    expect(bstNode.contains(8)).to be false
+    expect(bstNode.to_s).to eq '1,2,3,4,7'
+    expect(bstNode.contains(4)).to eq true
+    expect(bstNode.contains(8)).to eq false
     
     bstNode.insert(6);
 
     
-    expect(bstNode.to_s).to be '1,2,3,4,6,7'
-    expect(bstNode.contains(6)).to be true
-    expect(bstNode.contains(8)).to be false
+    expect(bstNode.to_s).to eq '1,2,3,4,6,7'
+    expect(bstNode.contains(6)).to eq true
+    expect(bstNode.contains(8)).to eq false
   end
 
     
@@ -64,16 +64,16 @@ describe BinarySearchTreeNode do
     bstNode.insert(1);
 
     
-    expect(bstNode.to_s).to be '1,2'
-    expect(bstNode.contains(1)).to be true
-    expect(bstNode.contains(3)).to be false
+    expect(bstNode.to_s).to eq '1,2'
+    expect(bstNode.contains(1)).to eq true
+    expect(bstNode.contains(3)).to eq false
     
     bstNode.insert(1);
 
     
-    expect(bstNode.to_s).to be '1,2'
-    expect(bstNode.contains(1)).to be true
-    expect(bstNode.contains(3)).to be false
+    expect(bstNode.to_s).to eq '1,2'
+    expect(bstNode.contains(1)).to eq true
+    expect(bstNode.contains(3)).to eq false
   end
 
     
@@ -93,7 +93,7 @@ describe BinarySearchTreeNode do
     
     expect(node.findMin()).not.toBeNull();
 
-    expect(node.findMin().value).to be 1
+    expect(node.findMin().value).to eq 1
   end
 
     
@@ -116,13 +116,13 @@ describe BinarySearchTreeNode do
     node2.meta.set('color', 'white');
 
     
-    expect(node.meta.get('color')).to be 'red'
+    expect(node.meta.get('color')).to eq 'red'
     
     expect(node.findMin()).not.toBeNull();
 
-    expect(node.findMin().value).to be 1
-    expect(node.findMin().meta.get('color')).to be 'white'
-    expect(node.find(30).meta.get('color')).to be 'black'
+    expect(node.findMin().value).to eq 1
+    expect(node.findMin().meta.get('color')).to eq 'white'
+    expect(node.find(30).meta.get('color')).to eq 'black'
   end
 
     
@@ -143,7 +143,7 @@ describe BinarySearchTreeNode do
     expect(node.find(6)).to eq nil
     expect(node.find(5)).not.toBeNull();
 
-    expect(node.find(5).value).to be 5
+    expect(node.find(5).value).to eq 5
   end
 
     
@@ -157,15 +157,15 @@ describe BinarySearchTreeNode do
     bstRootNode.insert(5);
 
     
-    expect(bstRootNode.to_s).to be '5,10,20'
+    expect(bstRootNode.to_s).to eq '5,10,20'
     
     removed1 = bstRootNode.remove(5)
-    expect(bstRootNode.to_s).to be '10,20'
-    expect(removed1).to be true
+    expect(bstRootNode.to_s).to eq '10,20'
+    expect(removed1).to eq true
     
     removed2 = bstRootNode.remove(20)
-    expect(bstRootNode.to_s).to be '10'
-    expect(removed2).to be true
+    expect(bstRootNode.to_s).to eq '10'
+    expect(removed2).to eq true
   end
 
     
@@ -181,19 +181,19 @@ describe BinarySearchTreeNode do
     bstRootNode.insert(30);
 
     
-    expect(bstRootNode.to_s).to be '5,10,20,30'
+    expect(bstRootNode.to_s).to eq '5,10,20,30'
     
     bstRootNode.remove(20);
 
-    expect(bstRootNode.to_s).to be '5,10,30'
+    expect(bstRootNode.to_s).to eq '5,10,30'
     
     bstRootNode.insert(1);
 
-    expect(bstRootNode.to_s).to be '1,5,10,30'
+    expect(bstRootNode.to_s).to eq '1,5,10,30'
     
     bstRootNode.remove(5);
 
-    expect(bstRootNode.to_s).to be '1,10,30'
+    expect(bstRootNode.to_s).to eq '1,10,30'
   end
 
     
@@ -213,50 +213,50 @@ describe BinarySearchTreeNode do
     bstRootNode.insert(25);
 
     
-    expect(bstRootNode.to_s).to be '5,10,15,20,25,30'
-    expect(bstRootNode.find(20).left.value).to be 15
-    expect(bstRootNode.find(20).right.value).to be 30
+    expect(bstRootNode.to_s).to eq '5,10,15,20,25,30'
+    expect(bstRootNode.find(20).left.value).to eq 15
+    expect(bstRootNode.find(20).right.value).to eq 30
     
     bstRootNode.remove(20);
 
-    expect(bstRootNode.to_s).to be '5,10,15,25,30'
+    expect(bstRootNode.to_s).to eq '5,10,15,25,30'
     
     bstRootNode.remove(15);
 
-    expect(bstRootNode.to_s).to be '5,10,25,30'
+    expect(bstRootNode.to_s).to eq '5,10,25,30'
     
     bstRootNode.remove(10);
 
-    expect(bstRootNode.to_s).to be '5,25,30'
-    expect(bstRootNode.value).to be 25
+    expect(bstRootNode.to_s).to eq '5,25,30'
+    expect(bstRootNode.value).to eq 25
     
     bstRootNode.remove(25);
 
-    expect(bstRootNode.to_s).to be '5,30'
+    expect(bstRootNode.to_s).to eq '5,30'
     
     bstRootNode.remove(5);
 
-    expect(bstRootNode.to_s).to be '30'
+    expect(bstRootNode.to_s).to eq '30'
   end
 
     
   it 'should remove node with no parent' do
     bstRootNode = BinarySearchTreeNode.new()
-    expect(bstRootNode.to_s).to be ''
+    expect(bstRootNode.to_s).to eq ''
     
     bstRootNode.insert(1);
 
     bstRootNode.insert(2);
 
-    expect(bstRootNode.to_s).to be '1,2'
+    expect(bstRootNode.to_s).to eq '1,2'
     
     bstRootNode.remove(1);
 
-    expect(bstRootNode.to_s).to be '2'
+    expect(bstRootNode.to_s).to eq '2'
     
     bstRootNode.remove(2);
 
-    expect(bstRootNode.to_s).to be ''
+    expect(bstRootNode.to_s).to eq ''
   end
 
     
@@ -305,15 +305,15 @@ describe BinarySearchTreeNode do
     bstNode.insert(obj1);
 
     
-    expect(bstNode.to_s).to be 'obj1,obj2'
-    expect(bstNode.contains(obj1)).to be true
-    expect(bstNode.contains(obj3)).to be false
+    expect(bstNode.to_s).to eq 'obj1,obj2'
+    expect(bstNode.contains(obj1)).to eq true
+    expect(bstNode.contains(obj3)).to eq false
     
     bstNode.insert(obj3);
 
     
-    expect(bstNode.to_s).to be 'obj1,obj2,obj3'
-    expect(bstNode.contains(obj3)).to be true
+    expect(bstNode.to_s).to eq 'obj1,obj2,obj3'
+    expect(bstNode.contains(obj3)).to eq true
     
     expect(bstNode.findMin().value).to eq obj1
   end

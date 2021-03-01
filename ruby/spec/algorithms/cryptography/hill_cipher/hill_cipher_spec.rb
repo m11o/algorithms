@@ -66,9 +66,9 @@ describe hillCipher do
 
     
   it 'should encrypt passed message using Hill Cipher' do
-    expect(hillCipherEncrypt('ACT', 'GYBNQKURP')).to be 'POH'
-    expect(hillCipherEncrypt('CAT', 'GYBNQKURP')).to be 'FIN'
-    expect(hillCipherEncrypt('GFG', 'HILLMAGIC')).to be 'SWK'
+    expect(hillCipherEncrypt('ACT', 'GYBNQKURP')).to eq 'POH'
+    expect(hillCipherEncrypt('CAT', 'GYBNQKURP')).to eq 'FIN'
+    expect(hillCipherEncrypt('GFG', 'HILLMAGIC')).to eq 'SWK'
   end
 
 end

@@ -88,19 +88,19 @@ describe eulerianPath do
     
     eulerianPathSet = eulerianPath(graph)
     
-    expect(eulerianPathSet.length).to be graphEdgesCount + 1
+    expect(eulerianPathSet.length).to eq graphEdgesCount + 1
     
-    expect(eulerianPathSet[0].getKey()).to be vertexA.getKey()
-    expect(eulerianPathSet[1].getKey()).to be vertexB.getKey()
-    expect(eulerianPathSet[2].getKey()).to be vertexE.getKey()
-    expect(eulerianPathSet[3].getKey()).to be vertexB.getKey()
-    expect(eulerianPathSet[4].getKey()).to be vertexC.getKey()
-    expect(eulerianPathSet[5].getKey()).to be vertexD.getKey()
-    expect(eulerianPathSet[6].getKey()).to be vertexE.getKey()
-    expect(eulerianPathSet[7].getKey()).to be vertexA.getKey()
-    expect(eulerianPathSet[8].getKey()).to be vertexF.getKey()
-    expect(eulerianPathSet[9].getKey()).to be vertexG.getKey()
-    expect(eulerianPathSet[10].getKey()).to be vertexA.getKey()
+    expect(eulerianPathSet[0].getKey()).to eq vertexA.getKey()
+    expect(eulerianPathSet[1].getKey()).to eq vertexB.getKey()
+    expect(eulerianPathSet[2].getKey()).to eq vertexE.getKey()
+    expect(eulerianPathSet[3].getKey()).to eq vertexB.getKey()
+    expect(eulerianPathSet[4].getKey()).to eq vertexC.getKey()
+    expect(eulerianPathSet[5].getKey()).to eq vertexD.getKey()
+    expect(eulerianPathSet[6].getKey()).to eq vertexE.getKey()
+    expect(eulerianPathSet[7].getKey()).to eq vertexA.getKey()
+    expect(eulerianPathSet[8].getKey()).to eq vertexF.getKey()
+    expect(eulerianPathSet[9].getKey()).to eq vertexG.getKey()
+    expect(eulerianPathSet[10].getKey()).to eq vertexA.getKey()
   end
 
     
@@ -151,18 +151,18 @@ describe eulerianPath do
     
     eulerianPathSet = eulerianPath(graph)
     
-    expect(eulerianPathSet.length).to be graphEdgesCount + 1
+    expect(eulerianPathSet.length).to eq graphEdgesCount + 1
     
-    expect(eulerianPathSet[0].getKey()).to be vertexC.getKey()
-    expect(eulerianPathSet[1].getKey()).to be vertexA.getKey()
-    expect(eulerianPathSet[2].getKey()).to be vertexB.getKey()
-    expect(eulerianPathSet[3].getKey()).to be vertexD.getKey()
-    expect(eulerianPathSet[4].getKey()).to be vertexC.getKey()
-    expect(eulerianPathSet[5].getKey()).to be vertexE.getKey()
-    expect(eulerianPathSet[6].getKey()).to be vertexF.getKey()
-    expect(eulerianPathSet[7].getKey()).to be vertexH.getKey()
-    expect(eulerianPathSet[8].getKey()).to be vertexG.getKey()
-    expect(eulerianPathSet[9].getKey()).to be vertexF.getKey()
+    expect(eulerianPathSet[0].getKey()).to eq vertexC.getKey()
+    expect(eulerianPathSet[1].getKey()).to eq vertexA.getKey()
+    expect(eulerianPathSet[2].getKey()).to eq vertexB.getKey()
+    expect(eulerianPathSet[3].getKey()).to eq vertexD.getKey()
+    expect(eulerianPathSet[4].getKey()).to eq vertexC.getKey()
+    expect(eulerianPathSet[5].getKey()).to eq vertexE.getKey()
+    expect(eulerianPathSet[6].getKey()).to eq vertexF.getKey()
+    expect(eulerianPathSet[7].getKey()).to eq vertexH.getKey()
+    expect(eulerianPathSet[8].getKey()).to eq vertexG.getKey()
+    expect(eulerianPathSet[9].getKey()).to eq vertexF.getKey()
   end
 
 end

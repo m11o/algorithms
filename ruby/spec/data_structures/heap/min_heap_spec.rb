@@ -4,7 +4,7 @@ describe MinHeap do
     minHeap = MinHeap.new()
     
     expect(minHeap.peek()).to eq nil
-    expect(minHeap.isEmpty()).to be true
+    expect(minHeap.isEmpty()).to eq true
   end
 
     
@@ -13,38 +13,38 @@ describe MinHeap do
     
     minHeap.add(5);
 
-    expect(minHeap.isEmpty()).to be false
-    expect(minHeap.peek()).to be 5
-    expect(minHeap.to_s).to be '5'
+    expect(minHeap.isEmpty()).to eq false
+    expect(minHeap.peek()).to eq 5
+    expect(minHeap.to_s).to eq '5'
     
     minHeap.add(3);
 
-    expect(minHeap.peek()).to be 3
-    expect(minHeap.to_s).to be '3,5'
+    expect(minHeap.peek()).to eq 3
+    expect(minHeap.to_s).to eq '3,5'
     
     minHeap.add(10);
 
-    expect(minHeap.peek()).to be 3
-    expect(minHeap.to_s).to be '3,5,10'
+    expect(minHeap.peek()).to eq 3
+    expect(minHeap.to_s).to eq '3,5,10'
     
     minHeap.add(1);
 
-    expect(minHeap.peek()).to be 1
-    expect(minHeap.to_s).to be '1,3,10,5'
+    expect(minHeap.peek()).to eq 1
+    expect(minHeap.to_s).to eq '1,3,10,5'
     
     minHeap.add(1);
 
-    expect(minHeap.peek()).to be 1
-    expect(minHeap.to_s).to be '1,1,10,5,3'
+    expect(minHeap.peek()).to eq 1
+    expect(minHeap.to_s).to eq '1,1,10,5,3'
     
-    expect(minHeap.poll()).to be 1
-    expect(minHeap.to_s).to be '1,3,10,5'
+    expect(minHeap.poll()).to eq 1
+    expect(minHeap.to_s).to eq '1,3,10,5'
     
-    expect(minHeap.poll()).to be 1
-    expect(minHeap.to_s).to be '3,5,10'
+    expect(minHeap.poll()).to eq 1
+    expect(minHeap.to_s).to eq '3,5,10'
     
-    expect(minHeap.poll()).to be 3
-    expect(minHeap.to_s).to be '5,10'
+    expect(minHeap.poll()).to eq 3
+    expect(minHeap.to_s).to eq '5,10'
   end
 
     
@@ -62,25 +62,25 @@ describe MinHeap do
     minHeap.add(1);
 
     
-    expect(minHeap.to_s).to be '1,3,10,11,5'
+    expect(minHeap.to_s).to eq '1,3,10,11,5'
     
-    expect(minHeap.poll()).to be 1
-    expect(minHeap.to_s).to be '3,5,10,11'
+    expect(minHeap.poll()).to eq 1
+    expect(minHeap.to_s).to eq '3,5,10,11'
     
-    expect(minHeap.poll()).to be 3
-    expect(minHeap.to_s).to be '5,11,10'
+    expect(minHeap.poll()).to eq 3
+    expect(minHeap.to_s).to eq '5,11,10'
     
-    expect(minHeap.poll()).to be 5
-    expect(minHeap.to_s).to be '10,11'
+    expect(minHeap.poll()).to eq 5
+    expect(minHeap.to_s).to eq '10,11'
     
-    expect(minHeap.poll()).to be 10
-    expect(minHeap.to_s).to be '11'
+    expect(minHeap.poll()).to eq 10
+    expect(minHeap.to_s).to eq '11'
     
-    expect(minHeap.poll()).to be 11
-    expect(minHeap.to_s).to be ''
+    expect(minHeap.poll()).to eq 11
+    expect(minHeap.to_s).to eq ''
     
     expect(minHeap.poll()).to eq nil
-    expect(minHeap.to_s).to be ''
+    expect(minHeap.to_s).to eq ''
   end
 
     
@@ -94,14 +94,14 @@ describe MinHeap do
     minHeap.add(10);
 
     
-    expect(minHeap.to_s).to be '3,12,10'
+    expect(minHeap.to_s).to eq '3,12,10'
     
     minHeap.add(11);
 
-    expect(minHeap.to_s).to be '3,11,10,12'
+    expect(minHeap.to_s).to eq '3,11,10,12'
     
-    expect(minHeap.poll()).to be 3
-    expect(minHeap.to_s).to be '10,11,12'
+    expect(minHeap.poll()).to eq 3
+    expect(minHeap.to_s).to eq '10,11,12'
   end
 
     
@@ -119,7 +119,7 @@ describe MinHeap do
     minHeap.add(11);
 
     
-    expect(minHeap.to_s).to be '3,11,10,12,11'
+    expect(minHeap.to_s).to eq '3,11,10,12,11'
     
     expect(minHeap.find(5)).to eq []
     expect(minHeap.find(3)).to eq [0]
@@ -141,7 +141,7 @@ describe MinHeap do
     minHeap.add(11);
 
     
-    expect(minHeap.to_s).to be '3,11,10,12,11'
+    expect(minHeap.to_s).to eq '3,11,10,12,11'
     
     expect(minHeap.remove(3).to eq '10,11,11,12'
     expect(minHeap.remove(3).peek()).to eq 10
@@ -174,7 +174,7 @@ describe MinHeap do
     minHeap.add(1);
 
     
-    expect(minHeap.to_s).to be '1,2,4,6,3,5,6,10,8,7'
+    expect(minHeap.to_s).to eq '1,2,4,6,3,5,6,10,8,7'
     expect(minHeap.remove(8).to eq '1,2,4,6,3,5,6,10,7'
     expect(minHeap.remove(7).to eq '1,2,4,6,3,5,6,10'
     expect(minHeap.remove(1).to eq '2,3,4,6,10,5,6'
@@ -198,7 +198,7 @@ describe MinHeap do
     minHeap.add('a');
 
     
-    expect(minHeap.to_s).to be 'a,bb,ccc,dddd'
+    expect(minHeap.to_s).to eq 'a,bb,ccc,dddd'
     
     comparator = Comparator.new((a, b)
     if (a.length === b.length) {
@@ -215,7 +215,7 @@ describe MinHeap do
     
     minHeap.remove('hey', comparator);
 
-    expect(minHeap.to_s).to be 'a,bb,dddd'
+    expect(minHeap.to_s).to eq 'a,bb,dddd'
   end
 
     
@@ -241,15 +241,15 @@ describe MinHeap do
     minHeap.add(9);
 
     
-    expect(minHeap.to_s).to be '1,2,3,4,5,6,7,8,9'
+    expect(minHeap.to_s).to eq '1,2,3,4,5,6,7,8,9'
     
     minHeap.remove(2);
 
-    expect(minHeap.to_s).to be '1,4,3,8,5,6,7,9'
+    expect(minHeap.to_s).to eq '1,4,3,8,5,6,7,9'
     
     minHeap.remove(4);
 
-    expect(minHeap.to_s).to be '1,5,3,8,9,6,7'
+    expect(minHeap.to_s).to eq '1,5,3,8,9,6,7'
   end
 
 end

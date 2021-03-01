@@ -19,9 +19,9 @@ describe BinaryTreeNode do
     .setRight(rightNode);
 
     
-    expect(rootNode.value).to be 2
-    expect(rootNode.left.value).to be 1
-    expect(rootNode.right.value).to be 3
+    expect(rootNode.value).to eq 2
+    expect(rootNode.left.value).to eq 1
+    expect(rootNode.right.value).to eq 3
   end
 
     
@@ -38,8 +38,8 @@ describe BinaryTreeNode do
 
     
     expect(rootNode.parent).to eq nil
-    expect(rootNode.left.parent.value).to be 2
-    expect(rootNode.right.parent.value).to be 2
+    expect(rootNode.left.parent.value).to eq 2
+    expect(rootNode.right.parent.value).to eq 2
     expect(rootNode.right.parent).to eq rootNode
   end
 
@@ -58,7 +58,7 @@ describe BinaryTreeNode do
     
     expect(rootNode.traverseInOrder()).to eq [1, 2, 3]
     
-    expect(rootNode.to_s).to be '1,2,3'
+    expect(rootNode.to_s).to eq '1,2,3'
   end
 
     
@@ -76,13 +76,13 @@ describe BinaryTreeNode do
     
     expect(rootNode.traverseInOrder()).to eq [1, 2, 3]
     
-    expect(rootNode.removeChild(rootNode.left)).to be true
+    expect(rootNode.removeChild(rootNode.left)).to eq true
     expect(rootNode.traverseInOrder()).to eq [2, 3]
     
-    expect(rootNode.removeChild(rootNode.right)).to be true
+    expect(rootNode.removeChild(rootNode.right)).to eq true
     expect(rootNode.traverseInOrder()).to eq [2]
     
-    expect(rootNode.removeChild(rootNode.right)).to be false
+    expect(rootNode.removeChild(rootNode.right)).to eq false
     expect(rootNode.traverseInOrder()).to eq [2]
   end
 
@@ -107,21 +107,21 @@ describe BinaryTreeNode do
     
     expect(rootNode.traverseInOrder()).to eq [1, 2, 3, 5]
     
-    expect(rootNode.replaceChild(rootNode.right, rootNode.right.right)).to be true
-    expect(rootNode.right.value).to be 5
+    expect(rootNode.replaceChild(rootNode.right, rootNode.right.right)).to eq true
+    expect(rootNode.right.value).to eq 5
     expect(rootNode.right.right).to eq nil
     expect(rootNode.traverseInOrder()).to eq [1, 2, 5]
     
-    expect(rootNode.replaceChild(rootNode.right, rootNode.right.right)).to be false
+    expect(rootNode.replaceChild(rootNode.right, rootNode.right.right)).to eq false
     expect(rootNode.traverseInOrder()).to eq [1, 2, 5]
     
-    expect(rootNode.replaceChild(rootNode.right, replacementNode)).to be true
+    expect(rootNode.replaceChild(rootNode.right, replacementNode)).to eq true
     expect(rootNode.traverseInOrder()).to eq [1, 2, 5]
     
-    expect(rootNode.replaceChild(rootNode.left, replacementNode)).to be true
+    expect(rootNode.replaceChild(rootNode.left, replacementNode)).to eq true
     expect(rootNode.traverseInOrder()).to eq [5, 2, 5]
     
-    expect(rootNode.replaceChild(new BinaryTreeNode(), new BinaryTreeNode())).to be false
+    expect(rootNode.replaceChild(new BinaryTreeNode(), new BinaryTreeNode())).to eq false
   end
 
     
@@ -133,8 +133,8 @@ describe BinaryTreeNode do
     grandRight = BinaryTreeNode.new(6)
     grandGrandLeft = BinaryTreeNode.new(7)
     
-    expect(root.height).to be 0
-    expect(root.balanceFactor).to be 0
+    expect(root.height).to eq 0
+    expect(root.balanceFactor).to eq 0
     
     root
 
@@ -143,9 +143,9 @@ describe BinaryTreeNode do
     .setRight(right);
 
     
-    expect(root.height).to be 1
-    expect(left.height).to be 0
-    expect(root.balanceFactor).to be 0
+    expect(root.height).to eq 1
+    expect(left.height).to eq 0
+    expect(root.balanceFactor).to eq 0
     
     left
 
@@ -154,21 +154,21 @@ describe BinaryTreeNode do
     .setRight(grandRight);
 
     
-    expect(root.height).to be 2
-    expect(left.height).to be 1
-    expect(grandLeft.height).to be 0
-    expect(grandRight.height).to be 0
-    expect(root.balanceFactor).to be 1
+    expect(root.height).to eq 2
+    expect(left.height).to eq 1
+    expect(grandLeft.height).to eq 0
+    expect(grandRight.height).to eq 0
+    expect(root.balanceFactor).to eq 1
     
     grandLeft.setLeft(grandGrandLeft);
 
     
-    expect(root.height).to be 3
-    expect(left.height).to be 2
-    expect(grandLeft.height).to be 1
-    expect(grandRight.height).to be 0
-    expect(grandGrandLeft.height).to be 0
-    expect(root.balanceFactor).to be 2
+    expect(root.height).to eq 3
+    expect(left.height).to eq 2
+    expect(grandLeft.height).to eq 1
+    expect(grandRight.height).to eq 0
+    expect(grandGrandLeft.height).to eq 0
+    expect(root.balanceFactor).to eq 2
   end
 
     
@@ -179,9 +179,9 @@ describe BinaryTreeNode do
     root.setRight(right);
 
     
-    expect(root.height).to be 1
-    expect(right.height).to be 0
-    expect(root.balanceFactor).to be -1
+    expect(root.height).to eq 1
+    expect(right.height).to eq 0
+    expect(root.balanceFactor).to eq -1
   end
 
     
@@ -195,8 +195,8 @@ describe BinaryTreeNode do
     root.setRight(right);
 
     
-    expect(root.left.value).to be 1
-    expect(root.right.value).to be 3
+    expect(root.left.value).to eq 1
+    expect(root.right.value).to eq 3
     
     root.setLeft(null);
 
@@ -229,8 +229,8 @@ describe BinaryTreeNode do
     expect(node2.value).to eq obj2
     expect(node1.left).to eq nil
     
-    expect(node1.to_s).to be 'object_1'
-    expect(node2.to_s).to be '[object Object]'
+    expect(node1.to_s).to eq 'object_1'
+    expect(node2.to_s).to eq '[object Object]'
   end
 
     
@@ -243,8 +243,8 @@ describe BinaryTreeNode do
     blackNode.meta.set('color', 'black');
 
     
-    expect(redNode.meta.get('color')).to be 'red'
-    expect(blackNode.meta.get('color')).to be 'black'
+    expect(redNode.meta.get('color')).to eq 'red'
+    expect(blackNode.meta.get('color')).to eq 'black'
   end
 
     
@@ -319,12 +319,12 @@ describe BinaryTreeNode do
   it 'should be possible to set node values' do
     node = BinaryTreeNode.new('initial_value')
     
-    expect(node.value).to be 'initial_value'
+    expect(node.value).to eq 'initial_value'
     
     node.setValue('new_value');
 
     
-    expect(node.value).to be 'new_value'
+    expect(node.value).to eq 'new_value'
   end
 
     
@@ -340,7 +340,7 @@ describe BinaryTreeNode do
     .setRight(right);
 
     
-    expect(root.to_s).to be 'left,root,right'
+    expect(root.to_s).to eq 'left,root,right'
     
     newRoot = BinaryTreeNode.new('new_root')
     newLeft = BinaryTreeNode.new('new_left')
@@ -353,13 +353,13 @@ describe BinaryTreeNode do
     .setRight(newRight);
 
     
-    expect(newRoot.to_s).to be 'new_left,new_root,new_right'
+    expect(newRoot.to_s).to eq 'new_left,new_root,new_right'
     
     BinaryTreeNode.copyNode(root, newRoot);
 
     
-    expect(root.to_s).to be 'left,root,right'
-    expect(newRoot.to_s).to be 'left,root,right'
+    expect(root.to_s).to eq 'left,root,right'
+    expect(newRoot.to_s).to eq 'left,root,right'
   end
 
 end

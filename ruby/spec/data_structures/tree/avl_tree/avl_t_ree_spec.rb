@@ -10,24 +10,24 @@ describe AvlTree do
     tree.insert(2);
 
     
-    expect(tree.to_s).to be '2,3,4'
-    expect(tree.root.value).to be 3
-    expect(tree.root.height).to be 1
+    expect(tree.to_s).to eq '2,3,4'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.height).to eq 1
     
     tree.insert(1);
 
     
-    expect(tree.to_s).to be '1,2,3,4'
-    expect(tree.root.value).to be 3
-    expect(tree.root.height).to be 2
+    expect(tree.to_s).to eq '1,2,3,4'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.height).to eq 2
     
     tree.insert(0);
 
     
-    expect(tree.to_s).to be '0,1,2,3,4'
-    expect(tree.root.value).to be 3
-    expect(tree.root.left.value).to be 1
-    expect(tree.root.height).to be 2
+    expect(tree.to_s).to eq '0,1,2,3,4'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.left.value).to eq 1
+    expect(tree.root.height).to eq 2
   end
 
     
@@ -43,21 +43,21 @@ describe AvlTree do
     tree.insert(10);
 
     
-    expect(tree.root.value).to be 30
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '10,20,30,40'
+    expect(tree.root.value).to eq 30
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '10,20,30,40'
     
     tree.insert(25);
 
-    expect(tree.root.value).to be 30
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '10,20,25,30,40'
+    expect(tree.root.value).to eq 30
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '10,20,25,30,40'
     
     tree.insert(5);
 
-    expect(tree.root.value).to be 20
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '5,10,20,25,30,40'
+    expect(tree.root.value).to eq 20
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '5,10,20,25,30,40'
   end
 
     
@@ -71,24 +71,24 @@ describe AvlTree do
     tree.insert(4);
 
     
-    expect(tree.to_s).to be '2,3,4'
-    expect(tree.root.value).to be 3
-    expect(tree.root.height).to be 1
+    expect(tree.to_s).to eq '2,3,4'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.height).to eq 1
     
     tree.insert(5);
 
     
-    expect(tree.to_s).to be '2,3,4,5'
-    expect(tree.root.value).to be 3
-    expect(tree.root.height).to be 2
+    expect(tree.to_s).to eq '2,3,4,5'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.height).to eq 2
     
     tree.insert(6);
 
     
-    expect(tree.to_s).to be '2,3,4,5,6'
-    expect(tree.root.value).to be 3
-    expect(tree.root.right.value).to be 5
-    expect(tree.root.height).to be 2
+    expect(tree.to_s).to eq '2,3,4,5,6'
+    expect(tree.root.value).to eq 3
+    expect(tree.root.right.value).to eq 5
+    expect(tree.root.height).to eq 2
   end
 
     
@@ -104,21 +104,21 @@ describe AvlTree do
     tree.insert(50);
 
     
-    expect(tree.root.value).to be 30
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '20,30,40,50'
+    expect(tree.root.value).to eq 30
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '20,30,40,50'
     
     tree.insert(35);
 
-    expect(tree.root.value).to be 30
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '20,30,35,40,50'
+    expect(tree.root.value).to eq 30
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '20,30,35,40,50'
     
     tree.insert(55);
 
-    expect(tree.root.value).to be 40
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '20,30,35,40,50,55'
+    expect(tree.root.value).to eq 40
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '20,30,35,40,50,55'
   end
 
     
@@ -132,9 +132,9 @@ describe AvlTree do
     tree.insert(25);
 
     
-    expect(tree.root.height).to be 1
-    expect(tree.root.value).to be 25
-    expect(tree.to_s).to be '20,25,30'
+    expect(tree.root.height).to eq 1
+    expect(tree.root.value).to eq 25
+    expect(tree.to_s).to eq '20,25,30'
   end
 
     
@@ -148,9 +148,9 @@ describe AvlTree do
     tree.insert(35);
 
     
-    expect(tree.root.height).to be 1
-    expect(tree.root.value).to be 35
-    expect(tree.to_s).to be '30,35,40'
+    expect(tree.root.height).to eq 1
+    expect(tree.root.value).to eq 35
+    expect(tree.to_s).to eq '30,35,40'
   end
 
     
@@ -166,44 +166,44 @@ describe AvlTree do
     tree.insert(3);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 1
-    expect(tree.to_s).to be '1,2,3'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 1
+    expect(tree.to_s).to eq '1,2,3'
     
     tree.insert(6);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '1,2,3,6'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '1,2,3,6'
     
     tree.insert(15);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '1,2,3,6,15'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '1,2,3,6,15'
     
     tree.insert(-2);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '-2,1,2,3,6,15'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '-2,1,2,3,6,15'
     
     tree.insert(-5);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '-5,-2,1,2,3,6,15'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '-5,-2,1,2,3,6,15'
     
     tree.insert(-8);
 
     
-    expect(tree.root.value).to be 2
-    expect(tree.root.height).to be 3
-    expect(tree.to_s).to be '-8,-5,-2,1,2,3,6,15'
+    expect(tree.root.value).to eq 2
+    expect(tree.root.height).to eq 3
+    expect(tree.to_s).to eq '-8,-5,-2,1,2,3,6,15'
   end
 
     
@@ -225,16 +225,16 @@ describe AvlTree do
     tree.insert(6);
 
     
-    expect(tree.root.value).to be 18
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '6,9,18,21,22,43'
+    expect(tree.root.value).to eq 18
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '6,9,18,21,22,43'
     
     tree.insert(8);
 
     
-    expect(tree.root.value).to be 18
-    expect(tree.root.height).to be 2
-    expect(tree.to_s).to be '6,8,9,18,21,22,43'
+    expect(tree.root.value).to eq 18
+    expect(tree.root.height).to eq 2
+    expect(tree.to_s).to eq '6,8,9,18,21,22,43'
   end
 
     
@@ -260,14 +260,14 @@ describe AvlTree do
     tree.insert(12);
 
     
-    expect(tree.to_s).to be '5,10,12,15,18,30,35,40,45'
-    expect(tree.root.height).to be 3
+    expect(tree.to_s).to eq '5,10,12,15,18,30,35,40,45'
+    expect(tree.root.height).to eq 3
     
     tree.insert(11);
 
     
-    expect(tree.to_s).to be '5,10,11,12,15,18,30,35,40,45'
-    expect(tree.root.height).to be 3
+    expect(tree.to_s).to eq '5,10,11,12,15,18,30,35,40,45'
+    expect(tree.root.height).to eq 3
   end
 
     
@@ -293,14 +293,14 @@ describe AvlTree do
     tree.insert(47);
 
     
-    expect(tree.to_s).to be '10,15,18,30,35,40,42,45,47'
-    expect(tree.root.height).to be 3
+    expect(tree.to_s).to eq '10,15,18,30,35,40,42,45,47'
+    expect(tree.root.height).to eq 3
     
     tree.insert(43);
 
     
-    expect(tree.to_s).to be '10,15,18,30,35,40,42,43,45,47'
-    expect(tree.root.height).to be 3
+    expect(tree.to_s).to eq '10,15,18,30,35,40,42,43,45,47'
+    expect(tree.root.height).to eq 3
   end
 
     
@@ -316,16 +316,16 @@ describe AvlTree do
     tree.insert(40);
 
     
-    expect(tree.to_s).to be '10,20,30,40'
+    expect(tree.to_s).to eq '10,20,30,40'
     
     tree.remove(10);
 
     
-    expect(tree.to_s).to be '20,30,40'
-    expect(tree.root.value).to be 30
-    expect(tree.root.left.value).to be 20
-    expect(tree.root.right.value).to be 40
-    expect(tree.root.balanceFactor).to be 0
+    expect(tree.to_s).to eq '20,30,40'
+    expect(tree.root.value).to eq 30
+    expect(tree.root.left.value).to eq 20
+    expect(tree.root.right.value).to eq 40
+    expect(tree.root.balanceFactor).to eq 0
   end
 
     
@@ -341,16 +341,16 @@ describe AvlTree do
     tree.insert(5);
 
     
-    expect(tree.to_s).to be '5,10,20,30'
+    expect(tree.to_s).to eq '5,10,20,30'
     
     tree.remove(30);
 
     
-    expect(tree.to_s).to be '5,10,20'
-    expect(tree.root.value).to be 10
-    expect(tree.root.left.value).to be 5
-    expect(tree.root.right.value).to be 20
-    expect(tree.root.balanceFactor).to be 0
+    expect(tree.to_s).to eq '5,10,20'
+    expect(tree.root.value).to eq 10
+    expect(tree.root.left.value).to eq 5
+    expect(tree.root.right.value).to eq 20
+    expect(tree.root.balanceFactor).to eq 0
   end
 
     
@@ -376,26 +376,26 @@ describe AvlTree do
     tree.insert(9);
 
     
-    expect(tree.to_s).to be '1,2,3,4,5,6,7,8,9'
-    expect(tree.root.value).to be 4
-    expect(tree.root.height).to be 3
-    expect(tree.root.balanceFactor).to be -1
+    expect(tree.to_s).to eq '1,2,3,4,5,6,7,8,9'
+    expect(tree.root.value).to eq 4
+    expect(tree.root.height).to eq 3
+    expect(tree.root.balanceFactor).to eq -1
     
     tree.remove(8);
 
     
-    expect(tree.root.value).to be 4
-    expect(tree.root.balanceFactor).to be -1
+    expect(tree.root.value).to eq 4
+    expect(tree.root.balanceFactor).to eq -1
     
     tree.remove(9);
 
     
-    expect(tree.contains(8)).to be 
-    expect(tree.contains(9)).to be 
-    expect(tree.to_s).to be '1,2,3,4,5,6,7'
-    expect(tree.root.value).to be 4
-    expect(tree.root.height).to be 2
-    expect(tree.root.balanceFactor).to be 0
+    expect(tree.contains(8)).to eq 
+    expect(tree.contains(9)).to eq 
+    expect(tree.to_s).to eq '1,2,3,4,5,6,7'
+    expect(tree.root.value).to eq 4
+    expect(tree.root.height).to eq 2
+    expect(tree.root.balanceFactor).to eq 0
   end
 
 end

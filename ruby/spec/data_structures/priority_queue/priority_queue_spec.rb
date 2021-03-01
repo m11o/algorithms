@@ -11,15 +11,15 @@ describe PriorityQueue do
     
     priorityQueue.add(10, 1);
 
-    expect(priorityQueue.peek()).to be 10
+    expect(priorityQueue.peek()).to eq 10
     
     priorityQueue.add(5, 2);
 
-    expect(priorityQueue.peek()).to be 10
+    expect(priorityQueue.peek()).to eq 10
     
     priorityQueue.add(100, 0);
 
-    expect(priorityQueue.peek()).to be 100
+    expect(priorityQueue.peek()).to eq 100
   end
 
     
@@ -32,15 +32,15 @@ describe PriorityQueue do
     
     priorityQueue.add(user1, 1);
 
-    expect(priorityQueue.peek()).to be user1
+    expect(priorityQueue.peek()).to eq user1
     
     priorityQueue.add(user2, 2);
 
-    expect(priorityQueue.peek()).to be user1
+    expect(priorityQueue.peek()).to eq user1
     
     priorityQueue.add(user3, 0);
 
-    expect(priorityQueue.peek()).to be user3
+    expect(priorityQueue.peek()).to eq user3
   end
 
     
@@ -56,10 +56,10 @@ describe PriorityQueue do
     priorityQueue.add(200, 0);
 
     
-    expect(priorityQueue.poll()).to be 100
-    expect(priorityQueue.poll()).to be 200
-    expect(priorityQueue.poll()).to be 10
-    expect(priorityQueue.poll()).to be 5
+    expect(priorityQueue.poll()).to eq 100
+    expect(priorityQueue.poll()).to eq 200
+    expect(priorityQueue.poll()).to eq 10
+    expect(priorityQueue.poll()).to eq 5
   end
 
     
@@ -75,17 +75,17 @@ describe PriorityQueue do
     priorityQueue.add(200, 0);
 
     
-    expect(priorityQueue.peek()).to be 100
+    expect(priorityQueue.peek()).to eq 100
     
     priorityQueue.changePriority(100, 10);
 
     priorityQueue.changePriority(10, 20);
 
     
-    expect(priorityQueue.poll()).to be 200
-    expect(priorityQueue.poll()).to be 5
-    expect(priorityQueue.poll()).to be 100
-    expect(priorityQueue.poll()).to be 10
+    expect(priorityQueue.poll()).to eq 200
+    expect(priorityQueue.poll()).to eq 5
+    expect(priorityQueue.poll()).to eq 100
+    expect(priorityQueue.poll()).to eq 10
   end
 
     
@@ -101,17 +101,17 @@ describe PriorityQueue do
     priorityQueue.add(200, 0);
 
     
-    expect(priorityQueue.peek()).to be 100
+    expect(priorityQueue.peek()).to eq 100
     
     priorityQueue.changePriority(200, 10);
 
     priorityQueue.changePriority(10, 20);
 
     
-    expect(priorityQueue.poll()).to be 100
-    expect(priorityQueue.poll()).to be 5
-    expect(priorityQueue.poll()).to be 200
-    expect(priorityQueue.poll()).to be 10
+    expect(priorityQueue.poll()).to eq 100
+    expect(priorityQueue.poll()).to eq 5
+    expect(priorityQueue.poll()).to eq 200
+    expect(priorityQueue.poll()).to eq 10
   end
 
     
@@ -135,11 +135,11 @@ describe PriorityQueue do
     priorityQueue.add(15, 15);
 
     
-    expect(priorityQueue.poll()).to be 100
-    expect(priorityQueue.poll()).to be 5
-    expect(priorityQueue.poll()).to be 200
-    expect(priorityQueue.poll()).to be 15
-    expect(priorityQueue.poll()).to be 10
+    expect(priorityQueue.poll()).to eq 100
+    expect(priorityQueue.poll()).to eq 5
+    expect(priorityQueue.poll()).to eq 200
+    expect(priorityQueue.poll()).to eq 15
+    expect(priorityQueue.poll()).to eq 10
   end
 
     
@@ -157,8 +157,8 @@ describe PriorityQueue do
     priorityQueue.add(15, 15);
 
     
-    expect(priorityQueue.hasValue(70)).to be false
-    expect(priorityQueue.hasValue(15)).to be true
+    expect(priorityQueue.hasValue(70)).to eq false
+    expect(priorityQueue.hasValue(15)).to eq true
   end
 
 end

@@ -17,7 +17,7 @@ describe Queue do
     queue.enqueue(2);
 
     
-    expect(queue.to_s).to be '1,2'
+    expect(queue.to_s).to eq '1,2'
   end
 
     
@@ -31,9 +31,9 @@ describe Queue do
     
     stringifier = (value) => `${value.key}:${value.value}`
     
-    expect(queue.toString(stringifier)).to be 'key1:test1,key2:test2'
-    expect(queue.dequeue().value).to be 'test1'
-    expect(queue.dequeue().value).to be 'test2'
+    expect(queue.toString(stringifier)).to eq 'key1:test1,key2:test2'
+    expect(queue.dequeue().value).to eq 'test1'
+    expect(queue.dequeue().value).to eq 'test2'
   end
 
     
@@ -47,20 +47,20 @@ describe Queue do
     queue.enqueue(2);
 
     
-    expect(queue.peek()).to be 1
-    expect(queue.peek()).to be 1
+    expect(queue.peek()).to eq 1
+    expect(queue.peek()).to eq 1
   end
 
     
   it 'should check if queue is empty' do
     queue = Queue.new()
     
-    expect(queue.isEmpty()).to be true
+    expect(queue.isEmpty()).to eq true
     
     queue.enqueue(1);
 
     
-    expect(queue.isEmpty()).to be false
+    expect(queue.isEmpty()).to eq false
   end
 
     
@@ -72,10 +72,10 @@ describe Queue do
     queue.enqueue(2);
 
     
-    expect(queue.dequeue()).to be 1
-    expect(queue.dequeue()).to be 2
+    expect(queue.dequeue()).to eq 1
+    expect(queue.dequeue()).to eq 2
     expect(queue.dequeue()).to eq nil
-    expect(queue.isEmpty()).to be true
+    expect(queue.isEmpty()).to eq true
   end
 
 end

@@ -89,11 +89,11 @@ describe combineWithoutRepetitions do
     r = combinationSlotsNumber
     expectedNumberOfCombinations = factorial(n) / (factorial(r) * factorial(n - r))
     
-    expect(combinations.length).to be expectedNumberOfCombinations
+    expect(combinations.length).to eq expectedNumberOfCombinations
     
     // This one is just to see one of the way of Pascal's triangle application.
 
-    expect(combinations.length).to be pascalTriangle(n)[r]
+    expect(combinations.length).to eq pascalTriangle(n)[r]
   end
 
 end

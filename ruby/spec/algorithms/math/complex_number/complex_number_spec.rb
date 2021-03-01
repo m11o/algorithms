@@ -5,12 +5,12 @@ describe ComplexNumber do
 
     complexNumber = ComplexNumber.new({ re: 1, im: 2 })
     
-    expect(complexNumber.re).to be 1
-    expect(complexNumber.im).to be 2
+    expect(complexNumber.re).to eq 1
+    expect(complexNumber.im).to eq 2
     
     defaultComplexNumber = ComplexNumber.new()
-    expect(defaultComplexNumber.re).to be 0
-    expect(defaultComplexNumber.im).to be 0
+    expect(defaultComplexNumber.re).to eq 0
+    expect(defaultComplexNumber.im).to eq 0
   end
 
     
@@ -25,11 +25,11 @@ describe ComplexNumber do
     complexNumber3 = complexNumber1.add(complexNumber2)
     complexNumber4 = complexNumber2.add(complexNumber1)
     
-    expect(complexNumber3.re).to be 1 + 3
-    expect(complexNumber3.im).to be 2 + 8
+    expect(complexNumber3.re).to eq 1 + 3
+    expect(complexNumber3.im).to eq 2 + 8
     
-    expect(complexNumber4.re).to be 1 + 3
-    expect(complexNumber4.im).to be 2 + 8
+    expect(complexNumber4.re).to eq 1 + 3
+    expect(complexNumber4.im).to eq 2 + 8
   end
 
     
@@ -45,14 +45,14 @@ describe ComplexNumber do
     complexNumber4 = realNumber.add(complexNumber)
     complexNumber5 = complexNumber.add(3)
     
-    expect(complexNumber3.re).to be 1 + 3
-    expect(complexNumber3.im).to be 2
+    expect(complexNumber3.re).to eq 1 + 3
+    expect(complexNumber3.im).to eq 2
     
-    expect(complexNumber4.re).to be 1 + 3
-    expect(complexNumber4.im).to be 2
+    expect(complexNumber4.re).to eq 1 + 3
+    expect(complexNumber4.im).to eq 2
     
-    expect(complexNumber5.re).to be 1 + 3
-    expect(complexNumber5.im).to be 2
+    expect(complexNumber5.re).to eq 1 + 3
+    expect(complexNumber5.im).to eq 2
   end
 
     
@@ -67,11 +67,11 @@ describe ComplexNumber do
     complexNumber3 = complexNumber1.subtract(complexNumber2)
     complexNumber4 = complexNumber2.subtract(complexNumber1)
     
-    expect(complexNumber3.re).to be 1 - 3
-    expect(complexNumber3.im).to be 2 - 8
+    expect(complexNumber3.re).to eq 1 - 3
+    expect(complexNumber3.im).to eq 2 - 8
     
-    expect(complexNumber4.re).to be 3 - 1
-    expect(complexNumber4.im).to be 8 - 2
+    expect(complexNumber4.re).to eq 3 - 1
+    expect(complexNumber4.im).to eq 8 - 2
   end
 
     
@@ -87,14 +87,14 @@ describe ComplexNumber do
     complexNumber4 = realNumber.subtract(complexNumber)
     complexNumber5 = complexNumber.subtract(3)
     
-    expect(complexNumber3.re).to be 1 - 3
-    expect(complexNumber3.im).to be 2
+    expect(complexNumber3.re).to eq 1 - 3
+    expect(complexNumber3.im).to eq 2
     
-    expect(complexNumber4.re).to be 3 - 1
-    expect(complexNumber4.im).to be -2
+    expect(complexNumber4.re).to eq 3 - 1
+    expect(complexNumber4.im).to eq -2
     
-    expect(complexNumber5.re).to be 1 - 3
-    expect(complexNumber5.im).to be 2
+    expect(complexNumber5.re).to eq 1 - 3
+    expect(complexNumber5.im).to eq 2
   end
 
     
@@ -110,14 +110,14 @@ describe ComplexNumber do
     complexNumber4 = complexNumber2.multiply(complexNumber1)
     complexNumber5 = complexNumber1.multiply(5)
     
-    expect(complexNumber3.re).to be -11
-    expect(complexNumber3.im).to be 23
+    expect(complexNumber3.re).to eq -11
+    expect(complexNumber3.im).to eq 23
     
-    expect(complexNumber4.re).to be -11
-    expect(complexNumber4.im).to be 23
+    expect(complexNumber4.re).to eq -11
+    expect(complexNumber4.im).to eq 23
     
-    expect(complexNumber5.re).to be 15
-    expect(complexNumber5.im).to be 10
+    expect(complexNumber5.re).to eq 15
+    expect(complexNumber5.im).to eq 10
   end
 
     
@@ -128,8 +128,8 @@ describe ComplexNumber do
     
     result = complexNumber.multiply(complexNumber)
     
-    expect(result.re).to be 0
-    expect(result.im).to be 2
+    expect(result.re).to eq 0
+    expect(result.im).to eq 2
   end
 
     
@@ -140,8 +140,8 @@ describe ComplexNumber do
     
     result = complexNumber.multiply(complexNumber)
     
-    expect(result.re).to be -1
-    expect(result.im).to be 0
+    expect(result.re).to eq -1
+    expect(result.im).to eq 0
   end
 
     
@@ -156,11 +156,11 @@ describe ComplexNumber do
     complexNumber3 = complexNumber1.divide(complexNumber2)
     complexNumber4 = complexNumber1.divide(2)
     
-    expect(complexNumber3.re).to be -7 / 41
-    expect(complexNumber3.im).to be 22 / 41
+    expect(complexNumber3.re).to eq -7 / 41
+    expect(complexNumber3.im).to eq 22 / 41
     
-    expect(complexNumber4.re).to be 1
-    expect(complexNumber4.im).to be 1.5
+    expect(complexNumber4.re).to eq 1
+    expect(complexNumber4.im).to eq 1.5
   end
 
     
@@ -168,70 +168,70 @@ describe ComplexNumber do
  end
 
     complexNumber1 = ComplexNumber.new({ re: 3, im: 3 })
-    expect(complexNumber1.getPolarForm().radius).to be Math.sqrt((3 ** 2) + (3 ** 2))
-    expect(complexNumber1.getPolarForm().phase).to be Math.PI / 4
-    expect(complexNumber1.getPolarForm(false).phase).to be 45
+    expect(complexNumber1.getPolarForm().radius).to eq Math.sqrt((3 ** 2) + (3 ** 2))
+    expect(complexNumber1.getPolarForm().phase).to eq Math.PI / 4
+    expect(complexNumber1.getPolarForm(false).phase).to eq 45
     
  end
 
     complexNumber2 = ComplexNumber.new({ re: -3, im: 3 })
-    expect(complexNumber2.getPolarForm().radius).to be Math.sqrt((3 ** 2) + (3 ** 2))
-    expect(complexNumber2.getPolarForm().phase).to be 3 * (Math.PI / 4)
-    expect(complexNumber2.getPolarForm(false).phase).to be 135
+    expect(complexNumber2.getPolarForm().radius).to eq Math.sqrt((3 ** 2) + (3 ** 2))
+    expect(complexNumber2.getPolarForm().phase).to eq 3 * (Math.PI / 4)
+    expect(complexNumber2.getPolarForm(false).phase).to eq 135
     
  end
 
     complexNumber3 = ComplexNumber.new({ re: -3, im: -3 })
-    expect(complexNumber3.getPolarForm().radius).to be Math.sqrt((3 ** 2) + (3 ** 2))
-    expect(complexNumber3.getPolarForm().phase).to be -3 * (Math.PI / 4)
-    expect(complexNumber3.getPolarForm(false).phase).to be -135
+    expect(complexNumber3.getPolarForm().radius).to eq Math.sqrt((3 ** 2) + (3 ** 2))
+    expect(complexNumber3.getPolarForm().phase).to eq -3 * (Math.PI / 4)
+    expect(complexNumber3.getPolarForm(false).phase).to eq -135
     
  end
 
     complexNumber4 = ComplexNumber.new({ re: 3, im: -3 })
-    expect(complexNumber4.getPolarForm().radius).to be Math.sqrt((3 ** 2) + (3 ** 2))
-    expect(complexNumber4.getPolarForm().phase).to be -1 * (Math.PI / 4)
-    expect(complexNumber4.getPolarForm(false).phase).to be -45
+    expect(complexNumber4.getPolarForm().radius).to eq Math.sqrt((3 ** 2) + (3 ** 2))
+    expect(complexNumber4.getPolarForm().phase).to eq -1 * (Math.PI / 4)
+    expect(complexNumber4.getPolarForm(false).phase).to eq -45
     
  end
 
     complexNumber5 = ComplexNumber.new({ re: 5, im: 7 })
-    expect(complexNumber5.getPolarForm().radius).to be 8.60
-    expect(complexNumber5.getPolarForm().phase).to be 0.95
-    expect(complexNumber5.getPolarForm(false).phase).to be 54.46
+    expect(complexNumber5.getPolarForm().radius).to eq 8.60
+    expect(complexNumber5.getPolarForm().phase).to eq 0.95
+    expect(complexNumber5.getPolarForm(false).phase).to eq 54.46
     
  end
 
     complexNumber6 = ComplexNumber.new({ re: 0, im: 0.25 })
-    expect(complexNumber6.getPolarForm().radius).to be 0.25
-    expect(complexNumber6.getPolarForm().phase).to be 1.57
-    expect(complexNumber6.getPolarForm(false).phase).to be 90
+    expect(complexNumber6.getPolarForm().radius).to eq 0.25
+    expect(complexNumber6.getPolarForm().phase).to eq 1.57
+    expect(complexNumber6.getPolarForm(false).phase).to eq 90
     
  end
 
     complexNumber7 = ComplexNumber.new({ re: 0, im: -0.25 })
-    expect(complexNumber7.getPolarForm().radius).to be 0.25
-    expect(complexNumber7.getPolarForm().phase).to be -1.57
-    expect(complexNumber7.getPolarForm(false).phase).to be -90
+    expect(complexNumber7.getPolarForm().radius).to eq 0.25
+    expect(complexNumber7.getPolarForm().phase).to eq -1.57
+    expect(complexNumber7.getPolarForm(false).phase).to eq -90
     
     complexNumber8 = ComplexNumber.new()
-    expect(complexNumber8.getPolarForm().radius).to be 0
-    expect(complexNumber8.getPolarForm().phase).to be 0
-    expect(complexNumber8.getPolarForm(false).phase).to be 0
+    expect(complexNumber8.getPolarForm().radius).to eq 0
+    expect(complexNumber8.getPolarForm().phase).to eq 0
+    expect(complexNumber8.getPolarForm(false).phase).to eq 0
     
  end
 
     complexNumber9 = ComplexNumber.new({ re: -0.25, im: 0 })
-    expect(complexNumber9.getPolarForm().radius).to be 0.25
-    expect(complexNumber9.getPolarForm().phase).to be Math.PI
-    expect(complexNumber9.getPolarForm(false).phase).to be 180
+    expect(complexNumber9.getPolarForm().radius).to eq 0.25
+    expect(complexNumber9.getPolarForm().phase).to eq Math.PI
+    expect(complexNumber9.getPolarForm(false).phase).to eq 180
     
  end
 
     complexNumber10 = ComplexNumber.new({ re: 0.25, im: 0 })
-    expect(complexNumber10.getPolarForm().radius).to be 0.25
-    expect(complexNumber10.getPolarForm().phase).to be 0
-    expect(complexNumber10.getPolarForm(false).phase).to be 0
+    expect(complexNumber10.getPolarForm().radius).to eq 0.25
+    expect(complexNumber10.getPolarForm().phase).to eq 0
+    expect(complexNumber10.getPolarForm(false).phase).to eq 0
   end
 
 end

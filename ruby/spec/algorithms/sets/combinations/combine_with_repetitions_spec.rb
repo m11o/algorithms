@@ -90,7 +90,7 @@ describe combineWithRepetitions do
     r = combinationSlotsNumber
     expectedNumberOfCombinations = factorial((r + n) - 1) / (factorial(r) * factorial(n - 1))
     
-    expect(combinations.length).to be expectedNumberOfCombinations
+    expect(combinations.length).to eq expectedNumberOfCombinations
   end
 
 end

@@ -43,7 +43,7 @@ describe breadthFirstSearch do
     .addEdge(edgeGH);
 
     
-    expect(graph.to_s).to be 'A,B,C,G,D,E,F,H'
+    expect(graph.to_s).to eq 'A,B,C,G,D,E,F,H'
     
     enterVertexCallback = jest.fn()
     leaveVertexCallback = jest.fn()
@@ -168,7 +168,7 @@ describe breadthFirstSearch do
     .addEdge(edgeGH);
 
     
-    expect(graph.to_s).to be 'A,B,C,G,D,E,F,H'
+    expect(graph.to_s).to eq 'A,B,C,G,D,E,F,H'
     
     enterVertexCallback = jest.fn()
     leaveVertexCallback = jest.fn()

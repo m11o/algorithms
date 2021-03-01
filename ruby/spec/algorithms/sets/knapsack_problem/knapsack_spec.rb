@@ -21,11 +21,11 @@ describe Knapsack do
     knapsack.solveZeroOneKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 9
-    expect(knapsack.totalWeight).to be 7
-    expect(knapsack.selectedItems.length).to be 2
-    expect(knapsack.selectedItems[0].to_s).to be 'v5 w4 x 1'
-    expect(knapsack.selectedItems[1].to_s).to be 'v4 w3 x 1'
+    expect(knapsack.totalValue).to eq 9
+    expect(knapsack.totalWeight).to eq 7
+    expect(knapsack.selectedItems.length).to eq 2
+    expect(knapsack.selectedItems[0].to_s).to eq 'v5 w4 x 1'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v4 w3 x 1'
   end
 
     
@@ -50,11 +50,11 @@ describe Knapsack do
     knapsack.solveZeroOneKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 9
-    expect(knapsack.totalWeight).to be 7
-    expect(knapsack.selectedItems.length).to be 2
-    expect(knapsack.selectedItems[0].to_s).to be 'v5 w4 x 1'
-    expect(knapsack.selectedItems[1].to_s).to be 'v4 w3 x 1'
+    expect(knapsack.totalValue).to eq 9
+    expect(knapsack.totalWeight).to eq 7
+    expect(knapsack.selectedItems.length).to eq 2
+    expect(knapsack.selectedItems[0].to_s).to eq 'v5 w4 x 1'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v4 w3 x 1'
   end
 
     
@@ -79,9 +79,9 @@ describe Knapsack do
     knapsack.solveZeroOneKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 0
-    expect(knapsack.totalWeight).to be 0
-    expect(knapsack.selectedItems.length).to be 0
+    expect(knapsack.totalValue).to eq 0
+    expect(knapsack.totalWeight).to eq 0
+    expect(knapsack.selectedItems.length).to eq 0
   end
 
     
@@ -110,12 +110,12 @@ describe Knapsack do
     knapsack.solveZeroOneKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 16
-    expect(knapsack.totalWeight).to be 3
-    expect(knapsack.selectedItems.length).to be 3
-    expect(knapsack.selectedItems[0].to_s).to be 'v4 w1 x 1'
-    expect(knapsack.selectedItems[1].to_s).to be 'v5 w1 x 1'
-    expect(knapsack.selectedItems[2].to_s).to be 'v7 w1 x 1'
+    expect(knapsack.totalValue).to eq 16
+    expect(knapsack.totalWeight).to eq 3
+    expect(knapsack.selectedItems.length).to eq 3
+    expect(knapsack.selectedItems[0].to_s).to eq 'v4 w1 x 1'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v5 w1 x 1'
+    expect(knapsack.selectedItems[2].to_s).to eq 'v7 w1 x 1'
   end
 
     
@@ -142,14 +142,14 @@ describe Knapsack do
     knapsack.solveUnboundedKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 84 + 20 + 12 + 10 + 5
-    expect(knapsack.totalWeight).to be 15
-    expect(knapsack.selectedItems.length).to be 5
-    expect(knapsack.selectedItems[0].to_s).to be 'v84 w7 x 1'
-    expect(knapsack.selectedItems[1].to_s).to be 'v20 w2 x 1'
-    expect(knapsack.selectedItems[2].to_s).to be 'v10 w1 x 1'
-    expect(knapsack.selectedItems[3].to_s).to be 'v12 w3 x 1'
-    expect(knapsack.selectedItems[4].to_s).to be 'v5 w2 x 1'
+    expect(knapsack.totalValue).to eq 84 + 20 + 12 + 10 + 5
+    expect(knapsack.totalWeight).to eq 15
+    expect(knapsack.selectedItems.length).to eq 5
+    expect(knapsack.selectedItems[0].to_s).to eq 'v84 w7 x 1'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v20 w2 x 1'
+    expect(knapsack.selectedItems[2].to_s).to eq 'v10 w1 x 1'
+    expect(knapsack.selectedItems[3].to_s).to eq 'v12 w3 x 1'
+    expect(knapsack.selectedItems[4].to_s).to eq 'v5 w2 x 1'
   end
 
     
@@ -176,12 +176,12 @@ describe Knapsack do
     knapsack.solveUnboundedKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be 84 + 84 + 20 + 10
-    expect(knapsack.totalWeight).to be 17
-    expect(knapsack.selectedItems.length).to be 3
-    expect(knapsack.selectedItems[0].to_s).to be 'v84 w7 x 2'
-    expect(knapsack.selectedItems[1].to_s).to be 'v20 w2 x 1'
-    expect(knapsack.selectedItems[2].to_s).to be 'v10 w1 x 1'
+    expect(knapsack.totalValue).to eq 84 + 84 + 20 + 10
+    expect(knapsack.totalWeight).to eq 17
+    expect(knapsack.selectedItems.length).to eq 3
+    expect(knapsack.selectedItems[0].to_s).to eq 'v84 w7 x 2'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v20 w2 x 1'
+    expect(knapsack.selectedItems[2].to_s).to eq 'v10 w1 x 1'
   end
 
     
@@ -208,14 +208,14 @@ describe Knapsack do
     knapsack.solveUnboundedKnapsackProblem();
 
     
-    expect(knapsack.totalValue).to be (3 * 84) + (2 * 5) + (1 * 12) + (6 * 10) + (8 * 20)
-    expect(knapsack.totalWeight).to be (3 * 7) + (2 * 2) + (1 * 3) + (6 * 1) + (8 * 2)
-    expect(knapsack.selectedItems.length).to be 5
-    expect(knapsack.selectedItems[0].to_s).to be 'v84 w7 x 3'
-    expect(knapsack.selectedItems[1].to_s).to be 'v20 w2 x 8'
-    expect(knapsack.selectedItems[2].to_s).to be 'v10 w1 x 6'
-    expect(knapsack.selectedItems[3].to_s).to be 'v12 w3 x 1'
-    expect(knapsack.selectedItems[4].to_s).to be 'v5 w2 x 2'
+    expect(knapsack.totalValue).to eq (3 * 84) + (2 * 5) + (1 * 12) + (6 * 10) + (8 * 20)
+    expect(knapsack.totalWeight).to eq (3 * 7) + (2 * 2) + (1 * 3) + (6 * 1) + (8 * 2)
+    expect(knapsack.selectedItems.length).to eq 5
+    expect(knapsack.selectedItems[0].to_s).to eq 'v84 w7 x 3'
+    expect(knapsack.selectedItems[1].to_s).to eq 'v20 w2 x 8'
+    expect(knapsack.selectedItems[2].to_s).to eq 'v10 w1 x 6'
+    expect(knapsack.selectedItems[3].to_s).to eq 'v12 w3 x 1'
+    expect(knapsack.selectedItems[4].to_s).to eq 'v5 w2 x 2'
   end
 
 end

@@ -23,9 +23,9 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 2
-    expect(articulationPointsSet[0].getKey()).to be vertexC.getKey()
-    expect(articulationPointsSet[1].getKey()).to be vertexB.getKey()
+    expect(articulationPointsSet.length).to eq 2
+    expect(articulationPointsSet[0].getKey()).to eq vertexC.getKey()
+    expect(articulationPointsSet[1].getKey()).to eq vertexB.getKey()
   end
 
     
@@ -55,8 +55,8 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 1
-    expect(articulationPointsSet[0].getKey()).to be vertexC.getKey()
+    expect(articulationPointsSet.length).to eq 1
+    expect(articulationPointsSet[0].getKey()).to eq vertexC.getKey()
   end
 
     
@@ -90,8 +90,8 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 1
-    expect(articulationPointsSet[0].getKey()).to be vertexC.getKey()
+    expect(articulationPointsSet.length).to eq 1
+    expect(articulationPointsSet[0].getKey()).to eq vertexC.getKey()
   end
 
     
@@ -140,11 +140,11 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 4
-    expect(articulationPointsSet[0].getKey()).to be vertexF.getKey()
-    expect(articulationPointsSet[1].getKey()).to be vertexE.getKey()
-    expect(articulationPointsSet[2].getKey()).to be vertexD.getKey()
-    expect(articulationPointsSet[3].getKey()).to be vertexC.getKey()
+    expect(articulationPointsSet.length).to eq 4
+    expect(articulationPointsSet[0].getKey()).to eq vertexF.getKey()
+    expect(articulationPointsSet[1].getKey()).to eq vertexE.getKey()
+    expect(articulationPointsSet[2].getKey()).to eq vertexD.getKey()
+    expect(articulationPointsSet[3].getKey()).to eq vertexC.getKey()
   end
 
     
@@ -193,11 +193,11 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 4
-    expect(articulationPointsSet[0].getKey()).to be vertexF.getKey()
-    expect(articulationPointsSet[1].getKey()).to be vertexE.getKey()
-    expect(articulationPointsSet[2].getKey()).to be vertexC.getKey()
-    expect(articulationPointsSet[3].getKey()).to be vertexD.getKey()
+    expect(articulationPointsSet.length).to eq 4
+    expect(articulationPointsSet[0].getKey()).to eq vertexF.getKey()
+    expect(articulationPointsSet[1].getKey()).to eq vertexE.getKey()
+    expect(articulationPointsSet[2].getKey()).to eq vertexC.getKey()
+    expect(articulationPointsSet[3].getKey()).to eq vertexD.getKey()
   end
 
     
@@ -231,9 +231,9 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 2
-    expect(articulationPointsSet[0].getKey()).to be vertexD.getKey()
-    expect(articulationPointsSet[1].getKey()).to be vertexC.getKey()
+    expect(articulationPointsSet.length).to eq 2
+    expect(articulationPointsSet[0].getKey()).to eq vertexD.getKey()
+    expect(articulationPointsSet[1].getKey()).to eq vertexC.getKey()
   end
 
     
@@ -278,8 +278,8 @@ describe articulationPoints do
     
     articulationPointsSet = Object.values(articulationPoints(graph))
     
-    expect(articulationPointsSet.length).to be 1
-    expect(articulationPointsSet[0].getKey()).to be vertexC.getKey()
+    expect(articulationPointsSet.length).to eq 1
+    expect(articulationPointsSet[0].getKey()).to eq vertexC.getKey()
   end
 
 end

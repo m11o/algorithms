@@ -46,7 +46,7 @@ describe PolynomialHash do
     
     // Check that rolling hash is the same as directly calculated hash.
 
-    expect(currentRollingHash).to be currentHash
+    expect(currentRollingHash).to eq currentHash
     
     previousWord = currentWord;
 
@@ -68,18 +68,18 @@ describe PolynomialHash do
 
     polynomialHash = PolynomialHash.new({ modulus: 100 })
     
-    expect(polynomialHash.hash('Some long text that is used as a key')).to be 41
-    expect(polynomialHash.hash('Test')).to be 92
-    expect(polynomialHash.hash('a')).to be 97
-    expect(polynomialHash.hash('b')).to be 98
-    expect(polynomialHash.hash('c')).to be 99
-    expect(polynomialHash.hash('d')).to be 0
-    expect(polynomialHash.hash('e')).to be 1
-    expect(polynomialHash.hash('ab')).to be 87
+    expect(polynomialHash.hash('Some long text that is used as a key')).to eq 41
+    expect(polynomialHash.hash('Test')).to eq 92
+    expect(polynomialHash.hash('a')).to eq 97
+    expect(polynomialHash.hash('b')).to eq 98
+    expect(polynomialHash.hash('c')).to eq 99
+    expect(polynomialHash.hash('d')).to eq 0
+    expect(polynomialHash.hash('e')).to eq 1
+    expect(polynomialHash.hash('ab')).to eq 87
     
     // @TODO: Provide Unicode support.
 
-    expect(polynomialHash.hash('\u{20000}')).to be 92
+    expect(polynomialHash.hash('\u{20000}')).to eq 92
   end
 
 end

@@ -84,7 +84,7 @@ describe permutateWithRepetitions do
 
     
     permutations4 = permutateWithRepetitions(['A', 'B', 'C', 'D'])
-    expect(permutations4.length).to be 4 * 4 * 4 * 4
+    expect(permutations4.length).to eq 4 * 4 * 4 * 4
   end
 
 end

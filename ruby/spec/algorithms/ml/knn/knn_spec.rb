@@ -61,7 +61,7 @@ describe kNN do
 
     expectedClass = 1;
 
-    expect(kNN(dataSet, labels, toClassify)).to be expectedClass
+    expect(kNN(dataSet, labels, toClassify)).to eq expectedClass
     
     dataSet = [[1, 1], [6, 2], [3, 3], [4, 5], [9, 2], [2, 4], [8, 7]];
 
@@ -71,7 +71,7 @@ describe kNN do
 
     expectedClass = 1;
 
-    expect(kNN(dataSet, labels, toClassify)).to be expectedClass
+    expect(kNN(dataSet, labels, toClassify)).to eq expectedClass
     
     dataSet = [[1, 1], [6, 2], [3, 3], [4, 5], [9, 2], [2, 4], [8, 7]];
 
@@ -81,7 +81,7 @@ describe kNN do
 
     expectedClass = 2;
 
-    expect(kNN(dataSet, labels, toClassify, 5)).to be expectedClass
+    expect(kNN(dataSet, labels, toClassify, 5)).to eq expectedClass
   end
 
     
@@ -90,7 +90,7 @@ describe kNN do
     labels = [1, 3, 3]
     toClassify = [0, 1]
     expectedClass = 3
-    expect(kNN(dataSet, labels, toClassify)).to be expectedClass
+    expect(kNN(dataSet, labels, toClassify)).to eq expectedClass
   end
 
     
@@ -99,7 +99,7 @@ describe kNN do
     labels = [1, 3, 3]
     toClassify = [0, 0, 1]
     expectedClass = 3
-    expect(kNN(dataSet, labels, toClassify)).to be expectedClass
+    expect(kNN(dataSet, labels, toClassify)).to eq expectedClass
   end
 
 end
