@@ -1,5 +1,5 @@
     
-describe fibonacci do
+xdescribe fibonacci do
   it 'should calculate fibonacci correctly' do
     expect(fibonacci(1)).to eq [1]
     expect(fibonacci(2)).to eq [1, 1]

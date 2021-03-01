@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 60
     EQUAL_ARRAY_VISITING_COUNT = 60
     
-describe CountingSort do
+xdescribe CountingSort do
   it 'should sort array' do
     SortTester.testSort(CountingSort);
 

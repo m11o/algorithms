@@ -1,5 +1,5 @@
     
-describe isPowerOfTwoBitwise do
+xdescribe isPowerOfTwoBitwise do
   it 'should check if the number is made by multiplying twos' do
     expect(isPowerOfTwoBitwise(-1)).to eq false
     expect(isPowerOfTwoBitwise(0)).to eq false

@@ -1,5 +1,5 @@
     
-describe multiplyByTwo do
+xdescribe multiplyByTwo do
   it 'should multiply numbers by two using bitwise operations' do
     expect(multiplyByTwo(0)).to eq 0
     expect(multiplyByTwo(1)).to eq 2

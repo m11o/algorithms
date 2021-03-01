@@ -1,5 +1,5 @@
     
-describe bwPowerSet do
+xdescribe bwPowerSet do
   it 'should calculate power set of given set using bitwise approach' do
     expect(bwPowerSet([1])).toEqual([
 

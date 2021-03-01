@@ -1,5 +1,5 @@
     
-describe leastCommonMultiple do
+xdescribe leastCommonMultiple do
   it 'should find least common multiple' do
     expect(leastCommonMultiple(0, 0)).to eq 0
     expect(leastCommonMultiple(1, 0)).to eq 0

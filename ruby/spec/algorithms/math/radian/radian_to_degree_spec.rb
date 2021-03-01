@@ -1,5 +1,5 @@
     
-describe radianToDegree do
+xdescribe radianToDegree do
   it 'should convert radian to degree' do
     expect(radianToDegree(0)).to eq 0
     expect(radianToDegree(Math.PI / 4)).to eq 45

@@ -1,5 +1,5 @@
     
-describe pascalTriangle do
+xdescribe pascalTriangle do
   it 'should calculate Pascal Triangle coefficients for specific line number' do
     expect(pascalTriangle(0)).to eq [1]
     expect(pascalTriangle(1)).to eq [1, 1]

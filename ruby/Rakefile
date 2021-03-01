@@ -38,7 +38,7 @@ namespace :rspec do
         when /\Aimport/
           # 何もしない
         when /describe\('(.+?)',/
-          @codes << ['describe', $1, 'do'].join(' ')
+          @codes << ['xdescribe', $1, 'do'].join(' ')  # 基本的にはすぺてskip. 必要なものだけskipを外して使用
         when /it\('(.+?)',/
           @codes << [' ', 'it', "'#{$1}'", 'do'].join(' ')
         when /expect\((.+?)\)\.(to.+?)\((.*?)\);/

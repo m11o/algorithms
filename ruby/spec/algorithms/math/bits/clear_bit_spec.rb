@@ -1,5 +1,5 @@
     
-describe clearBit do
+xdescribe clearBit do
   it 'should clear bit at specific position' do
     // 1 = 0b0001
 

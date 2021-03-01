@@ -1,5 +1,5 @@
     
-describe kruskal do
+xdescribe kruskal do
   it 'should fire an error for directed graph' do
     function applyPrimToDirectedGraph() {
 

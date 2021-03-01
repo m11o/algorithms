@@ -1,5 +1,5 @@
     
-describe Stack do
+xdescribe Stack do
   it 'should create empty stack' do
     stack = Stack.new()
     expect(stack).not.toBeNull();

@@ -1,5 +1,5 @@
     
-describe dpLongestIncreasingSubsequence do
+xdescribe dpLongestIncreasingSubsequence do
   it 'should find longest increasing subsequence length' do
     // Should be:
 

@@ -1,5 +1,5 @@
     
-describe MinHeap do
+xdescribe MinHeap do
   it 'should create an empty min heap' do
     minHeap = MinHeap.new()
     

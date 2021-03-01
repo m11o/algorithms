@@ -1,5 +1,5 @@
     
-describe BinaryTreeNode do
+xdescribe BinaryTreeNode do
   it 'should create node' do
     node = BinaryTreeNode.new()
     

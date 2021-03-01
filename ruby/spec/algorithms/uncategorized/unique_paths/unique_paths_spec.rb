@@ -1,5 +1,5 @@
     
-describe uniquePaths do
+xdescribe uniquePaths do
   it 'should find the number of unique paths on board' do
     expect(uniquePaths(3, 2)).to eq 3
     expect(uniquePaths(7, 3)).to eq 28

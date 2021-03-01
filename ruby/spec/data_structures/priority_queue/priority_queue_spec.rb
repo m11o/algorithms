@@ -1,5 +1,5 @@
     
-describe PriorityQueue do
+xdescribe PriorityQueue do
   it 'should create default priority queue' do
     priorityQueue = PriorityQueue.new()
     

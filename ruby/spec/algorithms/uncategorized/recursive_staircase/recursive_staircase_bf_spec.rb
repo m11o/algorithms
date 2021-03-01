@@ -1,5 +1,5 @@
     
-describe recursiveStaircaseBF do
+xdescribe recursiveStaircaseBF do
   it 'should calculate number of variants using Brute Force solution' do
     expect(recursiveStaircaseBF(-1)).to eq 0
     expect(recursiveStaircaseBF(0)).to eq 0

@@ -18,7 +18,7 @@
     REVERSE_SORTED_ARRAY_VISITING_COUNT = 209
     EQUAL_ARRAY_VISITING_COUNT = 20
     
-describe BubbleSort do
+xdescribe BubbleSort do
   it 'should sort array' do
     SortTester.testSort(BubbleSort);
 

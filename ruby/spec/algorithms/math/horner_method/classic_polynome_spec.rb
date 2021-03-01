@@ -1,5 +1,5 @@
     
-describe classicPolynome do
+xdescribe classicPolynome do
   it 'should evaluate the polynomial for the specified value of x correctly' do
     expect(classicPolynome([8], 0.1)).to eq 8
     expect(classicPolynome([2, 4, 2, 5], 0.555)).to eq 7.68400775

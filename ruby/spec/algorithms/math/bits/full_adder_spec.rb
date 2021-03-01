@@ -1,5 +1,5 @@
     
-describe fullAdder do
+xdescribe fullAdder do
   it 'should add up two numbers' do
     expect(fullAdder(0, 0)).to eq 0
     expect(fullAdder(2, 0)).to eq 2

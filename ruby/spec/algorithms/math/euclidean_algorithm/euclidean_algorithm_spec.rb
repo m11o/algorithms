@@ -1,5 +1,5 @@
     
-describe euclideanAlgorithm do
+xdescribe euclideanAlgorithm do
   it 'should calculate GCD recursively' do
     expect(euclideanAlgorithm(0, 0)).to eq 0
     expect(euclideanAlgorithm(2, 0)).to eq 2

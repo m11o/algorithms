@@ -1,5 +1,5 @@
     
-describe QueenPosition do
+xdescribe QueenPosition do
   it 'should store queen position on chessboard' do
     position1 = QueenPosition.new(0, 0)
     position2 = QueenPosition.new(2, 1)

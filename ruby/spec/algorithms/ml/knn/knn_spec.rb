@@ -1,5 +1,5 @@
     
-describe kNN do
+xdescribe kNN do
   it 'should throw an error on invalid data' do
     expect(() => {
 

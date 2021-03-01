@@ -1,5 +1,5 @@
     
-describe bfMaximumSubarray do
+xdescribe bfMaximumSubarray do
   it 'should find maximum subarray using brute force algorithm' do
     expect(bfMaximumSubarray([])).to eq []
     expect(bfMaximumSubarray([0, 0])).to eq [0]

@@ -1,5 +1,5 @@
     
-describe Trie do
+xdescribe Trie do
   it 'should create trie' do
     trie = Trie.new()
     

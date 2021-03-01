@@ -1,5 +1,5 @@
     
-describe breadthFirstSearch do
+xdescribe breadthFirstSearch do
   it 'should perform BFS operation on tree' do
     nodeA = BinaryTreeNode.new('A')
     nodeB = BinaryTreeNode.new('B')

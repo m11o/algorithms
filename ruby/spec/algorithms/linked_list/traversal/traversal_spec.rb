@@ -1,5 +1,5 @@
     
-describe traversal do
+xdescribe traversal do
   it 'should traverse linked list' do
     linkedList = LinkedList.new()
     

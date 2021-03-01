@@ -1,5 +1,5 @@
     
-describe BinarySearchTree do
+xdescribe BinarySearchTree do
   it 'should create binary search tree' do
     bst = BinarySearchTree.new()
     

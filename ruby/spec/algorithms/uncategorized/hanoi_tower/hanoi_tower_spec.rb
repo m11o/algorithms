@@ -1,5 +1,5 @@
     
-describe hanoiTower do
+xdescribe hanoiTower do
   it 'should solve tower of hanoi puzzle with 2 discs' do
     moveCallback = jest.fn()
     numberOfDiscs = 2

@@ -1,5 +1,5 @@
     
-describe linearSearch do
+xdescribe linearSearch do
   it 'should search all numbers in array' do
     array = [1, 2, 4, 6, 2]
     

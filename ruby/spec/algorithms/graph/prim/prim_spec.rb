@@ -1,5 +1,5 @@
     
-describe prim do
+xdescribe prim do
   it 'should fire an error for directed graph' do
     function applyPrimToDirectedGraph() {
 

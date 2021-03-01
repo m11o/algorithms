@@ -44,7 +44,7 @@
     
     delta = 1e-6
     
-describe fastFourierTransform do
+xdescribe fastFourierTransform do
   it 'should calculate the radix-2 discrete fourier transform #1' do
     input = [new ComplexNumber({ re: 0, im: 0 })]
     expectedOutput = [new ComplexNumber({ re: 0, im: 0 })]
