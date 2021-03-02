@@ -1,15 +1,10 @@
-    
 xdescribe Heap do
   it 'should not allow to create instance of the Heap directly' do
-    const instantiateHeap = () => {
+    def instantiate_head
+      heap = Heap.new
+      heap.add 5
+    end
 
-    heap = Heap.new()
-    heap.add(5);
-
-    };
-
-    
-    expect(instantiateHeap).to toThrow()
+    expect { instantiate_head }.to raise_error Exception
   end
-
 end
