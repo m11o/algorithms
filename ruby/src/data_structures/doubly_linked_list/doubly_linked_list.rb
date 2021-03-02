@@ -36,27 +36,26 @@ class DoublyLinkedList < LinkedList
     deleted_node = nil
     node = head
 
-    # head部分に削除する値が連続している場合に、headを複数回みるために、最初からループを回す
     while node
-      if node.value == value
-        deleted_node = node
+      node = node.next and next if node.value != value
 
-        if head.value == value
-          if head == tail
-            init_insertion nil
-            node = nil
-            next
-          end
+      deleted_node = node
 
-          @head = head.next
-          head.previous = nil
-        elsif tail.value == value
-          @tail = tail.previous
-          @tail.next = nil
-        else
-          node.previous.next = node.next
-          node.next.previous = node.previous
+      if head.value == value
+        if head == tail
+          init_insertion nil
+          node = nil
+          next
         end
+
+        @head = head.next
+        head.previous = nil
+      elsif tail.value == value
+        @tail = tail.previous
+        @tail.next = nil
+      else
+        node.previous.next = node.next
+        node.next.previous = node.previous
       end
 
       node = node.next

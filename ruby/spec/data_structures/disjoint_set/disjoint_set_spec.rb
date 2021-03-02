@@ -1,178 +1,118 @@
-    
 xdescribe DisjointSet do
   it 'should throw error when trying to union and check not existing sets' do
-    function mergeNotExistingSets() {
+    def merge_not_existing_sets
+      disjoint_set = DisjointSet.new
+      disjoint_set.union('A', 'B')
+    end
 
-    disjointSet = DisjointSet.new()
-    
-    disjointSet.union('A', 'B');
+    def check_not_existing_sets
+      disjoint_set = DisjointSet.new
+      disjoint_set.in_same_set?('A', 'B')
+    end
 
-    }
-
-    
-    function checkNotExistingSets() {
-
-    disjointSet = DisjointSet.new()
-    
-    disjointSet.inSameSet('A', 'B');
-
-    }
-
-    
-    expect(mergeNotExistingSets).to toThrow()
-    expect(checkNotExistingSets).to toThrow()
+    expect { merge_not_existing_sets }.to raise_error Exception
+    expect { check_not_existing_sets }.to raise_error Exception
   end
 
-    
   it 'should do basic manipulations on disjoint set' do
-    disjointSet = DisjointSet.new()
-    
-    expect(disjointSet.find('A')).to eq nil
-    expect(disjointSet.find('B')).to eq nil
-    
-    disjointSet.makeSet('A');
+    disjoint_set = DisjointSet.new
 
-    
-    expect(disjointSet.find('A')).to eq 'A'
-    expect(disjointSet.find('B')).to eq nil
-    
-    disjointSet.makeSet('B');
+    expect(disjoint_set.find('A')).to eq nil
+    expect(disjoint_set.find('B')).to eq nil
 
-    
-    expect(disjointSet.find('A')).to eq 'A'
-    expect(disjointSet.find('B')).to eq 'B'
-    
-    disjointSet.makeSet('C');
+    disjoint_set.make_set('A')
 
-    
-    expect(disjointSet.inSameSet('A', 'B')).to eq false
-    
-    disjointSet.union('A', 'B');
+    expect(disjoint_set.find('A')).to eq 'A'
+    expect(disjoint_set.find('B')).to eq nil
 
-    
-    expect(disjointSet.find('A')).to eq 'A'
-    expect(disjointSet.find('B')).to eq 'A'
-    expect(disjointSet.inSameSet('A', 'B')).to eq true
-    expect(disjointSet.inSameSet('B', 'A')).to eq true
-    expect(disjointSet.inSameSet('A', 'C')).to eq false
-    
-    disjointSet.union('A', 'A');
+    disjoint_set.make_set('B')
 
-    
-    disjointSet.union('B', 'C');
+    expect(disjoint_set.find('A')).to eq 'A'
+    expect(disjoint_set.find('B')).to eq 'B'
 
-    
-    expect(disjointSet.find('A')).to eq 'A'
-    expect(disjointSet.find('B')).to eq 'A'
-    expect(disjointSet.find('C')).to eq 'A'
-    
-    expect(disjointSet.inSameSet('A', 'B')).to eq true
-    expect(disjointSet.inSameSet('B', 'C')).to eq true
-    expect(disjointSet.inSameSet('A', 'C')).to eq true
-    
-    disjointSet
+    disjoint_set.make_set('C')
 
-    .makeSet('E')
+    expect(disjoint_set.in_same_set?('A', 'B')).to eq false
 
-    .makeSet('F')
+    disjoint_set.union('A', 'B')
 
-    .makeSet('G')
+    expect(disjoint_set.find('A')).to eq 'A'
+    expect(disjoint_set.find('B')).to eq 'A'
+    expect(disjoint_set.in_same_set?('A', 'B')).to eq true
+    expect(disjoint_set.in_same_set?('B', 'A')).to eq true
+    expect(disjoint_set.in_same_set?('A', 'C')).to eq false
 
-    .makeSet('H')
+    disjoint_set.union('A', 'A')
+    disjoint_set.union('B', 'C')
 
-    .makeSet('I');
+    expect(disjoint_set.find('A')).to eq 'A'
+    expect(disjoint_set.find('B')).to eq 'A'
+    expect(disjoint_set.find('C')).to eq 'A'
 
-    
-    disjointSet
+    expect(disjoint_set.in_same_set?('A', 'B')).to eq true
+    expect(disjoint_set.in_same_set?('B', 'C')).to eq true
+    expect(disjoint_set.in_same_set?('A', 'C')).to eq true
 
-    .union('E', 'F')
+    disjoint_set.make_set('E').make_set('F').make_set('G').make_set('H').make_set('I')
+    disjoint_set.union('E', 'F').union('F', 'G').union('G', 'H').union('H', 'I')
 
-    .union('F', 'G')
+    expect(disjoint_set.in_same_set?('A', 'I')).to eq false
+    expect(disjoint_set.in_same_set?('E', 'I')).to eq true
 
-    .union('G', 'H')
+    disjoint_set.union('I', 'C')
 
-    .union('H', 'I');
-
-    
-    expect(disjointSet.inSameSet('A', 'I')).to eq false
-    expect(disjointSet.inSameSet('E', 'I')).to eq true
-    
-    disjointSet.union('I', 'C');
-
-    
-    expect(disjointSet.find('I')).to eq 'E'
-    expect(disjointSet.inSameSet('A', 'I')).to eq true
+    expect(disjoint_set.find('I')).to eq 'E'
+    expect(disjoint_set.in_same_set?('A', 'I')).to eq true
   end
 
-    
   it 'should union smaller set with bigger one making bigger one to be new root' do
-    disjointSet = DisjointSet.new()
-    
-    disjointSet
+    disjoint_set = DisjointSet.new
+    disjoint_set.make_set('A').make_set('B').make_set('C').union('B', 'C').union('A', 'C')
 
-    .makeSet('A')
-
-    .makeSet('B')
-
-    .makeSet('C')
-
-    .union('B', 'C')
-
-    .union('A', 'C');
-
-    
-    expect(disjointSet.find('A')).to eq 'B'
+    expect(disjoint_set.find('A')).to eq 'B'
   end
 
-    
   it 'should do basic manipulations on disjoint set with custom key extractor' do
-    keyExtractor = (value) => value.key
-    
-    disjointSet = DisjointSet.new(keyExtractor)
-    
-    itemA = { key: 'A', value: 1 }
-    itemB = { key: 'B', value: 2 }
-    itemC = { key: 'C', value: 3 }
-    
-    expect(disjointSet.find(itemA)).to eq nil
-    expect(disjointSet.find(itemB)).to eq nil
-    
-    disjointSet.makeSet(itemA);
+    key_extractor = ->(value) { value.key }
+    disjoint_set = DisjointSet.new(&key_extractor)
 
-    
-    expect(disjointSet.find(itemA)).to eq 'A'
-    expect(disjointSet.find(itemB)).to eq nil
-    
-    disjointSet.makeSet(itemB);
+    item_a = { key: 'A', value: 1 }
+    item_b = { key: 'B', value: 2 }
+    item_c = { key: 'C', value: 3 }
 
-    
-    expect(disjointSet.find(itemA)).to eq 'A'
-    expect(disjointSet.find(itemB)).to eq 'B'
-    
-    disjointSet.makeSet(itemC);
+    expect(disjoint_set.find(item_a)).to eq nil
+    expect(disjoint_set.find(item_b)).to eq nil
 
-    
-    expect(disjointSet.inSameSet(itemA, itemB)).to eq false
-    
-    disjointSet.union(itemA, itemB);
+    disjoint_set.make_set(item_a)
 
-    
-    expect(disjointSet.find(itemA)).to eq 'A'
-    expect(disjointSet.find(itemB)).to eq 'A'
-    expect(disjointSet.inSameSet(itemA, itemB)).to eq true
-    expect(disjointSet.inSameSet(itemB, itemA)).to eq true
-    expect(disjointSet.inSameSet(itemA, itemC)).to eq false
-    
-    disjointSet.union(itemA, itemC);
+    expect(disjoint_set.find(item_a)).to eq 'A'
+    expect(disjoint_set.find(item_b)).to eq nil
 
-    
-    expect(disjointSet.find(itemA)).to eq 'A'
-    expect(disjointSet.find(itemB)).to eq 'A'
-    expect(disjointSet.find(itemC)).to eq 'A'
-    
-    expect(disjointSet.inSameSet(itemA, itemB)).to eq true
-    expect(disjointSet.inSameSet(itemB, itemC)).to eq true
-    expect(disjointSet.inSameSet(itemA, itemC)).to eq true
+    disjoint_set.make_set(item_b)
+
+    expect(disjoint_set.find(item_a)).to eq 'A'
+    expect(disjoint_set.find(item_b)).to eq 'B'
+
+    disjoint_set.make_set(item_c)
+
+    expect(disjoint_set.in_same_set?(item_a, item_b)).to eq false
+
+    disjoint_set.union(item_a, item_b)
+
+    expect(disjoint_set.find(item_a)).to eq 'A'
+    expect(disjoint_set.find(item_b)).to eq 'A'
+    expect(disjoint_set.in_same_set?(item_a, item_b)).to eq true
+    expect(disjoint_set.in_same_set?(item_b, item_a)).to eq true
+    expect(disjoint_set.in_same_set?(item_a, item_c)).to eq false
+
+    disjoint_set.union(item_a, item_c)
+
+    expect(disjoint_set.find(item_a)).to eq 'A'
+    expect(disjoint_set.find(item_b)).to eq 'A'
+    expect(disjoint_set.find(item_c)).to eq 'A'
+
+    expect(disjoint_set.in_same_set?(item_a, item_b)).to eq true
+    expect(disjoint_set.in_same_set?(item_b, item_c)).to eq true
+    expect(disjoint_set.in_same_set?(item_a, item_c)).to eq true
   end
-
 end

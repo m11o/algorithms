@@ -6,14 +6,12 @@ describe Stack do
     expect(stack.linked_list).not_to eq nil
   end
 
-
   it 'should stack data to stack' do
     stack.push(1)
     stack.push(2)
 
     expect(stack.to_s).to eq '2,1'
   end
-
 
   it 'should peek data from stack' do
     expect(stack.peek).to eq nil
@@ -25,7 +23,6 @@ describe Stack do
     expect(stack.peek).to eq 2
   end
 
-
   it 'should check if stack is empty' do
     expect(stack.empty?).to eq true
 
@@ -33,7 +30,6 @@ describe Stack do
 
     expect(stack.empty?).to eq false
   end
-
 
   it 'should pop data from stack' do
     stack.push(1)
@@ -45,7 +41,6 @@ describe Stack do
     expect(stack.empty?).to eq true
   end
 
-
   it 'should be possible to push/pop objects' do
     stack.push({ value: 'test1', key: 'key1' })
     stack.push({ value: 'test2', key: 'key2' })
@@ -55,7 +50,6 @@ describe Stack do
     expect(stack.pop[:value]).to eq 'test2'
     expect(stack.pop[:value]).to eq 'test1'
   end
-
 
   it 'should be possible to convert stack to array' do
     expect(stack.peek).to eq nil
