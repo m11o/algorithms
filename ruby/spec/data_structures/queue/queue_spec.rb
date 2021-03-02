@@ -6,14 +6,12 @@ describe Queue do
     expect(queue.linked_list).not_to eq nil
   end
 
-
   it 'should enqueue data to queue' do
     queue.enqueue(1)
     queue.enqueue(2)
 
     expect(queue.to_s).to eq '1,2'
   end
-
 
   it 'should be possible to enqueue/dequeue objects' do
     queue.enqueue({ value: 'test1', key: 'key1' })
@@ -26,7 +24,6 @@ describe Queue do
     expect(queue.dequeue[:value]).to eq 'test2'
   end
 
-
   it 'should peek data from queue' do
     expect(queue.peek).to eq nil
 
@@ -37,7 +34,6 @@ describe Queue do
     expect(queue.peek).to eq 1
   end
 
-
   it 'should check if queue is empty' do
     expect(queue.empty?).to eq true
 
@@ -45,7 +41,6 @@ describe Queue do
 
     expect(queue.empty?).to eq false
   end
-
 
   it 'should dequeue from queue in FIFO order' do
     queue.enqueue(1)
