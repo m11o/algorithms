@@ -51,13 +51,12 @@ class HashTable
   end
 
   def values
-    values = []
-    buckets.each do |bucket|
+    values = buckets.map do |bucket|
       next if bucket.nil?
 
-      values.concat bucket.to_a.map { |value| value[:value] }
+      bucket.to_a.map { |value| value[:value] }
     end
-    values
+    values.flatten
   end
 
   def delete(key)
