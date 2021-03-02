@@ -1,4 +1,3 @@
-
 describe HashTable do
   it 'should create hash table of certain size' do
     default_hash_table = HashTable.new
@@ -8,7 +7,6 @@ describe HashTable do
     expect(bigger_hash_table.buckets.length).to eq 64
   end
 
-
   it 'should generate proper hash for specified keys' do
     hash_table = HashTable.new
 
@@ -16,7 +14,6 @@ describe HashTable do
     expect(hash_table.hash('b')).to eq 2
     expect(hash_table.hash('abc')).to eq 6
   end
-
 
   it 'should set, read and delete data with collisions' do
     hash_table = HashTable.new 3
@@ -36,7 +33,7 @@ describe HashTable do
     expect(hash_table.key?('b')).to eq true
     expect(hash_table.key?('c')).to eq true
 
-    stringifier = lambda { |value| "#{value[:key]}:#{value[:value]}" }
+    stringifier = ->(value) { "#{value[:key]}:#{value[:value]}" }
 
     expect(hash_table.buckets[0].to_s(&stringifier)).to eq 'c:earth'
     expect(hash_table.buckets[1].to_s(&stringifier)).to eq 'a:sky,d:ocean'
@@ -66,7 +63,6 @@ describe HashTable do
     expect(object[:prop2]).to eq 'b'
   end
 
-
   it 'should track actual keys' do
     hash_table = HashTable.new 3
 
@@ -87,7 +83,6 @@ describe HashTable do
     expect(hash_table.key?('x')).to eq false
   end
 
-
   it 'should get all the values' do
     hash_table = HashTable.new 3
 
@@ -98,12 +93,10 @@ describe HashTable do
     expect(hash_table.values).to match_array %w[gamma alpha beta]
   end
 
-
   it 'should get all the values from empty hash table' do
     hash_table = HashTable.new
     expect(hash_table.values).to eq []
   end
-
 
   it 'should get all the values in case of hash collision' do
     hash_table = HashTable.new 3
