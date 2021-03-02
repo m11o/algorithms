@@ -98,9 +98,7 @@ class LinkedList
   def find(value = nil, &block)
     return if head.nil?
 
-    if head == tail
-      return head if _find head, value, &block
-    end
+    return head if head == tail && (_find head, value, &block)
 
     node = head
     while node
