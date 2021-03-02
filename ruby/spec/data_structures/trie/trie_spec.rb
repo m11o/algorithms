@@ -1,118 +1,91 @@
-    
 xdescribe Trie do
+  let(:trie) { Trie.new }
+
   it 'should create trie' do
-    trie = Trie.new()
-    
     expect(trie.head.to_s).to eq '*'
   end
 
-    
   it 'should add words to trie' do
-    trie = Trie.new()
-    
-    trie.addWord('cat');
-
-    
-    expect(trie.head.to_s).to eq '*:c'
-    expect(trie.head.getChild('c').to eq 'c:a'
-    
-    trie.addWord('car');
+    trie.add_word('cat')
 
     expect(trie.head.to_s).to eq '*:c'
-    expect(trie.head.getChild('c').to eq 'c:a'
-    expect(trie.head.getChild('c').getChild('a').to eq 'a:t,r'
-    expect(trie.head.getChild('c').getChild('a').getChild('t').to eq 't*'
+    expect(trie.head.child('c')).to eq 'c:a'
+
+    trie.add_word('car')
+
+    expect(trie.head.to_s).to eq '*:c'
+    expect(trie.head.child('c')).to eq 'c:a'
+    expect(trie.head.child('c').child('a')).to eq 'a:t,r'
+    expect(trie.head.child('c').child('a').child('t')).to eq 't*'
   end
 
-    
   it 'should delete words from trie' do
-    trie = Trie.new()
-    
-    trie.addWord('carpet');
+    trie.add_word('carpet')
+    trie.add_word('car')
+    trie.add_word('cat')
+    trie.add_word('cart')
 
-    trie.addWord('car');
+    expect(trie.exist_word?('carpet')).to eq true
+    expect(trie.exist_word?('car')).to eq true
+    expect(trie.exist_word?('cart')).to eq true
+    expect(trie.exist_word?('cat')).to eq true
 
-    trie.addWord('cat');
+    # Try to delete not-existing word first.
 
-    trie.addWord('cart');
+    trie.delete_word('carpool')
 
-    expect(trie.doesWordExist('carpet')).to eq true
-    expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to eq true
-    expect(trie.doesWordExist('cat')).to eq true
-    
-    // Try to delete not-existing word first.
+    expect(trie.exist_word?('carpet')).to eq true
+    expect(trie.exist_word?('car')).to eq true
+    expect(trie.exist_word?('cart')).to eq true
+    expect(trie.exist_word?('cat')).to eq true
 
-    trie.deleteWord('carpool');
+    trie.delete_word('carpet')
 
-    expect(trie.doesWordExist('carpet')).to eq true
-    expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to eq true
-    expect(trie.doesWordExist('cat')).to eq true
-    
-    trie.deleteWord('carpet');
+    expect(trie.exist_word?('carpet')).to eq false
+    expect(trie.exist_word?('car')).to eq true
+    expect(trie.exist_word?('cart')).to eq true
+    expect(trie.exist_word?('cat')).to eq true
 
-    expect(trie.doesWordExist('carpet')).to eq false
-    expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to eq true
-    expect(trie.doesWordExist('cat')).to eq true
-    
-    trie.deleteWord('cat');
+    trie.delete_word('cat')
 
-    expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cart')).to eq true
-    expect(trie.doesWordExist('cat')).to eq false
-    
-    trie.deleteWord('car');
+    expect(trie.exist_word?('car')).to eq true
+    expect(trie.exist_word?('cart')).to eq true
+    expect(trie.exist_word?('cat')).to eq false
 
-    expect(trie.doesWordExist('car')).to eq false
-    expect(trie.doesWordExist('cart')).to eq true
-    
-    trie.deleteWord('cart');
+    trie.delete_word('car')
 
-    expect(trie.doesWordExist('car')).to eq false
-    expect(trie.doesWordExist('cart')).to eq false
+    expect(trie.exist_word?('car')).to eq false
+    expect(trie.exist_word?('cart')).to eq true
+
+    trie.delete_word('cart')
+
+    expect(trie.exist_word?('car')).to eq false
+    expect(trie.exist_word?('cart')).to eq false
   end
 
-    
   it 'should suggests next characters' do
-    trie = Trie.new()
-    
-    trie.addWord('cat');
+    trie.add_word('cat')
+    trie.add_word('cats')
+    trie.add_word('car')
+    trie.add_word('caption')
 
-    trie.addWord('cats');
-
-    trie.addWord('car');
-
-    trie.addWord('caption');
-
-    
-    expect(trie.suggestNextCharacters('ca')).to eq ['t', 'r', 'p']
-    expect(trie.suggestNextCharacters('cat')).to eq ['s']
-    expect(trie.suggestNextCharacters('cab')).to eq nil
+    expect(trie.suggest_next_characters('ca')).to match_array %w[t r p]
+    expect(trie.suggest_next_characters('cat')).to match_array %w[s]
+    expect(trie.suggest_next_characters('cab')).to eq nil
   end
 
-    
   it 'should check if word exists' do
-    trie = Trie.new()
-    
-    trie.addWord('cat');
+    trie.add_word('cat')
+    trie.add_word('cats')
+    trie.add_word('carpet')
+    trie.add_word('car')
+    trie.add_word('caption')
 
-    trie.addWord('cats');
-
-    trie.addWord('carpet');
-
-    trie.addWord('car');
-
-    trie.addWord('caption');
-
-    
-    expect(trie.doesWordExist('cat')).to eq true
-    expect(trie.doesWordExist('cats')).to eq true
-    expect(trie.doesWordExist('carpet')).to eq true
-    expect(trie.doesWordExist('car')).to eq true
-    expect(trie.doesWordExist('cap')).to eq false
-    expect(trie.doesWordExist('call')).to eq false
+    expect(trie.exist_word?('cat')).to eq true
+    expect(trie.exist_word?('cats')).to eq true
+    expect(trie.exist_word?('carpet')).to eq true
+    expect(trie.exist_word?('car')).to eq true
+    expect(trie.exist_word?('cap')).to eq false
+    expect(trie.exist_word?('call')).to eq false
   end
-
 end
