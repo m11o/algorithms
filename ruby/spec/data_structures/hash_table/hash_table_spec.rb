@@ -1,147 +1,119 @@
-    
-xdescribe HashTable do
+
+describe HashTable do
   it 'should create hash table of certain size' do
-    defaultHashTable = HashTable.new()
-    expect(defaultHashTable.buckets.length).to eq 32
-    
-    biggerHashTable = HashTable.new(64)
-    expect(biggerHashTable.buckets.length).to eq 64
+    default_hash_table = HashTable.new
+    expect(default_hash_table.buckets.length).to eq 32
+
+    bigger_hash_table = HashTable.new 64
+    expect(bigger_hash_table.buckets.length).to eq 64
   end
 
-    
+
   it 'should generate proper hash for specified keys' do
-    hashTable = HashTable.new()
-    
-    expect(hashTable.hash('a')).to eq 1
-    expect(hashTable.hash('b')).to eq 2
-    expect(hashTable.hash('abc')).to eq 6
+    hash_table = HashTable.new
+
+    expect(hash_table.hash('a')).to eq 1
+    expect(hash_table.hash('b')).to eq 2
+    expect(hash_table.hash('abc')).to eq 6
   end
 
-    
+
   it 'should set, read and delete data with collisions' do
-    hashTable = HashTable.new(3)
-    
-    expect(hashTable.hash('a')).to eq 1
-    expect(hashTable.hash('b')).to eq 2
-    expect(hashTable.hash('c')).to eq 0
-    expect(hashTable.hash('d')).to eq 1
-    
-    hashTable.set('a', 'sky-old');
+    hash_table = HashTable.new 3
 
-    hashTable.set('a', 'sky');
+    expect(hash_table.hash('a')).to eq 1
+    expect(hash_table.hash('b')).to eq 2
+    expect(hash_table.hash('c')).to eq 0
+    expect(hash_table.hash('d')).to eq 1
 
-    hashTable.set('b', 'sea');
+    hash_table.set('a', 'sky-old')
+    hash_table.set('a', 'sky')
+    hash_table.set('b', 'sea')
+    hash_table.set('c', 'earth')
+    hash_table.set('d', 'ocean')
 
-    hashTable.set('c', 'earth');
+    expect(hash_table.key?('x')).to eq false
+    expect(hash_table.key?('b')).to eq true
+    expect(hash_table.key?('c')).to eq true
 
-    hashTable.set('d', 'ocean');
+    stringifier = lambda { |value| "#{value[:key]}:#{value[:value]}" }
 
-    
-    expect(hashTable.has('x')).to eq false
-    expect(hashTable.has('b')).to eq true
-    expect(hashTable.has('c')).to eq true
-    
-    stringifier = (value) => `${value.key}:${value.value}`
-    
-    expect(hashTable.buckets[0].toString(stringifier)).to eq 'c:earth'
-    expect(hashTable.buckets[1].toString(stringifier)).to eq 'a:sky,d:ocean'
-    expect(hashTable.buckets[2].toString(stringifier)).to eq 'b:sea'
-    
-    expect(hashTable.get('a')).to eq 'sky'
-    expect(hashTable.get('d')).to eq 'ocean'
-    expect(hashTable.get('x')).not.toBeDefined();
+    expect(hash_table.buckets[0].to_s(&stringifier)).to eq 'c:earth'
+    expect(hash_table.buckets[1].to_s(&stringifier)).to eq 'a:sky,d:ocean'
+    expect(hash_table.buckets[2].to_s(&stringifier)).to eq 'b:sea'
 
-    
-    hashTable.delete('a');
+    expect(hash_table.get('a')).to eq 'sky'
+    expect(hash_table.get('d')).to eq 'ocean'
+    expect(hash_table.get('x')).to eq nil
 
-    
-    expect(hashTable.delete('not-existing')).to eq nil
-    
-    expect(hashTable.get('a')).not.toBeDefined();
+    hash_table.delete('a')
 
-    expect(hashTable.get('d')).to eq 'ocean'
-    
-    hashTable.set('d', 'ocean-new');
+    expect(hash_table.delete('not-existing')).to eq nil
+    expect(hash_table.get('a')).to eq nil
+    expect(hash_table.get('d')).to eq 'ocean'
 
-    expect(hashTable.get('d')).to eq 'ocean-new'
+    hash_table.set('d', 'ocean-new')
+
+    expect(hash_table.get('d')).to eq 'ocean-new'
   end
 
-    
   it 'should be possible to add objects to hash table' do
-    hashTable = HashTable.new()
-    
- end
+    hash_table = HashTable.new
+    hash_table.set('objectKey', { prop1: 'a', prop2: 'b' })
 
-    
-    object = hashTable.get('objectKey')
-    expect(object.prop1).to eq 'a'
-    expect(object.prop2).to eq 'b'
+    object = hash_table.get('objectKey')
+    expect(object[:prop1]).to eq 'a'
+    expect(object[:prop2]).to eq 'b'
   end
 
-    
+
   it 'should track actual keys' do
-    hashTable = HashTable.new(3)
-    
-    hashTable.set('a', 'sky-old');
+    hash_table = HashTable.new 3
 
-    hashTable.set('a', 'sky');
+    hash_table.set('a', 'sky-old')
+    hash_table.set('a', 'sky')
+    hash_table.set('b', 'sea')
+    hash_table.set('c', 'earth')
+    hash_table.set('d', 'ocean')
 
-    hashTable.set('b', 'sea');
+    expect(hash_table.keys).to eq %w[a b c d]
+    expect(hash_table.key?('a')).to eq true
+    expect(hash_table.key?('x')).to eq false
 
-    hashTable.set('c', 'earth');
+    hash_table.delete('a')
 
-    hashTable.set('d', 'ocean');
-
-    
-    expect(hashTable.getKeys()).to eq ['a', 'b', 'c', 'd']
-    expect(hashTable.has('a')).to eq true
-    expect(hashTable.has('x')).to eq false
-    
-    hashTable.delete('a');
-
-    
-    expect(hashTable.has('a')).to eq false
-    expect(hashTable.has('b')).to eq true
-    expect(hashTable.has('x')).to eq false
+    expect(hash_table.key?('a')).to eq false
+    expect(hash_table.key?('b')).to eq true
+    expect(hash_table.key?('x')).to eq false
   end
 
-    
+
   it 'should get all the values' do
-    hashTable = HashTable.new(3)
-    
-    hashTable.set('a', 'alpha');
+    hash_table = HashTable.new 3
 
-    hashTable.set('b', 'beta');
+    hash_table.set('a', 'alpha')
+    hash_table.set('b', 'beta')
+    hash_table.set('c', 'gamma')
 
-    hashTable.set('c', 'gamma');
-
-    
-    expect(hashTable.getValues()).to eq ['gamma', 'alpha', 'beta']
+    expect(hash_table.values).to match_array %w[gamma alpha beta]
   end
 
-    
+
   it 'should get all the values from empty hash table' do
-    hashTable = HashTable.new()
-    expect(hashTable.getValues()).to eq []
+    hash_table = HashTable.new
+    expect(hash_table.values).to eq []
   end
 
-    
+
   it 'should get all the values in case of hash collision' do
-    hashTable = HashTable.new(3)
-    
-    // Keys `ab` and `ba` in current implementation should result in one hash (one bucket).
+    hash_table = HashTable.new 3
 
-    // We need to make sure that several items from one bucket will be serialized.
+    # Keys `ab` and `ba` in current implementation should result in one hash (one bucket).
+    # We need to make sure that several items from one bucket will be serialized.
+    hash_table.set('ab', 'one')
+    hash_table.set('ba', 'two')
+    hash_table.set('ac', 'three')
 
-    hashTable.set('ab', 'one');
-
-    hashTable.set('ba', 'two');
-
-    
-    hashTable.set('ac', 'three');
-
-    
-    expect(hashTable.getValues()).to eq ['one', 'two', 'three']
+    expect(hash_table.values).to eq %w[one two three]
   end
-
 end
