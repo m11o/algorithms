@@ -1,4 +1,4 @@
-xdescribe Heap do
+describe Heap do
   it 'should not allow to create instance of the Heap directly' do
     def instantiate_head
       heap = Heap.new

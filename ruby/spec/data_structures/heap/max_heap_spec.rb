@@ -1,4 +1,4 @@
-xdescribe MaxHeap do
+describe MaxHeap do
   let(:max_heap) { MaxHeap.new }
 
   it 'should create an empty max heap' do
@@ -109,9 +109,9 @@ xdescribe MaxHeap do
 
     expect(max_heap.to_s).to eq '12,11,10,3,11'
 
-    expect(max_heap.remove(12)).to eq '11,11,10,3'
+    expect(max_heap.remove(12).to_s).to eq '11,11,10,3'
     expect(max_heap.remove(12).peek).to eq 11
-    expect(max_heap.remove(11)).to eq '10,3'
+    expect(max_heap.remove(11).to_s).to eq '10,3'
     expect(max_heap.remove(10).peek).to eq 3
   end
 
@@ -128,14 +128,14 @@ xdescribe MaxHeap do
     max_heap.add(1)
 
     expect(max_heap.to_s).to eq '10,8,6,7,6,4,5,3,2,1'
-    expect(max_heap.remove(4)).to eq '10,8,6,7,6,1,5,3,2'
-    expect(max_heap.remove(3)).to eq '10,8,6,7,6,1,5,2'
-    expect(max_heap.remove(5)).to eq '10,8,6,7,6,1,2'
-    expect(max_heap.remove(10)).to eq '8,7,6,2,6,1'
-    expect(max_heap.remove(6)).to eq '8,7,1,2'
-    expect(max_heap.remove(2)).to eq '8,7,1'
-    expect(max_heap.remove(1)).to eq '8,7'
-    expect(max_heap.remove(7)).to eq '8'
-    expect(max_heap.remove(8)).to eq ''
+    expect(max_heap.remove(4).to_s).to eq '10,8,6,7,6,1,5,3,2'
+    expect(max_heap.remove(3).to_s).to eq '10,8,6,7,6,1,5,2'
+    expect(max_heap.remove(5).to_s).to eq '10,8,6,7,6,1,2'
+    expect(max_heap.remove(10).to_s).to eq '8,7,6,2,6,1'
+    expect(max_heap.remove(6).to_s).to eq '8,7,1,2'
+    expect(max_heap.remove(2).to_s).to eq '8,7,1'
+    expect(max_heap.remove(1).to_s).to eq '8,7'
+    expect(max_heap.remove(7).to_s).to eq '8'
+    expect(max_heap.remove(8).to_s).to eq ''
   end
 end
