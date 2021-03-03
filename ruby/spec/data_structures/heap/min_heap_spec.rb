@@ -1,4 +1,4 @@
-xdescribe MinHeap do
+describe MinHeap do
   let(:min_heap) { MinHeap.new }
 
   it 'should create an empty min heap' do
@@ -109,9 +109,9 @@ xdescribe MinHeap do
 
     expect(min_heap.to_s).to eq '3,11,10,12,11'
 
-    expect(min_heap.remove(3)).to eq '10,11,11,12'
+    expect(min_heap.remove(3).to_s).to eq '10,11,11,12'
     expect(min_heap.remove(3).peek).to eq 10
-    expect(min_heap.remove(11)).to eq '10,12'
+    expect(min_heap.remove(11).to_s).to eq '10,12'
     expect(min_heap.remove(3).peek).to eq 10
   end
 
@@ -128,15 +128,15 @@ xdescribe MinHeap do
     min_heap.add(1)
 
     expect(min_heap.to_s).to eq '1,2,4,6,3,5,6,10,8,7'
-    expect(min_heap.remove(8)).to eq '1,2,4,6,3,5,6,10,7'
-    expect(min_heap.remove(7)).to eq '1,2,4,6,3,5,6,10'
-    expect(min_heap.remove(1)).to eq '2,3,4,6,10,5,6'
-    expect(min_heap.remove(2)).to eq '3,6,4,6,10,5'
-    expect(min_heap.remove(6)).to eq '3,5,4,10'
-    expect(min_heap.remove(10)).to eq '3,5,4'
-    expect(min_heap.remove(5)).to eq '3,4'
-    expect(min_heap.remove(3)).to eq '4'
-    expect(min_heap.remove(4)).to eq ''
+    expect(min_heap.remove(8).to_s).to eq '1,2,4,6,3,5,6,10,7'
+    expect(min_heap.remove(7).to_s).to eq '1,2,4,6,3,5,6,10'
+    expect(min_heap.remove(1).to_s).to eq '2,3,4,6,10,5,6'
+    expect(min_heap.remove(2).to_s).to eq '3,6,4,6,10,5'
+    expect(min_heap.remove(6).to_s).to eq '3,5,4,10'
+    expect(min_heap.remove(10).to_s).to eq '3,5,4'
+    expect(min_heap.remove(5).to_s).to eq '3,4'
+    expect(min_heap.remove(3).to_s).to eq '4'
+    expect(min_heap.remove(4).to_s).to eq ''
   end
 
   it 'should remove values from heap and correctly re-order the tree' do
