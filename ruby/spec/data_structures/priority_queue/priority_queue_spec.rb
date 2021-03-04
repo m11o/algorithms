@@ -1,4 +1,4 @@
-xdescribe PriorityQueue do
+describe PriorityQueue do
   let(:priority_queue) { PriorityQueue.new }
 
   it 'should insert items to the queue and respect priorities' do
