@@ -14,7 +14,7 @@ class TrieNode
     @children.set character, TrieNode.new(character, is_complete) unless @children.key? character
 
     child_node = @children.get character
-    child_node.is_complete = child_node.is_complete || @is_complete
+    child_node.is_complete = child_node.is_complete || is_complete
     child_node
   end
 
