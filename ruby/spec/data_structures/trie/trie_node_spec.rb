@@ -1,9 +1,9 @@
-xdescribe TrieNode do
+describe TrieNode do
   it 'should create trie node' do
     trie_node = TrieNode.new('c', true)
 
     expect(trie_node.character).to eq 'c'
-    expect(trie_node.complete_word?).to eq true
+    expect(trie_node.is_complete).to eq true
     expect(trie_node.to_s).to eq 'c*'
   end
 
@@ -20,9 +20,9 @@ xdescribe TrieNode do
     trie_node.add_child('a')
     trie_node.add_child('o')
 
-    expect(trie_node.child('a')).to eq 'a'
     expect(trie_node.child('a').character).to eq 'a'
-    expect(trie_node.child('o')).to eq 'o'
+    expect(trie_node.child('a').character).to eq 'a'
+    expect(trie_node.child('o').character).to eq 'o'
     expect(trie_node.child('b')).to eq nil
   end
 

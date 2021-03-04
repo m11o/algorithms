@@ -1,4 +1,4 @@
-xdescribe Trie do
+describe Trie do
   let(:trie) { Trie.new }
 
   it 'should create trie' do
@@ -9,14 +9,14 @@ xdescribe Trie do
     trie.add_word('cat')
 
     expect(trie.head.to_s).to eq '*:c'
-    expect(trie.head.child('c')).to eq 'c:a'
+    expect(trie.head.child('c').to_s).to eq 'c:a'
 
     trie.add_word('car')
 
     expect(trie.head.to_s).to eq '*:c'
-    expect(trie.head.child('c')).to eq 'c:a'
-    expect(trie.head.child('c').child('a')).to eq 'a:t,r'
-    expect(trie.head.child('c').child('a').child('t')).to eq 't*'
+    expect(trie.head.child('c').to_s).to eq 'c:a'
+    expect(trie.head.child('c').child('a').to_s).to eq 'a:t,r'
+    expect(trie.head.child('c').child('a').child('t').to_s).to eq 't*'
   end
 
   it 'should delete words from trie' do
