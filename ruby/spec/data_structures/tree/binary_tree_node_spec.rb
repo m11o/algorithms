@@ -1,4 +1,4 @@
-xdescribe BinaryTreeNode do
+describe BinaryTreeNode do
   it 'should create node' do
     node = BinaryTreeNode.new
 
@@ -10,7 +10,8 @@ xdescribe BinaryTreeNode do
     right_node = BinaryTreeNode.new(3)
     root_node = BinaryTreeNode.new(2)
 
-    root_node.set_left(left_node).set_right(right_node)
+    root_node.left = left_node
+    root_node.right = right_node
 
     expect(root_node.value).to eq 2
     expect(root_node.left.value).to eq 1
@@ -22,7 +23,8 @@ xdescribe BinaryTreeNode do
     right_node = BinaryTreeNode.new(3)
     root_node = BinaryTreeNode.new(2)
 
-    root_node.set_left(left_node).set_right(right_node)
+    root_node.left = left_node
+    root_node.right = right_node
 
     expect(root_node.parent).to eq nil
     expect(root_node.left.parent.value).to eq 2
@@ -35,7 +37,8 @@ xdescribe BinaryTreeNode do
     right_node = BinaryTreeNode.new(3)
     root_node = BinaryTreeNode.new(2)
 
-    root_node.set_left(left_node).set_right(right_node)
+    root_node.left = left_node
+    root_node.right = right_node
 
     expect(root_node.traverse_in_order).to match_array [1, 2, 3]
     expect(root_node.to_s).to eq '1,2,3'
@@ -46,7 +49,8 @@ xdescribe BinaryTreeNode do
     right_node = BinaryTreeNode.new(3)
     root_node = BinaryTreeNode.new(2)
 
-    root_node.set_left(left_node).set_right(right_node)
+    root_node.left = left_node
+    root_node.right = right_node
 
     expect(root_node.traverse_in_order).to match_array [1, 2, 3]
 
@@ -65,12 +69,13 @@ xdescribe BinaryTreeNode do
     right_node = BinaryTreeNode.new(3)
     root_node = BinaryTreeNode.new(2)
 
-    root_node.set_left(left_node).set_right(right_node)
+    root_node.left = left_node
+    root_node.right = right_node
 
     expect(root_node.traverse_in_order).to match_array [1, 2, 3]
 
     replacement_node = BinaryTreeNode.new(5)
-    right_node.set_right(replacement_node)
+    right_node.right = replacement_node
 
     expect(root_node.traverse_in_order).to eq [1, 2, 3, 5]
 
@@ -102,13 +107,15 @@ xdescribe BinaryTreeNode do
     expect(root.height).to eq 0
     expect(root.balance_factor).to eq 0
 
-    root.set_left(left).set_right(right)
+    root.left = left
+    root.right = right
 
     expect(root.height).to eq 1
     expect(left.height).to eq 0
     expect(root.balance_factor).to eq 0
 
-    left.set_left(grand_left).set_right(grand_right)
+    left.left = grand_left
+    left.right = grand_right
 
     expect(root.height).to eq 2
     expect(left.height).to eq 1
@@ -116,7 +123,7 @@ xdescribe BinaryTreeNode do
     expect(grand_right.height).to eq 0
     expect(root.balance_factor).to eq 1
 
-    grand_left.set_left(grand_grand_left)
+    grand_left.left = grand_grand_left
 
     expect(root.height).to eq 3
     expect(left.height).to eq 2
@@ -130,7 +137,7 @@ xdescribe BinaryTreeNode do
     root = BinaryTreeNode.new(1)
     right = BinaryTreeNode.new(2)
 
-    root.set_right(right)
+    root.right = right
 
     expect(root.height).to eq 1
     expect(right.height).to eq 0
@@ -142,27 +149,27 @@ xdescribe BinaryTreeNode do
     left = BinaryTreeNode.new(1)
     right = BinaryTreeNode.new(3)
 
-    root.set_left(left)
-    root.set_right(right)
+    root.left = left
+    root.right = right
 
     expect(root.left.value).to eq 1
     expect(root.right.value).to eq 3
 
-    root.set_left(nil)
-    root.set_right(nil)
+    root.left = nil
+    root.right = nil
 
     expect(root.left).to eq nil
     expect(root.right).to eq nil
   end
 
   it 'should be possible to create node with object as a value' do
-    obj1 = { key: 'object_1', toString: 'object_1' }
+    obj1 = { key: 'object_1' }
     obj2 = { key: 'object_2' }
 
     node1 = BinaryTreeNode.new(obj1)
     node2 = BinaryTreeNode.new(obj2)
 
-    node1.set_left(node2)
+    node1.left = node2
 
     expect(node1.value).to eq obj1
     expect(node2.value).to eq obj2
@@ -174,8 +181,9 @@ xdescribe BinaryTreeNode do
     expect(node2.value).to eq obj2
     expect(node1.left).to eq nil
 
-    expect(node1.to_s).to eq 'object_1'
-    expect(node2.to_s).to eq '[object Object]'
+    block = ->(_value) { 'object_1' }
+    expect(node1.to_s(&block)).to eq 'object_1'
+    expect(node2.to_s).to eq '{:key=>"object_2"}'
   end
 
   it 'should be possible to attach meta information to the node' do
@@ -195,21 +203,21 @@ xdescribe BinaryTreeNode do
     uncle = BinaryTreeNode.new('uncle')
     child = BinaryTreeNode.new('child')
 
-    expect(grand_parent.uncle).not_to eq nil
-    expect(parent.uncle).not_to eq nil
+    expect(grand_parent.uncle).to eq nil
+    expect(parent.uncle).to eq nil
 
-    grand_parent.set_left(parent)
+    grand_parent.left = parent
 
-    expect(parent.uncle).not_to eq nil
-    expect(child.uncle).not_to eq nil
+    expect(parent.uncle).to eq nil
+    expect(child.uncle).to eq nil
 
-    parent.set_left(child)
+    parent.left = child
 
-    expect(child.uncle).not_to eq nil
+    expect(child.uncle).to eq nil
 
-    grand_parent.set_right(uncle)
+    grand_parent.right = uncle
 
-    expect(parent.uncle).not_to eq nil
+    expect(parent.uncle).to eq nil
     expect(child.uncle).to eq uncle
   end
 
@@ -219,21 +227,21 @@ xdescribe BinaryTreeNode do
     uncle = BinaryTreeNode.new('uncle')
     child = BinaryTreeNode.new('child')
 
-    expect(grand_parent.uncle).not_to eq nil
-    expect(parent.uncle).not_to eq nil
+    expect(grand_parent.uncle).to eq nil
+    expect(parent.uncle).to eq nil
 
-    grand_parent.set_right(parent)
+    grand_parent.right = parent
 
-    expect(parent.uncle).not_to eq nil
-    expect(child.uncle).not_to eq nil
+    expect(parent.uncle).to eq nil
+    expect(child.uncle).to eq nil
 
-    parent.set_right(child)
+    parent.right = child
 
-    expect(child.uncle).not_to eq nil
+    expect(child.uncle).to eq nil
 
-    grand_parent.set_left(uncle)
+    grand_parent.left = uncle
 
-    expect(parent.uncle).not_to eq nil
+    expect(parent.uncle).to eq nil
     expect(child.uncle).to eq uncle
   end
 
@@ -242,7 +250,7 @@ xdescribe BinaryTreeNode do
 
     expect(node.value).to eq 'initial_value'
 
-    node.setValue('new_value')
+    node.value = 'new_value'
 
     expect(node.value).to eq 'new_value'
   end
@@ -252,7 +260,8 @@ xdescribe BinaryTreeNode do
     left = BinaryTreeNode.new('left')
     right = BinaryTreeNode.new('right')
 
-    root.set_left(left).set_right(right)
+    root.left = left
+    root.right = right
 
     expect(root.to_s).to eq 'left,root,right'
 
@@ -260,7 +269,8 @@ xdescribe BinaryTreeNode do
     new_left = BinaryTreeNode.new('new_left')
     new_right = BinaryTreeNode.new('new_right')
 
-    new_root.set_left(new_left).set_right(new_right)
+    new_root.left = new_left
+    new_root.right = new_right
 
     expect(new_root.to_s).to eq 'new_left,new_root,new_right'
 
