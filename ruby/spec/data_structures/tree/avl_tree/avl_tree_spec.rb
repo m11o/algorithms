@@ -1,4 +1,4 @@
-xdescribe AvlTree do
+describe AvlTree do
   let(:tree) { AvlTree.new }
 
   it 'should do simple left-left rotation' do
@@ -228,7 +228,7 @@ xdescribe AvlTree do
     expect(tree.root.value).to eq 30
     expect(tree.root.left.value).to eq 20
     expect(tree.root.right.value).to eq 40
-    expect(tree.root.balanceFactor).to eq 0
+    expect(tree.root.balance_factor).to eq 0
   end
 
   it 'should remove values from the tree with left-left rotation' do
@@ -245,7 +245,7 @@ xdescribe AvlTree do
     expect(tree.root.value).to eq 10
     expect(tree.root.left.value).to eq 5
     expect(tree.root.right.value).to eq 20
-    expect(tree.root.balanceFactor).to eq 0
+    expect(tree.root.balance_factor).to eq 0
   end
 
   it 'should keep balance after removal' do
@@ -262,20 +262,20 @@ xdescribe AvlTree do
     expect(tree.to_s).to eq '1,2,3,4,5,6,7,8,9'
     expect(tree.root.value).to eq 4
     expect(tree.root.height).to eq 3
-    expect(tree.root.balanceFactor).to eq(-1)
+    expect(tree.root.balance_factor).to eq(-1)
 
     tree.remove(8)
 
     expect(tree.root.value).to eq 4
-    expect(tree.root.balanceFactor).to eq(-1)
+    expect(tree.root.balance_factor).to eq(-1)
 
     tree.remove(9)
 
-    expect(tree.contains(8)).to eq
-    expect(tree.contains(9)).to eq
+    expect(tree.include?(8)).to eq false
+    expect(tree.include?(9)).to eq false
     expect(tree.to_s).to eq '1,2,3,4,5,6,7'
     expect(tree.root.value).to eq 4
     expect(tree.root.height).to eq 2
-    expect(tree.root.balanceFactor).to eq 0
+    expect(tree.root.balance_factor).to eq 0
   end
 end
