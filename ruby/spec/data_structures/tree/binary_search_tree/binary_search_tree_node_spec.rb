@@ -1,4 +1,4 @@
-xdescribe BinarySearchTreeNode do
+describe BinarySearchTreeNode do
   it 'should create binary search tree' do
     bst_node = BinarySearchTreeNode.new(2)
 
