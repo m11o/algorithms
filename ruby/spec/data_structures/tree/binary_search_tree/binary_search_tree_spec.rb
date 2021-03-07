@@ -1,4 +1,4 @@
-xdescribe BinarySearchTree do
+describe BinarySearchTree do
   let(:bst) { BinarySearchTree.new }
 
   it 'should create binary search tree' do
@@ -22,8 +22,8 @@ xdescribe BinarySearchTree do
     bst.insert(20)
     bst.insert(5)
 
-    expect(bst.contains(20)).to eq true
-    expect(bst.contains(40)).to eq false
+    expect(bst.include?(20)).to eq true
+    expect(bst.include?(40)).to eq false
   end
 
   it 'should remove nodes' do
