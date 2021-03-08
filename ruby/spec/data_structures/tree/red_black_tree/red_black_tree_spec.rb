@@ -1,4 +1,4 @@
-xdescribe RedBlackTree do
+describe RedBlackTree do
   let(:tree) { RedBlackTree.new }
 
   it 'should always color first inserted node as black' do
@@ -293,6 +293,6 @@ xdescribe RedBlackTree do
       tree.remove(1)
     end
 
-    expect { remove_node_from_red_black_tree(tree) }.to raise_error Exception
+    expect { remove_node_from_red_black_tree(tree) }.to raise_error NotImplementedError
   end
 end
