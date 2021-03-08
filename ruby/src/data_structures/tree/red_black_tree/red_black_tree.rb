@@ -1,8 +1,5 @@
 require_relative '../binary_search_tree/binary_search_tree'
 
-# これむずくね？(git commitテスト)
-# AAAA
-# ああ
 class RedBlackTree < BinarySearchTree
   COLOR_PROP_NAME = 'color'.freeze
   RED_BLACK_TREE_COLORS = {
