@@ -1,4 +1,4 @@
-xdescribe GraphVertex do
+describe GraphVertex do
   it 'should throw an error when trying to create vertex without value' do
     def create_empty_vertex
       GraphVertex.new
