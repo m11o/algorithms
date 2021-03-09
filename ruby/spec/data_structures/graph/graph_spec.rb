@@ -1,4 +1,4 @@
-xdescribe Graph do
+describe Graph do
   it 'should add vertices to graph' do
     graph = Graph.new
 

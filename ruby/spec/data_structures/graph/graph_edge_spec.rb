@@ -1,4 +1,4 @@
-xdescribe GraphEdge do
+describe GraphEdge do
   it 'should create graph edge with default weight' do
     start_vertex = GraphVertex.new('A')
     end_vertex = GraphVertex.new('B')
